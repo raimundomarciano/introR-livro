@@ -72,7 +72,7 @@ Embora seja verdade que o espaço ocupado está menor, quando o código começa 
 
 No Python, onde a identação faz diferença, o código precisaria seguir uma estrutura baseada em espaços, sendo desnecessário o uso das chaves.
 
-```{r eval=FALSE, message=FALSE}
+```python
 #se o resultado for maior que zero
 if (resultado > 0):  
   # informe: "Tivemos Lucro!"
@@ -116,17 +116,148 @@ texto3 <- "Ela disse: "Ok"."
 O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok".")
 
 ### Lógicas
-## Boolean
 
-## Date
+Em muitos casos, é importante ter variáveis que indiquem VERDADEIRO (TRUE) ou FALSO (FALSE).O tipo de variável que admite apenas esses dois valores lógicos é chamado de Booleana (boolean ou bool). Essas variáveis seguem a lógica de primeira ordem. Por exemplo, TRUE AND FALSE resulta em FALSE, enquanto TRUE OR FALSE resulta em TRUE.
+
+```{r eval=TRUE, message=FALSE}
+# AND ou E é representado por &
+print(TRUE & FALSE)
+# OR ou OU é representado por |
+print(TRUE | FALSE) 
+```
+
+Variáveis lógicas podem ter muitos usos, como parâmetros em funções ou filtros para listas de dados. Por exemplo, você pode querer que o usuário informe se ele quer imprimir o relatório dos valores ao final. Nesse caso, ele deveria informar que o valor do parâmetro imprimir_relatorio deveria ser TRUE. Caso ele não queira imprimir o relatório, deveria informar imprimir_relatorio como FALSE.
+
+Também podem ser usados para comparações de igualdade (==) ou desigualdade (!=).
+
+```{r}
+dois_numero <- 2
+dois_texto <- "dois"
+# Vamos testar de o numero dois é o mesmo que o dois "por extenso"
+dois_numero == dois_texto
+# Vamos testar de o numero dois é diferente do dois "por extenso"
+dois_numero != dois_texto
+```
+
+O R não entende que "dois" é a forma "por extenso" do número 2. Para o R, há um número 2 e há uma palavra, cujo significado o R desconhece. Então, na comparação entre esse inteiro e essa string, o R entende que há uma diferença (de tipos). Por isso, ele afirma que são diferentes (ou não iguais).
+
+```{r}
+dois_numero <- 2
+dois_texto <- "2"
+# Vamos testar de o numero dois é o mesmo que o dois "caractere"
+# O resultado é verdadeiro porque apesar dos tipos serem diferentes, o conteúdo é o mesmo.
+dois_numero == dois_texto
+```
+
+Existe outro operador de igualdade (===), mas que não será tratado agora.
+
+### Datas
+
+```{r}
+today <- Sys.Date()
+print(today)
+today <- format(today, "%d/%m/%Y")
+print(today)
+today2 <- format(Sys.Date(), "%d/%m/%Y")
+print(today2)
+```
 
 # Estruturas de Dados
 
+Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar. 
+
 ## Vetores
 
-## Data frames
+Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um *vetor*. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.  
+Entretanto, se estivéssemos falando de uma relação envolvendo os nomes *e* os salários, seria inadequado usarmos o vetor, porque agora teríamos duas dimensões, além de dois tipos: uma mesma pessoa (o CEO) possui duas características: o nome (textual / string) e o salário (numérica / num).
+
+A criação de vetores é feita com o uso do c(), em que os valores que devem ser atribuídos ao vetor são incluídos dentro dos parênteses e separados por vírgula.
+
+```{r}
+vetorNumerico = c(1,2,3,4,5)
+vetorLogico = c(TRUE, TRUE, FALSE,FALSE)
+vetorTextual = c("Eu", "Nasci", "há", "10.000", "anos", "atrás")
+```
+
+Note que todos os vetores foram criados com dados de mesmo tipo. O vetor numérico tem apenas números inteiros (1 a 5); o vetor lógico tem apenas Verdadeiro (TRUE) e Falso (FALSE); o vetor de texto tem apenas elementos textuais (mesmo o número está entre aspas, o que força que aqueles dígitos sejam lidos como "texto").
+
+Caso você tente misturar tipos, o R irá forçar a padronização. Por exemplo, o que aconteceria se você tentasse criar um vetor com números e textos?
+
+```{r}
+vetorNumTex = c(1,2,"três","4",5)
+print(vetorNumTex)
+```
+
+Todos os elementos apresentados estão entre aspas. Como o R não tem uma forma de transformar "três" em um número, ele converte todos os outros números em texto. Por isso, 1 vira "1", 2 vira "2" e 5 vira "5".
+
+> Teste no seu console a seguinte operação: "3" + 1
+
+> O R informará um erro. "3" não é um número, mas um texto (por causa das aspas). Não é possível somar um texto com um número. É o mesmo que você tentar somar "banana" com 97. Não dá.
 
 ## Matrizes
+
+A matriz é um conjunto de dados do mesmo tipo, ordenados em linhas (filas horizonais) e colunas (filas verticais). É criada pelo matrix(), devendo ser informados os dados que irão compor a matriz (normalmente dispostos em um vetor), o número de linhas (nrow), o número de colunas (ncol) e se o preenchimento deve ser feito por linha (byrow = TRUE) ou por coluna (byrow = FALSE).
+
+```{r}
+# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.
+mat = matrix(c(1:6), nrow = 3, ncol = 2, byrow = TRUE)
+print(mat)
+```
+Ou seja, os números foram distribuídos até o fim da primeira linha, depois até o fim da segunda linha e depois até o fim da terceira (e última) linha.
+
+```{r}
+# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas
+mat = matrix(c(1:6), nrow = 3, ncol = 2, byrow = FALSE)
+print(mat)
+```
+Em contraste, aqui o preenchimento foi por colunas. Foi preenchida toda a primeira coluna e depois toda a segunda coluna. 
+
+Se já tivéssemos um vetor salvo na memória, poderíamos usá-lo para compor a matriz.
+
+```{r}
+vetorParaMatriz <- c("eu", "nasci", "há", "dez mil", "anos", "atrás") 
+
+mat = matrix(vetorParaMatriz, nrow = 3, ncol = 2, byrow = TRUE)
+print(mat)
+```
+
+Você reparou que aparecem valores entre colchetes e separados por vírgulas? Eles indicam a posição na matriz. 
+
+| [m,n] | Posição | Elementos |
+|:---:| :---: | :---: |
+| [1,] | Primeira Linha | "eu", "nasci" | 
+| [2,] | Segunda Linha | "há, "dez mil" |
+| [,1] | Primeira Coluna | "eu", "há", "anos" |
+| [,2] | Segunda Coluna | "nasci, "dez mil", "atrás" |
+| [1,1] | Primeira Linha, Primeira Coluna | "eu" |
+| [1,2] | Primeira Linha, Segunda Coluna | "nasci" |
+| [2,1] | Segunda Linha, Primeira Coluna | "há" |
+| [2,2] | Segunda Linha, Segunda Coluna | "dez mil" |
+
+Eventualmente, pode ser interessante informar os nomes para as linhas e para as colunas. Por exemplo, se você estiver precisando mapear a distância entre as unidades de uma empresa, seria importante dizer quais são as filiais.
+
+```{r echo=TRUE}
+vetorFiliais <- c("Natal", "Parnamirim", "Macaíba")
+vetorDistancias <- c(0, 10, 12, 10, 0, 2, 12, 2, 0)
+```
+
+Por isso, vamos incluir o argumento 
+
+> dimnames = list(row_names, col_names)
+
+_dimnames_ significa nome das dimensões, que é informado por meio de dois vetores: o vetor com o nomes das linhas (row_names) e o vetor com o nome das colunas (col_names).
+
+No nosso exemplo, as linhas e as colunas devem possuir os mesmos nomes (porque queremos estabelecer uma matriz com a distância entre cada unidade da empresa). Por isso, trocaremos row_names por vetorFiliais e **também** trocaremos col_names por vetorFiliais.
+
+```{r}
+mat = matrix(vetorDistancias, nrow = 3, ncol = 3, byrow = TRUE,
+             dimnames = list(vetorFiliais, vetorFiliais))
+print(mat)
+```
+
+Por que o elemento [1,1] da matriz foi 0? A distância de uma unidade para ela mesmo, por definição, é zero.
+
+## Data frames
 
 ## Listas
 
