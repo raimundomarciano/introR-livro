@@ -97,10 +97,25 @@ Raramente, isso será uma preocupação. Como dito, o R faz a análise automáti
 
 ### Textuais
 
-## Float
+Para inserir um caractere, uma palavra ou uma frase, é necessário o uso de aspas simples ou duplas. Como no português é comum o uso de aspas duplas, é interessante o uso de aspas simples no R. Isso se deve ao fato de que se você precisar eventualmente incluir as aspas duplas, elas podem ficar dentro das aspas simples.
 
-## String
+Por exemplo, é aceitável:
 
+```{r eval=TRUE, message=FALSE}
+texto1 = 'Ela disse: "Ok".'
+texto2 = 'E eu respondi "Certo".'
+writeLines(c(texto1, texto2))
+```
+
+Perceba que as aspas simples estão funcionando apenas como delimitadores. Estão dizendo que tudo que está dentro delas faz parte de um mesmo texto, inclusive as aspas duplas.
+
+```{r eval=FALSE, message=FALSE}
+texto3 <- "Ela disse: "Ok"."
+```
+
+O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok".")
+
+### Lógicas
 ## Boolean
 
 ## Date

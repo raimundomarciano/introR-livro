@@ -3,22 +3,22 @@
     "path": "D:/rprojects/introR/02-variaveis.Rmd",
     "project_path": "02-variaveis.Rmd",
     "type": "r_markdown",
-    "hash": "3254829024",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1613478965441.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
-        "cursorPosition": "85,407",
-        "scrollLine": "73"
+        "cursorPosition": "117,11",
+        "scrollLine": "108"
     },
     "folds": "",
-    "lastKnownWriteTime": 1613525505,
+    "lastKnownWriteTime": 1613527076,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1613525505940,
+    "last_content_update": 1613527076476,
     "read_only": false,
     "read_only_alternatives": []
 }

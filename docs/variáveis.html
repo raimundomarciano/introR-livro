@@ -142,11 +142,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a><ul>
 <li class="chapter" data-level="3.1.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1.1</b> Numéricas</a></li>
 <li class="chapter" data-level="3.1.2" data-path="variáveis.html"><a href="variáveis.html#textuais"><i class="fa fa-check"></i><b>3.1.2</b> Textuais</a></li>
+<li class="chapter" data-level="3.1.3" data-path="variáveis.html"><a href="variáveis.html#lógicas"><i class="fa fa-check"></i><b>3.1.3</b> Lógicas</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="variáveis.html"><a href="variáveis.html#float"><i class="fa fa-check"></i><b>3.2</b> Float</a></li>
-<li class="chapter" data-level="3.3" data-path="variáveis.html"><a href="variáveis.html#string"><i class="fa fa-check"></i><b>3.3</b> String</a></li>
-<li class="chapter" data-level="3.4" data-path="variáveis.html"><a href="variáveis.html#boolean"><i class="fa fa-check"></i><b>3.4</b> Boolean</a></li>
-<li class="chapter" data-level="3.5" data-path="variáveis.html"><a href="variáveis.html#date"><i class="fa fa-check"></i><b>3.5</b> Date</a></li>
+<li class="chapter" data-level="3.2" data-path="variáveis.html"><a href="variáveis.html#boolean"><i class="fa fa-check"></i><b>3.2</b> Boolean</a></li>
+<li class="chapter" data-level="3.3" data-path="variáveis.html"><a href="variáveis.html#date"><i class="fa fa-check"></i><b>3.3</b> Date</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de Dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
@@ -257,19 +256,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="textuais" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Textuais</h3>
+<p>Para inserir um caractere, uma palavra ou uma frase, é necessário o uso de aspas simples ou duplas. Como no português é comum o uso de aspas duplas, é interessante o uso de aspas simples no R. Isso se deve ao fato de que se você precisar eventualmente incluir as aspas duplas, elas podem ficar dentro das aspas simples.</p>
+<p>Por exemplo, é aceitável:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="variáveis.html#cb21-1"></a>texto1 =<span class="st"> &#39;Ela disse: &quot;Ok&quot;.&#39;</span></span>
+<span id="cb21-2"><a href="variáveis.html#cb21-2"></a>texto2 =<span class="st"> &#39;E eu respondi &quot;Certo&quot;.&#39;</span></span>
+<span id="cb21-3"><a href="variáveis.html#cb21-3"></a><span class="kw">writeLines</span>(<span class="kw">c</span>(texto1, texto2))</span></code></pre></div>
+<pre><code>## Ela disse: &quot;Ok&quot;.
+## E eu respondi &quot;Certo&quot;.</code></pre>
+<p>Perceba que as aspas simples estão funcionando apenas como delimitadores. Estão dizendo que tudo que está dentro delas faz parte de um mesmo texto, inclusive as aspas duplas.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="variáveis.html#cb23-1"></a>texto3 &lt;-<span class="st"> &quot;Ela disse: &quot;</span>Ok<span class="st">&quot;.&quot;</span></span></code></pre></div>
+<p>O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok“.”)</p>
 </div>
+<div id="lógicas" class="section level3">
+<h3><span class="header-section-number">3.1.3</span> Lógicas</h3>
 </div>
-<div id="float" class="section level2">
-<h2><span class="header-section-number">3.2</span> Float</h2>
-</div>
-<div id="string" class="section level2">
-<h2><span class="header-section-number">3.3</span> String</h2>
 </div>
 <div id="boolean" class="section level2">
-<h2><span class="header-section-number">3.4</span> Boolean</h2>
+<h2><span class="header-section-number">3.2</span> Boolean</h2>
 </div>
 <div id="date" class="section level2">
-<h2><span class="header-section-number">3.5</span> Date</h2>
+<h2><span class="header-section-number">3.3</span> Date</h2>
 </div>
 </div>
             </section>
