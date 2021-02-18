@@ -113,7 +113,7 @@
 
 \title{Introdução ao R}
 \author{Raimundo Marciano de Freitas Neto}
-\date{2021-02-16}
+\date{2021-02-18}
 
 \begin{document}
 \maketitle
@@ -307,7 +307,7 @@ Além disso, as variáveis em R são mutáveis, inclusive quanto ao tipo. Isso q
 ## [1] "dois"
 \end{verbatim}
 
-Por fim, para o R a indentação não é relevante. Há linguagens de programação em que a posição relevante das linhas de código é essencial para determinar se elas fazem parte de um bloco ou não. No R, os blocos são definidos com o uso de chaves (\{ \}). Ainda iremos explorar com detalhes o uso das condicionais, mas podemos ilustrar o seguinte caso: se o resultado for maior que zero, então, sim, tivemos lucro; caso contrário, não tivemos.
+Por fim, para o R a indentação não é relevante. Há linguagens de programação em que a posição relativa das linhas de código é essencial para determinar se elas fazem parte de um bloco ou não. No R, os blocos são definidos com o uso de chaves (\{ \}). Ainda iremos explorar com detalhes o uso das condicionais, mas podemos ilustrar o seguinte caso: se o resultado for maior que zero, então, sim, tivemos lucro; caso contrário, não tivemos.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -349,22 +349,19 @@ No Python, onde a identação faz diferença, o código precisaria seguir uma es
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{#se o resultado for maior que zero}
-\ControlFlowTok{if}\NormalTok{ (resultado }\OperatorTok{>}\StringTok{ }\DecValTok{0}\NormalTok{)}\OperatorTok{:}\StringTok{  }
-\StringTok{  }\CommentTok{# informe: "Tivemos Lucro!"}
-\StringTok{  }\KeywordTok{print}\NormalTok{(}\StringTok{"Tivemos Lucro!"}\NormalTok{) }
-\ControlFlowTok{else}\OperatorTok{:}\StringTok{  }
-\StringTok{  }\CommentTok{# informe: "Deu ruim :( "}
-\StringTok{  }\KeywordTok{print}\NormalTok{(}\StringTok{"Deu ruim :("}\NormalTok{) }
+\ControlFlowTok{if}\NormalTok{ (resultado }\OperatorTok{>} \DecValTok{0}\NormalTok{):  }
+  \CommentTok{# informe: "Tivemos Lucro!"}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"Tivemos Lucro!"}\NormalTok{) }
+\ControlFlowTok{else}\NormalTok{:  }
+  \CommentTok{# informe: "Deu ruim :( "}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"Deu ruim :("}\NormalTok{) }
 \end{Highlighting}
 \end{Shaded}
 
 No Python, portanto, o que importa para definir que o print(``Tivemos Lucro!'') está associado ao if(resultado \textgreater{} 0) é o fato de não haver nenhum espaço entre a margem da página e o if; e o fato de haver quatro espaços entre a margem da página e o print. Isso faz com que esse print esteja subordinado ao if; assim como, o segundo print (que também está mais recuado) é subordinado ao else (que não tem recuo).
 
-\hypertarget{tipos-de-variuxe1veis}{%
-\section{Tipos de Variáveis}\label{tipos-de-variuxe1veis}}
-
 \hypertarget{numuxe9ricas}{%
-\subsection{Numéricas}\label{numuxe9ricas}}
+\section{Numéricas}\label{numuxe9ricas}}
 
 Basicamente existem os inteiros (integers) e os ponto-flutuantes (float). O integer não admite casas decimais, sendo usado para eventos contáveis, como a quantidade de vezes que algo ocorreu. O float admite casas decimais, sendo indicado para representar valores monetários.
 
@@ -373,7 +370,7 @@ Veja, por exemplo, o caso da idade. Se a idade for calculada como a diferença e
 Raramente, isso será uma preocupação. Como dito, o R faz a análise automática e, por padrão, categoriza os números dentro do tipo numeric, que aceita tanto integers como floats. Eventualmente, algum erro pode acontecer, como haver algum canto na planilha que está sendo importada em que foi digitado 2x20 ao invés de 2020. Quando o R tentasse ler esse valor (2x20), ele reconheceria um caractere que não é um número e automaticamente tentaria entender isso como sendo um texto.
 
 \hypertarget{textuais}{%
-\subsection{Textuais}\label{textuais}}
+\section{Textuais}\label{textuais}}
 
 Para inserir um caractere, uma palavra ou uma frase, é necessário o uso de aspas simples ou duplas. Como no português é comum o uso de aspas duplas, é interessante o uso de aspas simples no R. Isso se deve ao fato de que se você precisar eventualmente incluir as aspas duplas, elas podem ficar dentro das aspas simples.
 
@@ -402,26 +399,435 @@ Perceba que as aspas simples estão funcionando apenas como delimitadores. Estã
 
 O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok``.'')
 
+\hypertarget{numuxe9rica-ou-textual}{%
+\subsection{Numérica ou textual?}\label{numuxe9rica-ou-textual}}
+
+O CNPJ de uma empresa é composto por 14 dígitos numéricos (0 a 9), separados por alguns marcadores (pontos, barras e traços). Por exemplo, pode ser 12.345.678/0001-19. Para guardar essa informação como uma variável numérica, você precisaria omitir as marcações, digitando 12345678000119. Entretanto, existe aqui um problema: o caso dos CNPJs iniciados por 0. Se há um 0 no início do número, ele é sempre ignorado. Por exemplo, 02 sempre será salvo na memória como 2, porque o zero à esquerda, na Matemática, não tem função.
+
+Pensando nisso, pode ser mais interessante salvar o CNPJ como uma variável textual.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cnpj <-}\StringTok{ "12.345.678/0001-19"}
+\end{Highlighting}
+\end{Shaded}
+
+Com isso não são perdidos os marcadores. Perceba, por fim, que o tratamento desse ``número'' como texto não tem implicações sobre a análise estatística dos dados. O CNPJ não é um número sobre o qual você realiza operações matemáticas. Você não calcula a média,a moda ou a mediana dos CNPJs e nem cria um gráfico de CNPJs. Ele é um identificador da empresa, tal qual o nome dela.
+
+No caso de pessoas físicas, o mesmo raciocínio vale para o CPF.
+
+\begin{quote}
+Exceção: os dois últimos dígitos do CNPJ (e do CPF) são um código verificador. Alguns formulários cadastrais usam esses dois últimos dígitos para conferir se o campo foi preenchido corretamente. Essa conferência é feita a partir de um cálculo matemático; logo, há casos específicos em que mesmo o CNPJ pode ser usado para algum cálculo.
+\end{quote}
+
 \hypertarget{luxf3gicas}{%
-\subsection{Lógicas}\label{luxf3gicas}}
+\section{Lógicas}\label{luxf3gicas}}
 
-\hypertarget{boolean}{%
-\section{Boolean}\label{boolean}}
+Em muitos casos, é importante ter variáveis que indiquem VERDADEIRO (TRUE) ou FALSO (FALSE).O tipo de variável que admite apenas esses dois valores lógicos é chamado de Booleana (boolean ou bool). Essas variáveis seguem a lógica de primeira ordem. Por exemplo, TRUE AND FALSE resulta em FALSE, enquanto TRUE OR FALSE resulta em TRUE.
 
-\hypertarget{date}{%
-\section{Date}\label{date}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# AND ou E é representado por &}
+\KeywordTok{print}\NormalTok{(}\OtherTok{TRUE} \OperatorTok{&}\StringTok{ }\OtherTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# OR ou OU é representado por |}
+\KeywordTok{print}\NormalTok{(}\OtherTok{TRUE} \OperatorTok{|}\StringTok{ }\OtherTok{FALSE}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Variáveis lógicas podem ter muitos usos, como parâmetros em funções ou filtros para listas de dados. Por exemplo, você pode querer que o usuário informe se ele quer imprimir o relatório dos valores ao final. Nesse caso, ele deveria informar que o valor do parâmetro imprimir\_relatorio deveria ser TRUE. Caso ele não queira imprimir o relatório, deveria informar imprimir\_relatorio como FALSE.
+
+Também podem ser usados para comparações de igualdade (==) ou desigualdade (!=).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dois_numero <-}\StringTok{ }\DecValTok{2}
+\NormalTok{dois_texto <-}\StringTok{ "dois"}
+\CommentTok{# Vamos testar de o numero dois é o mesmo que o dois "por extenso"}
+\NormalTok{dois_numero }\OperatorTok{==}\StringTok{ }\NormalTok{dois_texto}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Vamos testar de o numero dois é diferente do dois "por extenso"}
+\NormalTok{dois_numero }\OperatorTok{!=}\StringTok{ }\NormalTok{dois_texto}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+O R não entende que ``dois'' é a forma ``por extenso'' do número 2. Para o R, há um número 2 e há uma palavra, cujo significado o R desconhece. Então, na comparação entre esse inteiro e essa string, o R entende que há uma diferença (de tipos). Por isso, ele afirma que são diferentes (ou não iguais).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dois_numero <-}\StringTok{ }\DecValTok{2}
+\NormalTok{dois_texto <-}\StringTok{ "2"}
+\CommentTok{# Vamos testar de o numero dois é o mesmo que o dois "caractere"}
+\CommentTok{# O resultado é verdadeiro porque apesar dos tipos serem diferentes, o conteúdo é o mesmo.}
+\NormalTok{dois_numero }\OperatorTok{==}\StringTok{ }\NormalTok{dois_texto}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] TRUE
+\end{verbatim}
+
+Existe outro operador de igualdade (===), mas que não será tratado agora.
+
+\hypertarget{datas}{%
+\section{Datas}\label{datas}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{today <-}\StringTok{ }\KeywordTok{Sys.Date}\NormalTok{()}
+\KeywordTok{print}\NormalTok{(today)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2021-02-18"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{today <-}\StringTok{ }\KeywordTok{format}\NormalTok{(today, }\StringTok{"%d/%m/%Y"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(today)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "18/02/2021"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{today2 <-}\StringTok{ }\KeywordTok{format}\NormalTok{(}\KeywordTok{Sys.Date}\NormalTok{(), }\StringTok{"%d/%m/%Y"}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(today2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "18/02/2021"
+\end{verbatim}
 
 \hypertarget{estruturas-de-dados}{%
 \chapter{Estruturas de Dados}\label{estruturas-de-dados}}
 
+Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar.
+
 \hypertarget{vetores}{%
 \section{Vetores}\label{vetores}}
+
+Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um \textbf{vetor}. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.\\
+Entretanto, se estivéssemos falando de uma relação envolvendo os nomes \textbf{e} os salários, seria inadequado usarmos o vetor, porque agora teríamos duas dimensões, além de dois tipos: uma mesma pessoa (o CEO) possui duas características: o nome (textual / string) e o salário (numérica / num).
+
+A criação de vetores é feita com o uso do c( ), em que os valores que devem ser atribuídos ao vetor são incluídos dentro dos parênteses e separados por vírgula.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetorNumerico =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{vetorLogico =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{TRUE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{,}\OtherTok{FALSE}\NormalTok{)}
+\NormalTok{vetorTextual =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Eu"}\NormalTok{, }\StringTok{"Nasci"}\NormalTok{, }\StringTok{"há"}\NormalTok{, }\StringTok{"10.000"}\NormalTok{, }\StringTok{"anos"}\NormalTok{, }\StringTok{"atrás"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Note que todos os vetores foram criados com dados de mesmo tipo. O vetor numérico tem apenas números inteiros (1 a 5); o vetor lógico tem apenas Verdadeiro (TRUE) e Falso (FALSE); o vetor de texto tem apenas elementos textuais (mesmo o número está entre aspas, o que força que aqueles dígitos sejam lidos como ``texto'').
+
+Caso você tente misturar tipos, o R irá forçar a padronização. Por exemplo, o que aconteceria se você tentasse criar um vetor com números e textos?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetorNumTex =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\StringTok{"três","}\DecValTok{4}\StringTok{",5)}
+\StringTok{print(vetorNumTex)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "1"    "2"    "três" "4"    "5"
+\end{verbatim}
+
+Todos os elementos apresentados estão entre aspas. Como o R não tem uma forma de transformar ``três'' em um número, ele converte todos os outros números em texto. Por isso, 1 vira ``1'', 2 vira ``2'' e 5 vira ``5''.
+
+\begin{quote}
+Teste no seu console a seguinte operação: ``3'' + 1
+\end{quote}
+
+\begin{quote}
+O R informará um erro. ``3'' não é um número, mas um texto (por causa das aspas). Não é possível somar um texto com um número. É o mesmo que você tentar somar ``banana'' com 97. Não dá.
+\end{quote}
+
+\hypertarget{matrizes}{%
+\section{Matrizes}\label{matrizes}}
+
+A matriz é um conjunto de dados do mesmo tipo, ordenados em linhas (filas horizontais) e colunas (filas verticais). É criada pelo matrix(), devendo ser informados os dados que irão compor a matriz (normalmente dispostos em um vetor), o número de linhas (nrow), o número de colunas (ncol) e se o preenchimento deve ser feito por linha (byrow = TRUE) ou por coluna (byrow = FALSE).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.}
+\NormalTok{mat =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{), }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+## [3,]    5    6
+\end{verbatim}
+
+Ou seja, os números foram distribuídos até o fim da primeira linha, depois até o fim da segunda linha e depois até o fim da terceira (e última) linha.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas}
+\NormalTok{mat =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{6}\NormalTok{), }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{FALSE}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1] [,2]
+## [1,]    1    4
+## [2,]    2    5
+## [3,]    3    6
+\end{verbatim}
+
+Em contraste, aqui o preenchimento foi por colunas. Foi preenchida toda a primeira coluna e depois toda a segunda coluna.
+
+Se já tivéssemos um vetor salvo na memória, poderíamos usá-lo para compor a matriz.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetorParaMatriz <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"eu"}\NormalTok{, }\StringTok{"nasci"}\NormalTok{, }\StringTok{"há"}\NormalTok{, }\StringTok{"dez mil"}\NormalTok{, }\StringTok{"anos"}\NormalTok{, }\StringTok{"atrás"}\NormalTok{) }
+
+\NormalTok{mat =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vetorParaMatriz, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{2}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{)}
+\KeywordTok{print}\NormalTok{(mat)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      [,1]   [,2]     
+## [1,] "eu"   "nasci"  
+## [2,] "há"   "dez mil"
+## [3,] "anos" "atrás"
+\end{verbatim}
+
+Você reparou que aparecem valores entre colchetes e separados por vírgulas? Eles indicam a posição na matriz.
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+{[}m,n{]} & Posição & Elementos\tabularnewline
+\midrule
+\endhead
+{[}1,{]} & Primeira Linha & ``eu'', ``nasci''\tabularnewline
+{[}2,{]} & Segunda Linha & ``há,''dez mil"\tabularnewline
+{[},1{]} & Primeira Coluna & ``eu'', ``há'', ``anos''\tabularnewline
+{[},2{]} & Segunda Coluna & ``nasci,''dez mil``,''atrás"\tabularnewline
+{[}1,1{]} & Primeira Linha, Primeira Coluna & ``eu''\tabularnewline
+{[}1,2{]} & Primeira Linha, Segunda Coluna & ``nasci''\tabularnewline
+{[}2,1{]} & Segunda Linha, Primeira Coluna & ``há''\tabularnewline
+{[}2,2{]} & Segunda Linha, Segunda Coluna & ``dez mil''\tabularnewline
+\bottomrule
+\end{longtable}
+
+Eventualmente, pode ser interessante informar os nomes para as linhas e para as colunas. Por exemplo, se você estiver precisando mapear a distância entre as unidades de uma empresa, seria importante dizer quais são as filiais.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vetorFiliais <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"Natal"}\NormalTok{, }\StringTok{"Parnamirim"}\NormalTok{, }\StringTok{"Macaíba"}\NormalTok{)}
+\NormalTok{vetorDistancias <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{0}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+Por isso, vamos incluir o argumento
+
+\begin{quote}
+dimnames = list(row\_names, col\_names)
+\end{quote}
+
+\emph{dimnames} significa nome das dimensões, que é informado por meio de dois vetores: o vetor com o nomes das linhas (row\_names) e o vetor com o nome das colunas (col\_names).
+
+No nosso exemplo, as linhas e as colunas devem possuir os mesmos nomes (porque queremos estabelecer uma matriz com a distância entre cada unidade da empresa). Por isso, trocaremos row\_names por vetorFiliais e \textbf{também} trocaremos col\_names por vetorFiliais.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{distanciaFiliais =}\StringTok{ }\KeywordTok{matrix}\NormalTok{(vetorDistancias, }\DataTypeTok{nrow =} \DecValTok{3}\NormalTok{, }\DataTypeTok{ncol =} \DecValTok{3}\NormalTok{, }\DataTypeTok{byrow =} \OtherTok{TRUE}\NormalTok{,}
+             \DataTypeTok{dimnames =} \KeywordTok{list}\NormalTok{(vetorFiliais, vetorFiliais))}
+
+\NormalTok{distanciaFiliais}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##            Natal Parnamirim Macaíba
+## Natal          0         10      12
+## Parnamirim    10          0       2
+## Macaíba       12          2       0
+\end{verbatim}
+
+Por que o elemento {[}1,1{]} da matriz foi 0? A distância de uma unidade para ela mesmo, por definição, é zero. Para solicitar a distância entre a filial Natal e a filial Parnamirim:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{distanciaFiliais[}\StringTok{"Natal"}\NormalTok{, }\StringTok{"Parnamirim"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+Perceba que, nessa matriz, a distância entre Natal - Parnamirim é a mesma que Parnamirim - Natal. Se pensarmos em termos de rodovias, isso pode não ser necessariamente verdade, pois em casos específicos pode ser necessário um deslocamento adicional em um dos sentidos (por exemplo, ir adiante x quilômetros para conseguir fazer um retorno). No caso dessa matriz, solicitar o valor como:
+
+\begin{quote}
+distanciaFiliais{[}``Natal'', ``Parnamirim''{]}
+\end{quote}
+
+ou
+
+\begin{quote}
+distanciaFiliais{[}``Parnamirim'', ``Natal''{]}
+\end{quote}
+
+produziria o mesmo resultado e, nesse caso, é irrelevante. Entretanto, é importante ter em mente que isso nem sempre será verdade. Além disso, se quiséssemos saber a distância da filial Natal para todas as demais, deveríamos informar apenas a linha, omitindo a informação após a vírgula.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{distanciaFiliais[}\StringTok{"Natal"}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Natal Parnamirim    Macaíba 
+##          0         10         12
+\end{verbatim}
+
+Alternativamente, sabendo que Natal é a primeira linha da matriz, também seria possível executar
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{distanciaFiliais[}\DecValTok{1}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      Natal Parnamirim    Macaíba 
+##          0         10         12
+\end{verbatim}
+
+A segunda opção é particularmente importante quando as filas (linhas ou colunas) não estão nomeadas.
 
 \hypertarget{data-frames}{%
 \section{Data frames}\label{data-frames}}
 
-\hypertarget{matrizes}{%
-\section{Matrizes}\label{matrizes}}
+O data frame é similar a matrix, mas admite colunas com tipos diferentes. Nesse caso, é possível incluir uma coluna para o nome de uma empresa (string), uma coluna para o CNPJ (string), uma coluna para o número de empregados (integer), uma coluna para o faturamento (float) e uma coluna para identificar se as demonstrações já foram encerradas ou se ainda estão pendentes (boolean).
+
+O data frame é criado por meio do data.frame(), onde são passados os valores que irão entrar na estrutura. Uma possibilidade é passarmos vetores que representem as colunas. Assim, usaríamos um vetor para a empresa, um vetor para o CNPJ, um vetor para os empregados e um vetor para o faturamento.
+
+Não é necessário informar a quantidade de linhas ou colunas, já que o R não precisará organizar os dados (no caso da matriz, foi necessário informar como ela deveria ser preenchida). Os vetores serão incluídos como colunas na mesma ordem em que forem aparecendo dentro do data.frame().
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.}
+\NormalTok{clientes <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{empresa =} \KeywordTok{c}\NormalTok{(}\StringTok{"Marte S.A."}\NormalTok{, }\StringTok{"Deimos S.A."}\NormalTok{, }\StringTok{"Phobos S.A."}\NormalTok{), }
+                       \DataTypeTok{cnpj =} \KeywordTok{c}\NormalTok{(}\StringTok{"00.000.001/0001-00"}\NormalTok{,}\StringTok{"00.000.011/0001-10"}\NormalTok{, }\StringTok{"99.000.001/0001-55"}\NormalTok{),}
+                       \DataTypeTok{empregados =} \KeywordTok{c}\NormalTok{(}\DecValTok{10}\NormalTok{,}\DecValTok{20}\NormalTok{, }\DecValTok{25}\NormalTok{), }
+                       \DataTypeTok{encerramento =} \KeywordTok{c}\NormalTok{(}\OtherTok{FALSE}\NormalTok{, }\OtherTok{FALSE}\NormalTok{, }\OtherTok{TRUE}\NormalTok{),}
+                       \DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{clientes}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       empresa               cnpj empregados encerramento
+## 1  Marte S.A. 00.000.001/0001-00         10        FALSE
+## 2 Deimos S.A. 00.000.011/0001-10         20        FALSE
+## 3 Phobos S.A. 99.000.001/0001-55         25         TRUE
+\end{verbatim}
+
+Por conta dessa permissão para uso de tipos diferentes em uma mesma estrutura, os data frames são consideravalmente importantes. Para solicitar uma fila específica (linha ou coluna) ou um elemento, é possível usar a mesma notação das matrizes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clientes[}\DecValTok{1}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      empresa               cnpj empregados encerramento
+## 1 Marte S.A. 00.000.001/0001-00         10        FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# para gerar uma relação com os CNPJs:}
+\NormalTok{clientes[,}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "00.000.001/0001-00" "00.000.011/0001-10" "99.000.001/0001-55"
+\end{verbatim}
+
+Da mesma forma que fizemos com as matrizes, podemos solicitar uma coluna com base em seu nome.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clientes[,}\StringTok{"cnpj"}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "00.000.001/0001-00" "00.000.011/0001-10" "99.000.001/0001-55"
+\end{verbatim}
+
+Percebea que nesse caso as linhas não foram nomeadas. No caso dos data frames, é bem comum que o identificador seja inserido como um dado
+
+O data frame ainda admite uma forma adicional de solicitar uma coluna, informando o nome do objeto seguido do cifrão (\$) e do nome da coluna.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clientes}\OperatorTok{$}\NormalTok{cnpj}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "00.000.001/0001-00" "00.000.011/0001-10" "99.000.001/0001-55"
+\end{verbatim}
+
+Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes\$cnpj, estamos usando um procedimento equivalente a clientes{[},``cnpj''{]}. Como poderíamos fazer para usando a notação com cifrão, solicitar o terceiro elemento dessa relação?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{clientes}\OperatorTok{$}\NormalTok{cnpj[}\DecValTok{3}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "99.000.001/0001-55"
+\end{verbatim}
+
+Não precisamos informar dois elementos dentro dos colchetes {[},{]} porque um deles foi informado anteriormente (no caso, a coluna \emph{cnpj})! Assim, quando informarmos o {[}3{]} estamos automaticamente nos referindo à linha.
 
 \hypertarget{listas}{%
 \section{Listas}\label{listas}}

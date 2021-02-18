@@ -1,0 +1,183 @@
+# Estruturas de Dados
+
+Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar. 
+
+## Vetores
+
+Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um **vetor**. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.  
+Entretanto, se estivéssemos falando de uma relação envolvendo os nomes **e** os salários, seria inadequado usarmos o vetor, porque agora teríamos duas dimensões, além de dois tipos: uma mesma pessoa (o CEO) possui duas características: o nome (textual / string) e o salário (numérica / num).
+
+A criação de vetores é feita com o uso do c( ), em que os valores que devem ser atribuídos ao vetor são incluídos dentro dos parênteses e separados por vírgula.
+
+```{r}
+vetorNumerico = c(1,2,3,4,5)
+vetorLogico = c(TRUE, TRUE, FALSE,FALSE)
+vetorTextual = c("Eu", "Nasci", "há", "10.000", "anos", "atrás")
+```
+
+Note que todos os vetores foram criados com dados de mesmo tipo. O vetor numérico tem apenas números inteiros (1 a 5); o vetor lógico tem apenas Verdadeiro (TRUE) e Falso (FALSE); o vetor de texto tem apenas elementos textuais (mesmo o número está entre aspas, o que força que aqueles dígitos sejam lidos como "texto").
+
+Caso você tente misturar tipos, o R irá forçar a padronização. Por exemplo, o que aconteceria se você tentasse criar um vetor com números e textos?
+
+```{r}
+vetorNumTex = c(1,2,"três","4",5)
+print(vetorNumTex)
+```
+
+Todos os elementos apresentados estão entre aspas. Como o R não tem uma forma de transformar "três" em um número, ele converte todos os outros números em texto. Por isso, 1 vira "1", 2 vira "2" e 5 vira "5".
+
+> Teste no seu console a seguinte operação: "3" + 1
+
+> O R informará um erro. "3" não é um número, mas um texto (por causa das aspas). Não é possível somar um texto com um número. É o mesmo que você tentar somar "banana" com 97. Não dá.
+
+## Matrizes
+
+A matriz é um conjunto de dados do mesmo tipo, ordenados em linhas (filas horizontais) e colunas (filas verticais). É criada pelo matrix(), devendo ser informados os dados que irão compor a matriz (normalmente dispostos em um vetor), o número de linhas (nrow), o número de colunas (ncol) e se o preenchimento deve ser feito por linha (byrow = TRUE) ou por coluna (byrow = FALSE).
+
+```{r}
+# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.
+mat = matrix(c(1:6), nrow = 3, ncol = 2, byrow = TRUE)
+print(mat)
+```
+Ou seja, os números foram distribuídos até o fim da primeira linha, depois até o fim da segunda linha e depois até o fim da terceira (e última) linha.
+
+```{r}
+# Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas
+mat = matrix(c(1:6), nrow = 3, ncol = 2, byrow = FALSE)
+print(mat)
+```
+Em contraste, aqui o preenchimento foi por colunas. Foi preenchida toda a primeira coluna e depois toda a segunda coluna. 
+
+Se já tivéssemos um vetor salvo na memória, poderíamos usá-lo para compor a matriz.
+
+```{r}
+vetorParaMatriz <- c("eu", "nasci", "há", "dez mil", "anos", "atrás") 
+
+mat = matrix(vetorParaMatriz, nrow = 3, ncol = 2, byrow = TRUE)
+print(mat)
+```
+
+Você reparou que aparecem valores entre colchetes e separados por vírgulas? Eles indicam a posição na matriz. 
+
+| [m,n] | Posição | Elementos |
+|:---:| :---: | :---: |
+| [1,] | Primeira Linha | "eu", "nasci" | 
+| [2,] | Segunda Linha | "há, "dez mil" |
+| [,1] | Primeira Coluna | "eu", "há", "anos" |
+| [,2] | Segunda Coluna | "nasci, "dez mil", "atrás" |
+| [1,1] | Primeira Linha, Primeira Coluna | "eu" |
+| [1,2] | Primeira Linha, Segunda Coluna | "nasci" |
+| [2,1] | Segunda Linha, Primeira Coluna | "há" |
+| [2,2] | Segunda Linha, Segunda Coluna | "dez mil" |
+
+Eventualmente, pode ser interessante informar os nomes para as linhas e para as colunas. Por exemplo, se você estiver precisando mapear a distância entre as unidades de uma empresa, seria importante dizer quais são as filiais.
+
+```{r echo=TRUE}
+vetorFiliais <- c("Natal", "Parnamirim", "Macaíba")
+vetorDistancias <- c(0, 10, 12, 10, 0, 2, 12, 2, 0)
+```
+
+Por isso, vamos incluir o argumento 
+
+> dimnames = list(row_names, col_names)
+
+_dimnames_ significa nome das dimensões, que é informado por meio de dois vetores: o vetor com o nomes das linhas (row_names) e o vetor com o nome das colunas (col_names).
+
+No nosso exemplo, as linhas e as colunas devem possuir os mesmos nomes (porque queremos estabelecer uma matriz com a distância entre cada unidade da empresa). Por isso, trocaremos row_names por vetorFiliais e **também** trocaremos col_names por vetorFiliais.
+
+```{r}
+distanciaFiliais = matrix(vetorDistancias, nrow = 3, ncol = 3, byrow = TRUE,
+             dimnames = list(vetorFiliais, vetorFiliais))
+
+distanciaFiliais
+```
+
+Por que o elemento [1,1] da matriz foi 0? A distância de uma unidade para ela mesmo, por definição, é zero. Para solicitar a distância entre a filial Natal e a filial Parnamirim:
+
+```{r}
+distanciaFiliais["Natal", "Parnamirim"]
+```
+Perceba que, nessa matriz, a distância entre Natal - Parnamirim é a mesma que Parnamirim - Natal. Se pensarmos em termos de rodovias, isso pode não ser necessariamente verdade, pois em casos específicos pode ser necessário um deslocamento adicional em um dos sentidos (por exemplo, ir adiante x quilômetros para conseguir fazer um retorno). No caso dessa matriz, solicitar o valor como:
+
+> distanciaFiliais["Natal", "Parnamirim"]
+
+ou 
+
+> distanciaFiliais["Parnamirim", "Natal"]
+
+produziria o mesmo resultado e, nesse caso, é irrelevante. Entretanto, é importante ter em mente que isso nem sempre será verdade. Além disso, se quiséssemos saber a distância da filial Natal para todas as demais, deveríamos informar apenas a linha, omitindo a informação após a vírgula.
+
+```{r}
+distanciaFiliais["Natal",]
+```
+
+Alternativamente, sabendo que Natal é a primeira linha da matriz, também seria possível executar
+
+```{r}
+distanciaFiliais[1,]
+```
+
+A segunda opção é particularmente importante quando as filas (linhas ou colunas) não estão nomeadas.
+
+## Data frames
+
+O data frame é similar a matrix, mas admite colunas com tipos diferentes. Nesse caso, é possível incluir uma coluna para o nome de uma empresa (string), uma coluna para o CNPJ (string), uma coluna para o número de empregados (integer), uma coluna para o faturamento (float) e uma coluna para identificar se as demonstrações já foram encerradas ou se ainda estão pendentes (boolean).
+
+O data frame é criado por meio do data.frame(), onde são passados os valores que irão entrar na estrutura. Uma possibilidade é passarmos vetores que representem as colunas. Assim, usaríamos um vetor para a empresa, um vetor para o CNPJ, um vetor para os empregados e um vetor para o faturamento.
+
+Não é necessário informar a quantidade de linhas ou colunas, já que o R não precisará organizar os dados (no caso da matriz, foi necessário informar como ela deveria ser preenchida). Os vetores serão incluídos como colunas na mesma ordem em que forem aparecendo dentro do data.frame().
+
+```{r}
+# Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.
+clientes <- data.frame(empresa = c("Marte S.A.", "Deimos S.A.", "Phobos S.A."), 
+                       cnpj = c("00.000.001/0001-00","00.000.011/0001-10", "99.000.001/0001-55"),
+                       empregados = c(10,20, 25), 
+                       encerramento = c(FALSE, FALSE, TRUE),
+                       stringsAsFactors = FALSE)
+clientes
+```
+
+Por conta dessa permissão para uso de tipos diferentes em uma mesma estrutura, os data frames são consideravalmente importantes. Para solicitar uma fila específica (linha ou coluna) ou um elemento, é possível usar a mesma notação das matrizes.
+
+```{r}
+clientes[1,]
+```
+```{r}
+# para gerar uma relação com os CNPJs:
+clientes[,2]
+```
+
+Da mesma forma que fizemos com as matrizes, podemos solicitar uma coluna com base em seu nome.
+
+```{r}
+clientes[,"cnpj"]
+```
+
+Percebea que nesse caso as linhas não foram nomeadas. No caso dos data frames, é bem comum que o identificador seja inserido como um dado
+
+O data frame ainda admite uma forma adicional de solicitar uma coluna, informando o nome do objeto seguido do cifrão ($) e do nome da coluna.
+
+```{r}
+clientes$cnpj
+```
+Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes$cnpj, estamos usando um procedimento equivalente a clientes[,"cnpj"]. Como poderíamos fazer para usando a notação com cifrão, solicitar o terceiro elemento dessa relação?
+
+```{r}
+clientes$cnpj[3]
+```
+Não precisamos informar dois elementos dentro dos colchetes [,] porque um deles foi informado anteriormente (no caso, a coluna _cnpj_)! Assim, quando informarmos o [3] estamos automaticamente nos referindo à linha.
+
+## Listas
+
+## Factors
+
+# Trabalhando com variáveis no R Base
+## Manuseio de variáveis
+
+## Funções numéricas básicas
+
+## Funções textuais básicas
+
+# Criando sua própria função
+
+## Comentários

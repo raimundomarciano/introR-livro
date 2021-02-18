@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo6 Criando sua própria função | Introdução ao R</title>
+  <title>Capítulo 6 Criando sua própria função | Introdução ao R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo6 Criando sua própria função | Introdução ao R" />
+  <meta property="og:title" content="Capítulo 6 Criando sua própria função | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo6 Criando sua própria função | Introdução ao R" />
+  <meta name="twitter:title" content="Capítulo 6 Criando sua própria função | Introdução ao R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-02-17" />
+<meta name="date" content="2021-02-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -131,7 +131,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">Introdução ao R</a></li>
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
@@ -139,12 +139,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.1</b> Scripts</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a><ul>
-<li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#tipos-de-variáveis"><i class="fa fa-check"></i><b>3.1</b> Tipos de Variáveis</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1.1</b> Numéricas</a></li>
-<li class="chapter" data-level="3.1.2" data-path="variáveis.html"><a href="variáveis.html#textuais"><i class="fa fa-check"></i><b>3.1.2</b> Textuais</a></li>
-<li class="chapter" data-level="3.1.3" data-path="variáveis.html"><a href="variáveis.html#lógicas"><i class="fa fa-check"></i><b>3.1.3</b> Lógicas</a></li>
-<li class="chapter" data-level="3.1.4" data-path="variáveis.html"><a href="variáveis.html#datas"><i class="fa fa-check"></i><b>3.1.4</b> Datas</a></li>
+<li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1</b> Numéricas</a></li>
+<li class="chapter" data-level="3.2" data-path="variáveis.html"><a href="variáveis.html#textuais"><i class="fa fa-check"></i><b>3.2</b> Textuais</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="variáveis.html"><a href="variáveis.html#numérica-ou-textual"><i class="fa fa-check"></i><b>3.2.1</b> Numérica ou textual?</a></li>
 </ul></li>
+<li class="chapter" data-level="3.3" data-path="variáveis.html"><a href="variáveis.html#lógicas"><i class="fa fa-check"></i><b>3.3</b> Lógicas</a></li>
+<li class="chapter" data-level="3.4" data-path="variáveis.html"><a href="variáveis.html#datas"><i class="fa fa-check"></i><b>3.4</b> Datas</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de Dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
@@ -189,7 +189,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="criando-sua-própria-função" class="section level1">
-<h1><span class="header-section-number">Capítulo6</span> Criando sua própria função</h1>
+<h1><span class="header-section-number">Capítulo 6</span> Criando sua própria função</h1>
 <div id="comentários" class="section level2">
 <h2><span class="header-section-number">6.1</span> Comentários</h2>
 
@@ -243,7 +243,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["introR.pdf", "introR.epub"],
+"download": ["introR.pdf"],
 "toc": {
 "collapse": "subsection"
 }
@@ -251,6 +251,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>
