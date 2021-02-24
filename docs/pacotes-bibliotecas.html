@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 8 Applications | Introdução ao R</title>
+  <title>8 Pacotes / Bibliotecas | Introdução ao R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 8 Applications | Introdução ao R" />
+  <meta property="og:title" content="8 Pacotes / Bibliotecas | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 8 Applications | Introdução ao R" />
+  <meta name="twitter:title" content="8 Pacotes / Bibliotecas | Introdução ao R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,15 +24,15 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-02-18" />
+<meta name="date" content="2021-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="methods.html"/>
-<link rel="next" href="final-words.html"/>
+<link rel="prev" href="criando-sua-própria-função.html"/>
+<link rel="next" href="obtendo-dados.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -134,9 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Introdução ao R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Boas vindas</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> O que é o R?</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.1</b> Scripts</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a><ul>
 <li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1</b> Numéricas</a></li>
@@ -158,15 +160,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-numéricas-básicas"><i class="fa fa-check"></i><b>5.2</b> Funções numéricas básicas</a></li>
 <li class="chapter" data-level="5.3" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-textuais-básicas"><i class="fa fa-check"></i><b>5.3</b> Funções textuais básicas</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>6</b> Criando sua própria função</a><ul>
-<li class="chapter" data-level="6.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>6.1</b> Comentários</a></li>
+<li class="chapter" data-level="6" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html"><i class="fa fa-check"></i><b>6</b> Trabalhando com variáveis no R Base</a><ul>
+<li class="chapter" data-level="6.1" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#manuseio-de-variáveis-1"><i class="fa fa-check"></i><b>6.1</b> Manuseio de variáveis</a></li>
+<li class="chapter" data-level="6.2" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#funções-numéricas-básicas-1"><i class="fa fa-check"></i><b>6.2</b> Funções numéricas básicas</a></li>
+<li class="chapter" data-level="6.3" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#funções-textuais-básicas-1"><i class="fa fa-check"></i><b>6.3</b> Funções textuais básicas</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>7</b> Methods</a></li>
-<li class="chapter" data-level="8" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>8</b> Applications</a><ul>
-<li class="chapter" data-level="8.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>8.1</b> Example one</a></li>
-<li class="chapter" data-level="8.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>8.2</b> Example two</a></li>
+<li class="chapter" data-level="7" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>7</b> Criando sua própria função</a><ul>
+<li class="chapter" data-level="7.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#modularização-do-código"><i class="fa fa-check"></i><b>7.1</b> Modularização do código</a></li>
+<li class="chapter" data-level="7.2" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>7.2</b> Comentários</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>9</b> Final Words</a></li>
+<li class="chapter" data-level="8" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>8</b> Pacotes / Bibliotecas</a></li>
+<li class="chapter" data-level="9" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>9</b> Obtendo dados</a><ul>
+<li class="chapter" data-level="9.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#planilhas-csv-excel"><i class="fa fa-check"></i><b>9.1</b> Planilhas (csv / Excel)</a></li>
+<li class="chapter" data-level="9.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#txt-bloco-de-notas-e-word"><i class="fa fa-check"></i><b>9.2</b> TXT (bloco de notas) e Word</a></li>
+<li class="chapter" data-level="9.3" data-path="obtendo-dados.html"><a href="obtendo-dados.html#xml"><i class="fa fa-check"></i><b>9.3</b> XML</a></li>
+<li class="chapter" data-level="9.4" data-path="obtendo-dados.html"><a href="obtendo-dados.html#dados-coletados-por-meio-de-pacotes"><i class="fa fa-check"></i><b>9.4</b> Dados coletados por meio de pacotes</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#getdfpdata"><i class="fa fa-check"></i><b>9.4.1</b> GetDFPData</a></li>
+<li class="chapter" data-level="9.4.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#bcbdata"><i class="fa fa-check"></i><b>9.4.2</b> BCBData</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="obtendo-dados.html"><a href="obtendo-dados.html#juntando-bases"><i class="fa fa-check"></i><b>9.5</b> Juntando bases</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>10</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -188,24 +202,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="applications" class="section level1">
-<h1><span class="header-section-number">Capítulo 8</span> Applications</h1>
-<p>Some <em>significant</em> applications are demonstrated in this chapter.</p>
-<div id="example-one" class="section level2">
-<h2><span class="header-section-number">8.1</span> Example one</h2>
-</div>
-<div id="example-two" class="section level2">
-<h2><span class="header-section-number">8.2</span> Example two</h2>
+<div id="pacotes-bibliotecas" class="section level1">
+<h1><span class="header-section-number">8</span> Pacotes / Bibliotecas</h1>
+<p>Muito do que precisamos usar já foi criado por alguém e disponibilizado na internet. No caso do R, a plataforma “oficial” para isso é o CRAN, mas há outras formas de conseguir esses códigos, como o Github.</p>
+<p>Diversas bibliotecas já vêm pré-instaladas no R.</p>
+<p>Quando precisamos instalar, usamos o comando</p>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="pacotes-bibliotecas.html#cb112-1"></a><span class="kw">install.packages</span>()</span></code></pre></div>
+<p>O nome do pacote deve ser informado entre aspas, como todo bom texto.</p>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="pacotes-bibliotecas.html#cb113-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<p>A instalação do pacote dplyr permite o acesso a várias funções, como filter(), select() e group_by(). Quando um pacote é instalado, as funções ficam dentro dele. ISso significa que quando queremos acessá-las, precisamos identificar a fonte.</p>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="pacotes-bibliotecas.html#cb114-1"></a>dplyr<span class="op">::</span><span class="kw">select</span>()</span>
+<span id="cb114-2"><a href="pacotes-bibliotecas.html#cb114-2"></a>dplyr<span class="op">::</span><span class="kw">filter</span>()</span></code></pre></div>
+<p>Em outras palavras, primeiro dizemos qual é o pacote (dplyr, no caso), seguido de <span class="math inline">\(::\)</span> (dois pontos, duas vezes) e concluímos informando a função desejada e que se encontra desse pacote.</p>
+<p>Alternativamente, podemos usar library(dplyr). Isso deixa, durante a sessão ativa, as funções do pacote dplyr prontamente disponíveis. Quando você fechar o R (ou o R Studio), isso será desfeito. Portanto, da próxima vez que abrir o programa, precisará executar novamente o comando library(dplyr).</p>
+<p>É possível que existam duas funções com o mesmo nome, o que gera um conflito. Por exemplo, na minha máquina, há um pacote chamado <em>stats</em> que contém uma função chamada <em>lag</em>. Quando carrego o <em>dplyr</em>, que também possui uma função chamada lag(), recebo a seguinte mensagem:</p>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="pacotes-bibliotecas.html#cb115-1"></a>Attaching package<span class="op">:</span><span class="st"> </span>‘dplyr’</span>
+<span id="cb115-2"><a href="pacotes-bibliotecas.html#cb115-2"></a></span>
+<span id="cb115-3"><a href="pacotes-bibliotecas.html#cb115-3"></a>The following objects are masked from ‘package<span class="op">:</span>stats’<span class="op">:</span></span>
+<span id="cb115-4"><a href="pacotes-bibliotecas.html#cb115-4"></a></span>
+<span id="cb115-5"><a href="pacotes-bibliotecas.html#cb115-5"></a><span class="st">    </span>filter, lag</span>
+<span id="cb115-6"><a href="pacotes-bibliotecas.html#cb115-6"></a></span>
+<span id="cb115-7"><a href="pacotes-bibliotecas.html#cb115-7"></a>The following objects are masked from ‘package<span class="op">:</span>base’<span class="op">:</span></span>
+<span id="cb115-8"><a href="pacotes-bibliotecas.html#cb115-8"></a></span>
+<span id="cb115-9"><a href="pacotes-bibliotecas.html#cb115-9"></a><span class="st">    </span>intersect, setdiff, setequal, union</span></code></pre></div>
+<p>Isso significa que a função lag() do <em>stats</em> foi ocultada pelo <em>dplyr</em>. Em outras palavras, se eu for usar a função lag() sem dizer a que pacote ela pertence, o R automaticamente entenderá que eu estou usando a do <em>dplyr</em>, que está sendo dominante em relação ao <em>stats</em>.</p>
+<p>Sempre que você estiver confuso sobre qual função está dominando e qual está oculta, você pode incluir o nome do pacote no comando. Se você usar dplyr::lag(), com certeza será o lag() do dplyr. Se você usar stats::lag(), com certeza será o lag() do stats.</p>
+<p>Se o pacote que você deseja instalar está disponível no Github, você deve usar a função install_github() do pacote remotes.</p>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="pacotes-bibliotecas.html#cb116-1"></a>remotes<span class="op">::</span><span class="kw">install_github</span>()</span></code></pre></div>
 
-</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="methods.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="criando-sua-própria-função.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="obtendo-dados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

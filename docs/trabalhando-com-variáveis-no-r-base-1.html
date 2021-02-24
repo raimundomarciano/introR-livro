@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introdução ao R</title>
+  <title>6 Trabalhando com variáveis no R Base | Introdução ao R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introdução ao R" />
+  <meta property="og:title" content="6 Trabalhando com variáveis no R Base | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introdução ao R" />
+  <meta name="twitter:title" content="6 Trabalhando com variáveis no R Base | Introdução ao R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="intro.html"/>
+<link rel="prev" href="trabalhando-com-variáveis-no-r-base.html"/>
+<link rel="next" href="criando-sua-própria-função.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -202,29 +202,63 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">Introdução ao R</h1>
-<p class="author"><em>Raimundo Marciano de Freitas Neto</em></p>
-<p class="date"><em>2021-02-24</em></p>
+<div id="trabalhando-com-variáveis-no-r-base-1" class="section level1">
+<h1><span class="header-section-number">6</span> Trabalhando com variáveis no R Base</h1>
+<div id="manuseio-de-variáveis-1" class="section level2">
+<h2><span class="header-section-number">6.1</span> Manuseio de variáveis</h2>
 </div>
-<div id="boas-vindas" class="section level1">
-<h1><span class="header-section-number">1</span> Boas vindas</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
-
+<div id="funções-numéricas-básicas-1" class="section level2">
+<h2><span class="header-section-number">6.2</span> Funções numéricas básicas</h2>
+<p>As principais operações matemáticas e de estatísticas descritivas já vêm instaladas no R.</p>
+<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb69-1"></a><span class="co"># Sejam a = 5 e b = 2 e v um vetor de números inteiros</span></span>
+<span id="cb69-2"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb69-2"></a>a =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb69-3"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb69-3"></a>b =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb69-4"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb69-4"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
+<p>As operações básicas podem ser representadas por:</p>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb70-1"></a>a <span class="op">+</span><span class="st"> </span>b <span class="co"># soma</span></span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb72"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb72-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb72-1"></a>a <span class="op">-</span><span class="st"> </span>b <span class="co"># subtração</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb74-1"></a>a <span class="op">*</span><span class="st"> </span>b <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb76-1"></a>a <span class="op">/</span><span class="st"> </span>b <span class="co"># divisão</span></span></code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb78-1"></a>a <span class="op">^</span><span class="st"> </span>b <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
+<pre><code>## [1] 25</code></pre>
+<p>Além disso, podemos estabelecer as operações no vetor, aplicando a elementos específicos:</p>
+<div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb80-1"></a>v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># soma</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb82"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb82-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb82-1"></a>v[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># subtração</span></span></code></pre></div>
+<pre><code>## [1] -1</code></pre>
+<div class="sourceCode" id="cb84"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb84-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb84-1"></a>v[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb86-1"></a>v[<span class="dv">1</span>] <span class="op">/</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># divisão</span></span></code></pre></div>
+<pre><code>## [1] 0.5</code></pre>
+<div class="sourceCode" id="cb88"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb88-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb88-1"></a>v[<span class="dv">1</span>] <span class="op">^</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<p>Quando queremos aplicar ao vetor inteiro, podemos usar funções instaladas no R base.</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb90-1"></a><span class="kw">sum</span>(v) <span class="co"># soma de todos os elementos de v</span></span></code></pre></div>
+<pre><code>## [1] 15</code></pre>
+<div class="sourceCode" id="cb92"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb92-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb92-1"></a><span class="kw">sum</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># soma dos quatro primeiros elementos de v</span></span></code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<div class="sourceCode" id="cb94"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb94-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb94-1"></a><span class="kw">sum</span>(v[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>]) <span class="co"># soma dos três últimos elementos de v</span></span></code></pre></div>
+<pre><code>## [1] 12</code></pre>
+<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb96-1"></a><span class="kw">mean</span>(v) <span class="co"># média aritmérica de todos os elementos de v</span></span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="trabalhando-com-variáveis-no-r-base-1.html#cb98-1"></a><span class="kw">mean</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># média dos quatro primeiros elementos de v</span></span></code></pre></div>
+<pre><code>## [1] 2.5</code></pre>
+</div>
+<div id="funções-textuais-básicas-1" class="section level2">
+<h2><span class="header-section-number">6.3</span> Funções textuais básicas</h2>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="trabalhando-com-variáveis-no-r-base.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="criando-sua-própria-função.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

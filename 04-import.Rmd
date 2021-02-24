@@ -1,0 +1,17 @@
+# Obtendo dados
+
+O R oferece muitas opções de pacotes para importar os dados presentes em um arquivo. Além disso, alguns pacotes permitem que você colete dados de fontes oficiais facilmente.
+
+## Planilhas (csv / Excel)
+
+## TXT (bloco de notas) e Word
+
+## XML
+
+## Dados coletados por meio de pacotes
+
+### GetDFPData
+
+### BCBData
+
+## Juntando bases

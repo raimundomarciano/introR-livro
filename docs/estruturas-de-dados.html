@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 4 Estruturas de Dados | Introdução ao R</title>
+  <title>4 Estruturas de Dados | Introdução ao R</title>
   <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 4 Estruturas de Dados | Introdução ao R" />
+  <meta property="og:title" content="4 Estruturas de Dados | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Estruturas de Dados | Introdução ao R" />
+  <meta name="twitter:title" content="4 Estruturas de Dados | Introdução ao R" />
   
   <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-02-18" />
+<meta name="date" content="2021-02-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -134,9 +134,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Introdução ao R</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Boas vindas</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> O que é o R?</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.1</b> Scripts</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a><ul>
 <li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1</b> Numéricas</a></li>
@@ -158,15 +160,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.2" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-numéricas-básicas"><i class="fa fa-check"></i><b>5.2</b> Funções numéricas básicas</a></li>
 <li class="chapter" data-level="5.3" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-textuais-básicas"><i class="fa fa-check"></i><b>5.3</b> Funções textuais básicas</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>6</b> Criando sua própria função</a><ul>
-<li class="chapter" data-level="6.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>6.1</b> Comentários</a></li>
+<li class="chapter" data-level="6" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html"><i class="fa fa-check"></i><b>6</b> Trabalhando com variáveis no R Base</a><ul>
+<li class="chapter" data-level="6.1" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#manuseio-de-variáveis-1"><i class="fa fa-check"></i><b>6.1</b> Manuseio de variáveis</a></li>
+<li class="chapter" data-level="6.2" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#funções-numéricas-básicas-1"><i class="fa fa-check"></i><b>6.2</b> Funções numéricas básicas</a></li>
+<li class="chapter" data-level="6.3" data-path="trabalhando-com-variáveis-no-r-base-1.html"><a href="trabalhando-com-variáveis-no-r-base-1.html#funções-textuais-básicas-1"><i class="fa fa-check"></i><b>6.3</b> Funções textuais básicas</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>7</b> Methods</a></li>
-<li class="chapter" data-level="8" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>8</b> Applications</a><ul>
-<li class="chapter" data-level="8.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>8.1</b> Example one</a></li>
-<li class="chapter" data-level="8.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>8.2</b> Example two</a></li>
+<li class="chapter" data-level="7" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>7</b> Criando sua própria função</a><ul>
+<li class="chapter" data-level="7.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#modularização-do-código"><i class="fa fa-check"></i><b>7.1</b> Modularização do código</a></li>
+<li class="chapter" data-level="7.2" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>7.2</b> Comentários</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>9</b> Final Words</a></li>
+<li class="chapter" data-level="8" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>8</b> Pacotes / Bibliotecas</a></li>
+<li class="chapter" data-level="9" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>9</b> Obtendo dados</a><ul>
+<li class="chapter" data-level="9.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#planilhas-csv-excel"><i class="fa fa-check"></i><b>9.1</b> Planilhas (csv / Excel)</a></li>
+<li class="chapter" data-level="9.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#txt-bloco-de-notas-e-word"><i class="fa fa-check"></i><b>9.2</b> TXT (bloco de notas) e Word</a></li>
+<li class="chapter" data-level="9.3" data-path="obtendo-dados.html"><a href="obtendo-dados.html#xml"><i class="fa fa-check"></i><b>9.3</b> XML</a></li>
+<li class="chapter" data-level="9.4" data-path="obtendo-dados.html"><a href="obtendo-dados.html#dados-coletados-por-meio-de-pacotes"><i class="fa fa-check"></i><b>9.4</b> Dados coletados por meio de pacotes</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#getdfpdata"><i class="fa fa-check"></i><b>9.4.1</b> GetDFPData</a></li>
+<li class="chapter" data-level="9.4.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#bcbdata"><i class="fa fa-check"></i><b>9.4.2</b> BCBData</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="obtendo-dados.html"><a href="obtendo-dados.html#juntando-bases"><i class="fa fa-check"></i><b>9.5</b> Juntando bases</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>10</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -189,20 +203,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="estruturas-de-dados" class="section level1">
-<h1><span class="header-section-number">Capítulo 4</span> Estruturas de Dados</h1>
+<h1><span class="header-section-number">4</span> Estruturas de Dados</h1>
 <p>Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar.</p>
 <div id="vetores" class="section level2">
 <h2><span class="header-section-number">4.1</span> Vetores</h2>
 <p>Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um <strong>vetor</strong>. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.<br />
 Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <strong>e</strong> os salários, seria inadequado usarmos o vetor, porque agora teríamos duas dimensões, além de dois tipos: uma mesma pessoa (o CEO) possui duas características: o nome (textual / string) e o salário (numérica / num).</p>
 <p>A criação de vetores é feita com o uso do c( ), em que os valores que devem ser atribuídos ao vetor são incluídos dentro dos parênteses e separados por vírgula.</p>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="estruturas-de-dados.html#cb41-1"></a>vetorNumerico =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb41-2"><a href="estruturas-de-dados.html#cb41-2"></a>vetorLogico =<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>,<span class="ot">FALSE</span>)</span>
-<span id="cb41-3"><a href="estruturas-de-dados.html#cb41-3"></a>vetorTextual =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Eu&quot;</span>, <span class="st">&quot;Nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;10.000&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="estruturas-de-dados.html#cb39-1"></a>vetorNumerico =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb39-2"><a href="estruturas-de-dados.html#cb39-2"></a>vetorLogico =<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="ot">TRUE</span>, <span class="ot">FALSE</span>,<span class="ot">FALSE</span>)</span>
+<span id="cb39-3"><a href="estruturas-de-dados.html#cb39-3"></a>vetorTextual =<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Eu&quot;</span>, <span class="st">&quot;Nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;10.000&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>)</span></code></pre></div>
 <p>Note que todos os vetores foram criados com dados de mesmo tipo. O vetor numérico tem apenas números inteiros (1 a 5); o vetor lógico tem apenas Verdadeiro (TRUE) e Falso (FALSE); o vetor de texto tem apenas elementos textuais (mesmo o número está entre aspas, o que força que aqueles dígitos sejam lidos como “texto”).</p>
 <p>Caso você tente misturar tipos, o R irá forçar a padronização. Por exemplo, o que aconteceria se você tentasse criar um vetor com números e textos?</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="estruturas-de-dados.html#cb42-1"></a>vetorNumTex =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;três&quot;,&quot;</span><span class="dv">4</span><span class="st">&quot;,5)</span></span>
-<span id="cb42-2"><a href="estruturas-de-dados.html#cb42-2"></a><span class="st">print(vetorNumTex)</span></span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="estruturas-de-dados.html#cb40-1"></a>vetorNumTex =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;três&quot;,&quot;</span><span class="dv">4</span><span class="st">&quot;,5)</span></span>
+<span id="cb40-2"><a href="estruturas-de-dados.html#cb40-2"></a><span class="st">print(vetorNumTex)</span></span></code></pre></div>
 <pre><code>## [1] &quot;1&quot;    &quot;2&quot;    &quot;três&quot; &quot;4&quot;    &quot;5&quot;</code></pre>
 <p>Todos os elementos apresentados estão entre aspas. Como o R não tem uma forma de transformar “três” em um número, ele converte todos os outros números em texto. Por isso, 1 vira “1”, 2 vira “2” e 5 vira “5”.</p>
 <blockquote>
@@ -215,27 +229,27 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <div id="matrizes" class="section level2">
 <h2><span class="header-section-number">4.2</span> Matrizes</h2>
 <p>A matriz é um conjunto de dados do mesmo tipo, ordenados em linhas (filas horizontais) e colunas (filas verticais). É criada pelo matrix(), devendo ser informados os dados que irão compor a matriz (normalmente dispostos em um vetor), o número de linhas (nrow), o número de colunas (ncol) e se o preenchimento deve ser feito por linha (byrow = TRUE) ou por coluna (byrow = FALSE).</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="estruturas-de-dados.html#cb44-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.</span></span>
-<span id="cb44-2"><a href="estruturas-de-dados.html#cb44-2"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb44-3"><a href="estruturas-de-dados.html#cb44-3"></a><span class="kw">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="estruturas-de-dados.html#cb42-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.</span></span>
+<span id="cb42-2"><a href="estruturas-de-dados.html#cb42-2"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb42-3"><a href="estruturas-de-dados.html#cb42-3"></a><span class="kw">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    2
 ## [2,]    3    4
 ## [3,]    5    6</code></pre>
 <p>Ou seja, os números foram distribuídos até o fim da primeira linha, depois até o fim da segunda linha e depois até o fim da terceira (e última) linha.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="estruturas-de-dados.html#cb46-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas</span></span>
-<span id="cb46-2"><a href="estruturas-de-dados.html#cb46-2"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb46-3"><a href="estruturas-de-dados.html#cb46-3"></a><span class="kw">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="estruturas-de-dados.html#cb44-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas</span></span>
+<span id="cb44-2"><a href="estruturas-de-dados.html#cb44-2"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(<span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">6</span>), <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb44-3"><a href="estruturas-de-dados.html#cb44-3"></a><span class="kw">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    4
 ## [2,]    2    5
 ## [3,]    3    6</code></pre>
 <p>Em contraste, aqui o preenchimento foi por colunas. Foi preenchida toda a primeira coluna e depois toda a segunda coluna.</p>
 <p>Se já tivéssemos um vetor salvo na memória, poderíamos usá-lo para compor a matriz.</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="estruturas-de-dados.html#cb48-1"></a>vetorParaMatriz &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;eu&quot;</span>, <span class="st">&quot;nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;dez mil&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>) </span>
-<span id="cb48-2"><a href="estruturas-de-dados.html#cb48-2"></a></span>
-<span id="cb48-3"><a href="estruturas-de-dados.html#cb48-3"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(vetorParaMatriz, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
-<span id="cb48-4"><a href="estruturas-de-dados.html#cb48-4"></a><span class="kw">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="estruturas-de-dados.html#cb46-1"></a>vetorParaMatriz &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;eu&quot;</span>, <span class="st">&quot;nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;dez mil&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>) </span>
+<span id="cb46-2"><a href="estruturas-de-dados.html#cb46-2"></a></span>
+<span id="cb46-3"><a href="estruturas-de-dados.html#cb46-3"></a>mat =<span class="st"> </span><span class="kw">matrix</span>(vetorParaMatriz, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">2</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>)</span>
+<span id="cb46-4"><a href="estruturas-de-dados.html#cb46-4"></a><span class="kw">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1]   [,2]     
 ## [1,] &quot;eu&quot;   &quot;nasci&quot;  
 ## [2,] &quot;há&quot;   &quot;dez mil&quot;
@@ -293,24 +307,24 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 </tbody>
 </table>
 <p>Eventualmente, pode ser interessante informar os nomes para as linhas e para as colunas. Por exemplo, se você estiver precisando mapear a distância entre as unidades de uma empresa, seria importante dizer quais são as filiais.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="estruturas-de-dados.html#cb50-1"></a>vetorFiliais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>, <span class="st">&quot;Macaíba&quot;</span>)</span>
-<span id="cb50-2"><a href="estruturas-de-dados.html#cb50-2"></a>vetorDistancias &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="estruturas-de-dados.html#cb48-1"></a>vetorFiliais &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>, <span class="st">&quot;Macaíba&quot;</span>)</span>
+<span id="cb48-2"><a href="estruturas-de-dados.html#cb48-2"></a>vetorDistancias &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">0</span>)</span></code></pre></div>
 <p>Por isso, vamos incluir o argumento</p>
 <blockquote>
 <p>dimnames = list(row_names, col_names)</p>
 </blockquote>
 <p><em>dimnames</em> significa nome das dimensões, que é informado por meio de dois vetores: o vetor com o nomes das linhas (row_names) e o vetor com o nome das colunas (col_names).</p>
 <p>No nosso exemplo, as linhas e as colunas devem possuir os mesmos nomes (porque queremos estabelecer uma matriz com a distância entre cada unidade da empresa). Por isso, trocaremos row_names por vetorFiliais e <strong>também</strong> trocaremos col_names por vetorFiliais.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="estruturas-de-dados.html#cb51-1"></a>distanciaFiliais =<span class="st"> </span><span class="kw">matrix</span>(vetorDistancias, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>,</span>
-<span id="cb51-2"><a href="estruturas-de-dados.html#cb51-2"></a>             <span class="dt">dimnames =</span> <span class="kw">list</span>(vetorFiliais, vetorFiliais))</span>
-<span id="cb51-3"><a href="estruturas-de-dados.html#cb51-3"></a></span>
-<span id="cb51-4"><a href="estruturas-de-dados.html#cb51-4"></a>distanciaFiliais</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="estruturas-de-dados.html#cb49-1"></a>distanciaFiliais =<span class="st"> </span><span class="kw">matrix</span>(vetorDistancias, <span class="dt">nrow =</span> <span class="dv">3</span>, <span class="dt">ncol =</span> <span class="dv">3</span>, <span class="dt">byrow =</span> <span class="ot">TRUE</span>,</span>
+<span id="cb49-2"><a href="estruturas-de-dados.html#cb49-2"></a>             <span class="dt">dimnames =</span> <span class="kw">list</span>(vetorFiliais, vetorFiliais))</span>
+<span id="cb49-3"><a href="estruturas-de-dados.html#cb49-3"></a></span>
+<span id="cb49-4"><a href="estruturas-de-dados.html#cb49-4"></a>distanciaFiliais</span></code></pre></div>
 <pre><code>##            Natal Parnamirim Macaíba
 ## Natal          0         10      12
 ## Parnamirim    10          0       2
 ## Macaíba       12          2       0</code></pre>
 <p>Por que o elemento [1,1] da matriz foi 0? A distância de uma unidade para ela mesmo, por definição, é zero. Para solicitar a distância entre a filial Natal e a filial Parnamirim:</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="estruturas-de-dados.html#cb53-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="estruturas-de-dados.html#cb51-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p>Perceba que, nessa matriz, a distância entre Natal - Parnamirim é a mesma que Parnamirim - Natal. Se pensarmos em termos de rodovias, isso pode não ser necessariamente verdade, pois em casos específicos pode ser necessário um deslocamento adicional em um dos sentidos (por exemplo, ir adiante x quilômetros para conseguir fazer um retorno). No caso dessa matriz, solicitar o valor como:</p>
 <blockquote>
@@ -321,11 +335,11 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>distanciaFiliais[“Parnamirim”, “Natal”]</p>
 </blockquote>
 <p>produziria o mesmo resultado e, nesse caso, é irrelevante. Entretanto, é importante ter em mente que isso nem sempre será verdade. Além disso, se quiséssemos saber a distância da filial Natal para todas as demais, deveríamos informar apenas a linha, omitindo a informação após a vírgula.</p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="estruturas-de-dados.html#cb55-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="estruturas-de-dados.html#cb53-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>,]</span></code></pre></div>
 <pre><code>##      Natal Parnamirim    Macaíba 
 ##          0         10         12</code></pre>
 <p>Alternativamente, sabendo que Natal é a primeira linha da matriz, também seria possível executar</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="estruturas-de-dados.html#cb57-1"></a>distanciaFiliais[<span class="dv">1</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="estruturas-de-dados.html#cb55-1"></a>distanciaFiliais[<span class="dv">1</span>,]</span></code></pre></div>
 <pre><code>##      Natal Parnamirim    Macaíba 
 ##          0         10         12</code></pre>
 <p>A segunda opção é particularmente importante quando as filas (linhas ou colunas) não estão nomeadas.</p>
@@ -335,33 +349,33 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>O data frame é similar a matrix, mas admite colunas com tipos diferentes. Nesse caso, é possível incluir uma coluna para o nome de uma empresa (string), uma coluna para o CNPJ (string), uma coluna para o número de empregados (integer), uma coluna para o faturamento (float) e uma coluna para identificar se as demonstrações já foram encerradas ou se ainda estão pendentes (boolean).</p>
 <p>O data frame é criado por meio do data.frame(), onde são passados os valores que irão entrar na estrutura. Uma possibilidade é passarmos vetores que representem as colunas. Assim, usaríamos um vetor para a empresa, um vetor para o CNPJ, um vetor para os empregados e um vetor para o faturamento.</p>
 <p>Não é necessário informar a quantidade de linhas ou colunas, já que o R não precisará organizar os dados (no caso da matriz, foi necessário informar como ela deveria ser preenchida). Os vetores serão incluídos como colunas na mesma ordem em que forem aparecendo dentro do data.frame().</p>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="estruturas-de-dados.html#cb59-1"></a><span class="co"># Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.</span></span>
-<span id="cb59-2"><a href="estruturas-de-dados.html#cb59-2"></a>clientes &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">empresa =</span> <span class="kw">c</span>(<span class="st">&quot;Marte S.A.&quot;</span>, <span class="st">&quot;Deimos S.A.&quot;</span>, <span class="st">&quot;Phobos S.A.&quot;</span>), </span>
-<span id="cb59-3"><a href="estruturas-de-dados.html#cb59-3"></a>                       <span class="dt">cnpj =</span> <span class="kw">c</span>(<span class="st">&quot;00.000.001/0001-00&quot;</span>,<span class="st">&quot;00.000.011/0001-10&quot;</span>, <span class="st">&quot;99.000.001/0001-55&quot;</span>),</span>
-<span id="cb59-4"><a href="estruturas-de-dados.html#cb59-4"></a>                       <span class="dt">empregados =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>), </span>
-<span id="cb59-5"><a href="estruturas-de-dados.html#cb59-5"></a>                       <span class="dt">encerramento =</span> <span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>),</span>
-<span id="cb59-6"><a href="estruturas-de-dados.html#cb59-6"></a>                       <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb59-7"><a href="estruturas-de-dados.html#cb59-7"></a>clientes</span></code></pre></div>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="estruturas-de-dados.html#cb57-1"></a><span class="co"># Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.</span></span>
+<span id="cb57-2"><a href="estruturas-de-dados.html#cb57-2"></a>clientes &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">empresa =</span> <span class="kw">c</span>(<span class="st">&quot;Marte S.A.&quot;</span>, <span class="st">&quot;Deimos S.A.&quot;</span>, <span class="st">&quot;Phobos S.A.&quot;</span>), </span>
+<span id="cb57-3"><a href="estruturas-de-dados.html#cb57-3"></a>                       <span class="dt">cnpj =</span> <span class="kw">c</span>(<span class="st">&quot;00.000.001/0001-00&quot;</span>,<span class="st">&quot;00.000.011/0001-10&quot;</span>, <span class="st">&quot;99.000.001/0001-55&quot;</span>),</span>
+<span id="cb57-4"><a href="estruturas-de-dados.html#cb57-4"></a>                       <span class="dt">empregados =</span> <span class="kw">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>), </span>
+<span id="cb57-5"><a href="estruturas-de-dados.html#cb57-5"></a>                       <span class="dt">encerramento =</span> <span class="kw">c</span>(<span class="ot">FALSE</span>, <span class="ot">FALSE</span>, <span class="ot">TRUE</span>),</span>
+<span id="cb57-6"><a href="estruturas-de-dados.html#cb57-6"></a>                       <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb57-7"><a href="estruturas-de-dados.html#cb57-7"></a>clientes</span></code></pre></div>
 <pre><code>##       empresa               cnpj empregados encerramento
 ## 1  Marte S.A. 00.000.001/0001-00         10        FALSE
 ## 2 Deimos S.A. 00.000.011/0001-10         20        FALSE
 ## 3 Phobos S.A. 99.000.001/0001-55         25         TRUE</code></pre>
 <p>Por conta dessa permissão para uso de tipos diferentes em uma mesma estrutura, os data frames são consideravalmente importantes. Para solicitar uma fila específica (linha ou coluna) ou um elemento, é possível usar a mesma notação das matrizes.</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="estruturas-de-dados.html#cb61-1"></a>clientes[<span class="dv">1</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="estruturas-de-dados.html#cb59-1"></a>clientes[<span class="dv">1</span>,]</span></code></pre></div>
 <pre><code>##      empresa               cnpj empregados encerramento
 ## 1 Marte S.A. 00.000.001/0001-00         10        FALSE</code></pre>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="estruturas-de-dados.html#cb63-1"></a><span class="co"># para gerar uma relação com os CNPJs:</span></span>
-<span id="cb63-2"><a href="estruturas-de-dados.html#cb63-2"></a>clientes[,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="estruturas-de-dados.html#cb61-1"></a><span class="co"># para gerar uma relação com os CNPJs:</span></span>
+<span id="cb61-2"><a href="estruturas-de-dados.html#cb61-2"></a>clientes[,<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Da mesma forma que fizemos com as matrizes, podemos solicitar uma coluna com base em seu nome.</p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="estruturas-de-dados.html#cb65-1"></a>clientes[,<span class="st">&quot;cnpj&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="estruturas-de-dados.html#cb63-1"></a>clientes[,<span class="st">&quot;cnpj&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Percebea que nesse caso as linhas não foram nomeadas. No caso dos data frames, é bem comum que o identificador seja inserido como um dado</p>
 <p>O data frame ainda admite uma forma adicional de solicitar uma coluna, informando o nome do objeto seguido do cifrão ($) e do nome da coluna.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="estruturas-de-dados.html#cb67-1"></a>clientes<span class="op">$</span>cnpj</span></code></pre></div>
+<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="estruturas-de-dados.html#cb65-1"></a>clientes<span class="op">$</span>cnpj</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes$cnpj, estamos usando um procedimento equivalente a clientes[,“cnpj”]. Como poderíamos fazer para usando a notação com cifrão, solicitar o terceiro elemento dessa relação?</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="estruturas-de-dados.html#cb69-1"></a>clientes<span class="op">$</span>cnpj[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="estruturas-de-dados.html#cb67-1"></a>clientes<span class="op">$</span>cnpj[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Não precisamos informar dois elementos dentro dos colchetes [,] porque um deles foi informado anteriormente (no caso, a coluna <em>cnpj</em>)! Assim, quando informarmos o [3] estamos automaticamente nos referindo à linha.</p>
 </div>

@@ -113,7 +113,7 @@
 
 \title{Introdução ao R}
 \author{Raimundo Marciano de Freitas Neto}
-\date{2021-02-18}
+\date{2021-02-24}
 
 \begin{document}
 \maketitle
@@ -122,8 +122,8 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{prerequisites}{%
-\chapter{Prerequisites}\label{prerequisites}}
+\hypertarget{boas-vindas}{%
+\chapter{Boas vindas}\label{boas-vindas}}
 
 This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
 
@@ -151,76 +151,14 @@ Aliás, o Python (outra linguagem de programação) possui funcionalidades bem s
 
 É preferível que o analista iniciante dedique-se a uma das duas (R ou Python). Posteriormente, aprender a outra (ou mais alguma que esteja despontando no mercado, como a Julia) será uma tarefa bem mais simples. Isso se deve ao fato de que diversos elementos da programação se repetem entre as diferentes linguagens, especialmente os conceitos. Um IF tem o mesmo propósito em R ou em Python ou em Java ou em C++, embora a forma como você deve explicar ao computador o que fazer com esse IF será bem diferente em cada linguagem.
 
-You can label chapter and section titles using \texttt{\{\#label\}} after them, e.g., we can reference Chapter \ref{intro}. If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \ref{methods}.
-
-Figures and tables with captions will be placed in \texttt{figure} and \texttt{table} environments, respectively.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{par}\NormalTok{(}\DataTypeTok{mar =} \KeywordTok{c}\NormalTok{(}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\FloatTok{.1}\NormalTok{, }\FloatTok{.1}\NormalTok{))}
-\KeywordTok{plot}\NormalTok{(pressure, }\DataTypeTok{type =} \StringTok{'b'}\NormalTok{, }\DataTypeTok{pch =} \DecValTok{19}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.8\linewidth]{introR_files/figure-latex/nice-fig-1} 
-
-}
-
-\caption{Here is a nice figure!}\label{fig:nice-fig}
-\end{figure}
-
-Reference a figure by its code chunk label with the \texttt{fig:} prefix, e.g., see Figure \ref{fig:nice-fig}. Similarly, you can reference tables generated from \texttt{knitr::kable()}, e.g., see Table \ref{tab:nice-tab}.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(}
-  \KeywordTok{head}\NormalTok{(iris, }\DecValTok{20}\NormalTok{), }\DataTypeTok{caption =} \StringTok{'Here is a nice table!'}\NormalTok{,}
-  \DataTypeTok{booktabs =} \OtherTok{TRUE}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{table}
-
-\caption{\label{tab:nice-tab}Here is a nice table!}
-\centering
-\begin{tabular}[t]{rrrrl}
-\toprule
-Sepal.Length & Sepal.Width & Petal.Length & Petal.Width & Species\\
-\midrule
-5.1 & 3.5 & 1.4 & 0.2 & setosa\\
-4.9 & 3.0 & 1.4 & 0.2 & setosa\\
-4.7 & 3.2 & 1.3 & 0.2 & setosa\\
-4.6 & 3.1 & 1.5 & 0.2 & setosa\\
-5.0 & 3.6 & 1.4 & 0.2 & setosa\\
-\addlinespace
-5.4 & 3.9 & 1.7 & 0.4 & setosa\\
-4.6 & 3.4 & 1.4 & 0.3 & setosa\\
-5.0 & 3.4 & 1.5 & 0.2 & setosa\\
-4.4 & 2.9 & 1.4 & 0.2 & setosa\\
-4.9 & 3.1 & 1.5 & 0.1 & setosa\\
-\addlinespace
-5.4 & 3.7 & 1.5 & 0.2 & setosa\\
-4.8 & 3.4 & 1.6 & 0.2 & setosa\\
-4.8 & 3.0 & 1.4 & 0.1 & setosa\\
-4.3 & 3.0 & 1.1 & 0.1 & setosa\\
-5.8 & 4.0 & 1.2 & 0.2 & setosa\\
-\addlinespace
-5.7 & 4.4 & 1.5 & 0.4 & setosa\\
-5.4 & 3.9 & 1.3 & 0.4 & setosa\\
-5.1 & 3.5 & 1.4 & 0.3 & setosa\\
-5.7 & 3.8 & 1.7 & 0.3 & setosa\\
-5.1 & 3.8 & 1.5 & 0.3 & setosa\\
-\bottomrule
-\end{tabular}
-\end{table}
-
-You can write citations, too. For example, we are using the \textbf{bookdown} package \citep{R-bookdown} in this sample book, which was built on top of R Markdown and \textbf{knitr} \citep{xie2015}.
-
 \hypertarget{scripts}{%
 \section{Scripts}\label{scripts}}
+
+\hypertarget{r-studio}{%
+\section{R Studio}\label{r-studio}}
+
+\hypertarget{r-nas-nuvens}{%
+\section{R nas Nuvens}\label{r-nas-nuvens}}
 
 \hypertarget{variuxe1veis}{%
 \chapter{Variáveis}\label{variuxe1veis}}
@@ -504,7 +442,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2021-02-18"
+## [1] "2021-02-24"
 \end{verbatim}
 
 \begin{Shaded}
@@ -515,7 +453,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "18/02/2021"
+## [1] "24/02/2021"
 \end{verbatim}
 
 \begin{Shaded}
@@ -526,7 +464,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "18/02/2021"
+## [1] "24/02/2021"
 \end{verbatim}
 
 \hypertarget{estruturas-de-dados}{%
@@ -847,27 +785,382 @@ Não precisamos informar dois elementos dentro dos colchetes {[},{]} porque um d
 \hypertarget{funuxe7uxf5es-textuais-buxe1sicas}{%
 \section{Funções textuais básicas}\label{funuxe7uxf5es-textuais-buxe1sicas}}
 
+\hypertarget{trabalhando-com-variuxe1veis-no-r-base-1}{%
+\chapter{Trabalhando com variáveis no R Base}\label{trabalhando-com-variuxe1veis-no-r-base-1}}
+
+\hypertarget{manuseio-de-variuxe1veis-1}{%
+\section{Manuseio de variáveis}\label{manuseio-de-variuxe1veis-1}}
+
+\hypertarget{funuxe7uxf5es-numuxe9ricas-buxe1sicas-1}{%
+\section{Funções numéricas básicas}\label{funuxe7uxf5es-numuxe9ricas-buxe1sicas-1}}
+
+As principais operações matemáticas e de estatísticas descritivas já vêm instaladas no R.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Sejam a = 5 e b = 2 e v um vetor de números inteiros}
+\NormalTok{a =}\StringTok{ }\DecValTok{5}
+\NormalTok{b =}\StringTok{ }\DecValTok{2}
+\NormalTok{v =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+As operações básicas podem ser representadas por:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{+}\StringTok{ }\NormalTok{b }\CommentTok{# soma}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{-}\StringTok{ }\NormalTok{b }\CommentTok{# subtração}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{*}\StringTok{ }\NormalTok{b }\CommentTok{# multiplicação (asterisco)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{/}\StringTok{ }\NormalTok{b }\CommentTok{# divisão}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{a }\OperatorTok{^}\StringTok{ }\NormalTok{b }\CommentTok{# potenciação (acento circunflexo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 25
+\end{verbatim}
+
+Além disso, podemos estabelecer as operações no vetor, aplicando a elementos específicos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{1}\NormalTok{] }\OperatorTok{+}\StringTok{ }\NormalTok{v[}\DecValTok{2}\NormalTok{] }\CommentTok{# soma}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{1}\NormalTok{] }\OperatorTok{-}\StringTok{ }\NormalTok{v[}\DecValTok{2}\NormalTok{] }\CommentTok{# subtração}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{1}\NormalTok{] }\OperatorTok{*}\StringTok{ }\NormalTok{v[}\DecValTok{2}\NormalTok{] }\CommentTok{# multiplicação (asterisco)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{1}\NormalTok{] }\OperatorTok{/}\StringTok{ }\NormalTok{v[}\DecValTok{2}\NormalTok{] }\CommentTok{# divisão}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.5
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{v[}\DecValTok{1}\NormalTok{] }\OperatorTok{^}\StringTok{ }\NormalTok{v[}\DecValTok{2}\NormalTok{] }\CommentTok{# potenciação (acento circunflexo)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+Quando queremos aplicar ao vetor inteiro, podemos usar funções instaladas no R base.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(v) }\CommentTok{# soma de todos os elementos de v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 15
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(v[}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\CommentTok{# soma dos quatro primeiros elementos de v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{sum}\NormalTok{(v[}\DecValTok{3}\OperatorTok{:}\DecValTok{5}\NormalTok{]) }\CommentTok{# soma dos três últimos elementos de v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(v) }\CommentTok{# média aritmérica de todos os elementos de v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{mean}\NormalTok{(v[}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{]) }\CommentTok{# média dos quatro primeiros elementos de v}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2.5
+\end{verbatim}
+
+\hypertarget{funuxe7uxf5es-textuais-buxe1sicas-1}{%
+\section{Funções textuais básicas}\label{funuxe7uxf5es-textuais-buxe1sicas-1}}
+
 \hypertarget{criando-sua-pruxf3pria-funuxe7uxe3o}{%
 \chapter{Criando sua própria função}\label{criando-sua-pruxf3pria-funuxe7uxe3o}}
+
+No R, você pode criar suas próprias funções da mesma forma como você cria e guarda dados: as funções também são objetos. A função para criar funções é a function(). Vamos começar com um caso simples, produzindo uma função que apenas imprime um texto básico.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{minhaFuncao <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{()\{}
+  \CommentTok{# Esta função imprime a mensagem "Esta é a minha primeira função"}
+  \KeywordTok{print}\NormalTok{(}\StringTok{"Esta é a minha primeira função."}\NormalTok{)}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{minhaFuncao}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Esta é a minha primeira função."
+\end{verbatim}
+
+Essa função ainda não aceita parâmetros, ou seja, ela ainda não é capaz de receber e processar dados. A função pode receber dados ou usar valores que estão presentes em variáveis anteriormente criadas. O argumento funciona como um apelido que será usado internamente para aquele valor. Por exemplo, posso querer que a função retorne quanto é 8\% do salário do empregado. Assim, precisamos que a função receba o valor do salário empregado e que, a partir dele, calcule quanto é 8\% e, por fim, exiba esse valor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# a funcao recebera o 'salario'}
+\NormalTok{fgts <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(salario)\{}
+  \CommentTok{# variavei INTERNA fgtsFuncionario guarda o valor calculado do FGTS}
+  \CommentTok{# ela não fica automaticamente disponível na memória do R após }
+  \CommentTok{# a função ter terminado a execução}
+\NormalTok{  fgtsFuncionario <-}\StringTok{ }\NormalTok{salario }\OperatorTok{*}\StringTok{ }\FloatTok{0.08}
+  \CommentTok{# vamos gerar uma frase contendo o valor do FGTS}
+\NormalTok{  mensagem <-}\StringTok{ }\KeywordTok{paste0}\NormalTok{(}\StringTok{"O valor do FGTS é R$ "}\NormalTok{, fgtsFuncionario, }\StringTok{"."}\NormalTok{)}
+  \CommentTok{# para imprimir a mensagem}
+  \KeywordTok{print}\NormalTok{(mensagem)}
+  \CommentTok{# podemos encerrar o código da função especificando uma última variável INTERNA}
+  \CommentTok{# que pode ser guardada em um objeto normal do R, por atribuição}
+  \CommentTok{# Se essa atribuição não ocorrer, todos os valores gerados internamente}
+  \CommentTok{# serão esquecidos}
+\NormalTok{  fgtsFuncionario}
+\NormalTok{\}}
+\end{Highlighting}
+\end{Shaded}
+
+Perceba que se simplesmente rodarmos a função sem guardar seu valor em um objeto
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{fgts}\NormalTok{(}\DecValTok{2000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O valor do FGTS é R$ 160."
+\end{verbatim}
+
+\begin{verbatim}
+## [1] 160
+\end{verbatim}
+
+A mensagem será impressa, mas posteriormente não será possível resgatar nem o valor contido em \(fgtsFuncionario\) e nem em \(mensagem\). Se você quer que o R realmente guarde esses valores, e não apenas os exiba na tela, é necessário que haja a atribuição a uma variável.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# estamos guardando o valor da execução de fgts(2000) em fgtsFunc1}
+\NormalTok{fgtsFunc1 <-}\StringTok{ }\KeywordTok{fgts}\NormalTok{(}\DecValTok{2000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O valor do FGTS é R$ 160."
+\end{verbatim}
+
+A função \(fgts\) foi encerrada com \(fgtsFuncionario\). Por isso, o valor que será atribuído para fgtsFunc1 será apenas \(fgtsFuncionario\). A \(mensagem\) não ficará gravada na memória.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# se solicitarmos o valor de fgtsFunc1, será exibido o valor 160.}
+\NormalTok{fgtsFunc1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 160
+\end{verbatim}
+
+\hypertarget{modularizauxe7uxe3o-do-cuxf3digo}{%
+\section{Modularização do código}\label{modularizauxe7uxe3o-do-cuxf3digo}}
+
+Em certas situações, seu script pode começar a ficar muito extenso, dificultando a leitura do código e que você encontre problemas específicos. Assim, pode ser uma boa ideia criar scripts auxiliares com funções. Você cria um script separado (por exemplo, funcoes.R) e deixa nele o código com as funções que serão utilizadas.
+
+No script onde você está desenvolvendo a análise, você inclui o comando source(), informando o parâmetro com a localização e o nome do arquivo (``scripts/funcoes.R'', por exemplo).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# assumindo que o script auxiliar funcoes.R está na pasta scripts}
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/funcoes.R"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+O source() faz e leitura do script auxiliar e importa todas as funções que constam nele, de forma muito similar ao que é feito pelo library().
 
 \hypertarget{comentuxe1rios}{%
 \section{Comentários}\label{comentuxe1rios}}
 
-\hypertarget{methods}{%
-\chapter{Methods}\label{methods}}
+\hypertarget{pacotes-bibliotecas}{%
+\chapter{Pacotes / Bibliotecas}\label{pacotes-bibliotecas}}
 
-We describe our methods in this chapter.
+Muito do que precisamos usar já foi criado por alguém e disponibilizado na internet. No caso do R, a plataforma ``oficial'' para isso é o CRAN, mas há outras formas de conseguir esses códigos, como o Github.
 
-\hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+Diversas bibliotecas já vêm pré-instaladas no R.
 
-Some \emph{significant} applications are demonstrated in this chapter.
+Quando precisamos instalar, usamos o comando
 
-\hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
 
-\hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+O nome do pacote deve ser informado entre aspas, como todo bom texto.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{install.packages}\NormalTok{(}\StringTok{"dplyr"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+A instalação do pacote dplyr permite o acesso a várias funções, como filter(), select() e group\_by(). Quando um pacote é instalado, as funções ficam dentro dele. ISso significa que quando queremos acessá-las, precisamos identificar a fonte.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{select}\NormalTok{()}
+\NormalTok{dplyr}\OperatorTok{::}\KeywordTok{filter}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+Em outras palavras, primeiro dizemos qual é o pacote (dplyr, no caso), seguido de \(::\) (dois pontos, duas vezes) e concluímos informando a função desejada e que se encontra desse pacote.
+
+Alternativamente, podemos usar library(dplyr). Isso deixa, durante a sessão ativa, as funções do pacote dplyr prontamente disponíveis. Quando você fechar o R (ou o R Studio), isso será desfeito. Portanto, da próxima vez que abrir o programa, precisará executar novamente o comando library(dplyr).
+
+É possível que existam duas funções com o mesmo nome, o que gera um conflito. Por exemplo, na minha máquina, há um pacote chamado \emph{stats} que contém uma função chamada \emph{lag}. Quando carrego o \emph{dplyr}, que também possui uma função chamada lag(), recebo a seguinte mensagem:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Attaching package}\OperatorTok{:}\StringTok{ }\NormalTok{‘dplyr’}
+
+\NormalTok{The following objects are masked from ‘package}\OperatorTok{:}\NormalTok{stats’}\OperatorTok{:}
+
+\StringTok{    }\NormalTok{filter, lag}
+
+\NormalTok{The following objects are masked from ‘package}\OperatorTok{:}\NormalTok{base’}\OperatorTok{:}
+
+\StringTok{    }\NormalTok{intersect, setdiff, setequal, union}
+\end{Highlighting}
+\end{Shaded}
+
+Isso significa que a função lag() do \emph{stats} foi ocultada pelo \emph{dplyr}. Em outras palavras, se eu for usar a função lag() sem dizer a que pacote ela pertence, o R automaticamente entenderá que eu estou usando a do \emph{dplyr}, que está sendo dominante em relação ao \emph{stats}.
+
+Sempre que você estiver confuso sobre qual função está dominando e qual está oculta, você pode incluir o nome do pacote no comando. Se você usar dplyr::lag(), com certeza será o lag() do dplyr. Se você usar stats::lag(), com certeza será o lag() do stats.
+
+Se o pacote que você deseja instalar está disponível no Github, você deve usar a função install\_github() do pacote remotes.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{remotes}\OperatorTok{::}\KeywordTok{install_github}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{obtendo-dados}{%
+\chapter{Obtendo dados}\label{obtendo-dados}}
+
+O R oferece muitas opções de pacotes para importar os dados presentes em um arquivo. Além disso, alguns pacotes permitem que você colete dados de fontes oficiais facilmente.
+
+\hypertarget{planilhas-csv-excel}{%
+\section{Planilhas (csv / Excel)}\label{planilhas-csv-excel}}
+
+\hypertarget{txt-bloco-de-notas-e-word}{%
+\section{TXT (bloco de notas) e Word}\label{txt-bloco-de-notas-e-word}}
+
+\hypertarget{xml}{%
+\section{XML}\label{xml}}
+
+\hypertarget{dados-coletados-por-meio-de-pacotes}{%
+\section{Dados coletados por meio de pacotes}\label{dados-coletados-por-meio-de-pacotes}}
+
+\hypertarget{getdfpdata}{%
+\subsection{GetDFPData}\label{getdfpdata}}
+
+\hypertarget{bcbdata}{%
+\subsection{BCBData}\label{bcbdata}}
+
+\hypertarget{juntando-bases}{%
+\section{Juntando bases}\label{juntando-bases}}
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}

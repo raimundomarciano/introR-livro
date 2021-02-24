@@ -177,7 +177,3 @@ Não precisamos informar dois elementos dentro dos colchetes [,] porque um deles
 ## Funções numéricas básicas
 
 ## Funções textuais básicas
-
-# Criando sua própria função
-
-## Comentários
