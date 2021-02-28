@@ -113,7 +113,7 @@
 
 \title{Introdução ao R}
 \author{Raimundo Marciano de Freitas Neto}
-\date{2021-02-24}
+\date{2021-02-28}
 
 \begin{document}
 \maketitle
@@ -442,7 +442,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2021-02-24"
+## [1] "2021-02-28"
 \end{verbatim}
 
 \begin{Shaded}
@@ -453,7 +453,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "24/02/2021"
+## [1] "28/02/2021"
 \end{verbatim}
 
 \begin{Shaded}
@@ -464,7 +464,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "24/02/2021"
+## [1] "28/02/2021"
 \end{verbatim}
 
 \hypertarget{estruturas-de-dados}{%
@@ -782,18 +782,6 @@ Não precisamos informar dois elementos dentro dos colchetes {[},{]} porque um d
 \hypertarget{funuxe7uxf5es-numuxe9ricas-buxe1sicas}{%
 \section{Funções numéricas básicas}\label{funuxe7uxf5es-numuxe9ricas-buxe1sicas}}
 
-\hypertarget{funuxe7uxf5es-textuais-buxe1sicas}{%
-\section{Funções textuais básicas}\label{funuxe7uxf5es-textuais-buxe1sicas}}
-
-\hypertarget{trabalhando-com-variuxe1veis-no-r-base-1}{%
-\chapter{Trabalhando com variáveis no R Base}\label{trabalhando-com-variuxe1veis-no-r-base-1}}
-
-\hypertarget{manuseio-de-variuxe1veis-1}{%
-\section{Manuseio de variáveis}\label{manuseio-de-variuxe1veis-1}}
-
-\hypertarget{funuxe7uxf5es-numuxe9ricas-buxe1sicas-1}{%
-\section{Funções numéricas básicas}\label{funuxe7uxf5es-numuxe9ricas-buxe1sicas-1}}
-
 As principais operações matemáticas e de estatísticas descritivas já vêm instaladas no R.
 
 \begin{Shaded}
@@ -961,8 +949,71 @@ Quando queremos aplicar ao vetor inteiro, podemos usar funções instaladas no R
 ## [1] 2.5
 \end{verbatim}
 
-\hypertarget{funuxe7uxf5es-textuais-buxe1sicas-1}{%
-\section{Funções textuais básicas}\label{funuxe7uxf5es-textuais-buxe1sicas-1}}
+\hypertarget{funuxe7uxf5es-textuais-buxe1sicas}{%
+\section{Funções textuais básicas}\label{funuxe7uxf5es-textuais-buxe1sicas}}
+
+Seja o seguinte data.frame:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cias <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{nome =} \KeywordTok{c}\NormalTok{(}\StringTok{"Petrobras"}\NormalTok{, }\StringTok{"Petrobras"}\NormalTok{, }\StringTok{"Vale"}\NormalTok{, }\StringTok{"Banco do Brasil"}\NormalTok{),}
+                   \DataTypeTok{ticker =} \KeywordTok{c}\NormalTok{(}\StringTok{"PETR3"}\NormalTok{, }\StringTok{"PETR4"}\NormalTok{, }\StringTok{"VALE3"}\NormalTok{, }\StringTok{"BBAS3"}\NormalTok{),}
+                   \DataTypeTok{tipo =} \KeywordTok{c}\NormalTok{(}\StringTok{"ON"}\NormalTok{, }\StringTok{"PN"}\NormalTok{, }\StringTok{"ON"}\NormalTok{, }\StringTok{"ON"}\NormalTok{),}
+                   \DataTypeTok{segmento =} \KeywordTok{c}\NormalTok{(}\StringTok{"N2"}\NormalTok{, }\StringTok{"N2"}\NormalTok{, }\StringTok{"NM"}\NormalTok{, }\StringTok{"NM"}\NormalTok{),}
+                   \DataTypeTok{stringsAsFactors =} \OtherTok{FALSE}\NormalTok{)}
+\NormalTok{cias}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              nome ticker tipo segmento
+## 1       Petrobras  PETR3   ON       N2
+## 2       Petrobras  PETR4   PN       N2
+## 3            Vale  VALE3   ON       NM
+## 4 Banco do Brasil  BBAS3   ON       NM
+\end{verbatim}
+
+Podemos estar interessados em saber se há uma empresa chamada ``Banco do Brasil''. Para isso, há as funções grep() e grepl(). A grep() retorna um vetor com todas as posições em que foi encontrada a expressão desejada. A função grepl() retorna um vetor com a análise se cada elemento possui o padrão desejado ou não. Assim, se aplicássemos o grep() com a expressão ``Petrobras'' à lista de nomes, receberíamos a informação de que ``Petrobras'' foi localizada nas posições 1 e 2, sem qualquer menção às posições 3 e 4. Se usássemos o grepl(), o retorno seria uma lista composta por (TRUE, TRUE, FALSE, FALSE), que explicita a situação de cada observação.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{grep}\NormalTok{(}\StringTok{"Petrobras"}\NormalTok{, cias}\OperatorTok{$}\NormalTok{nome)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1 2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{grep}\NormalTok{(}\StringTok{"Banco do Brasil"}\NormalTok{, cias}\OperatorTok{$}\NormalTok{nome)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{grepl}\NormalTok{(}\StringTok{"Petrobras"}\NormalTok{, cias}\OperatorTok{$}\NormalTok{nome)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1]  TRUE  TRUE FALSE FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{grepl}\NormalTok{(}\StringTok{"Banco do Brasil"}\NormalTok{, cias}\OperatorTok{$}\NormalTok{nome)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] FALSE FALSE FALSE  TRUE
+\end{verbatim}
 
 \hypertarget{criando-sua-pruxf3pria-funuxe7uxe3o}{%
 \chapter{Criando sua própria função}\label{criando-sua-pruxf3pria-funuxe7uxe3o}}

@@ -4,6 +4,53 @@ O R oferece muitas opções de pacotes para importar os dados presentes em um ar
 
 ## Planilhas (csv / Excel)
 
+```{r}
+dados <- read.csv("data/df_info.csv", encoding = "UTF-8", colClasses = c("cnpj" = "character"))
+```
+
+Solicitamos as cinco primeiras colunas das cinco primeiras linhas:
+
+```{r}
+dados[1:5, 1:5]
+```
+O CNPJ está parecendo um pouco estranho. O nosso conhecimento prévio nos diz que todos os CNPJs possuem 14 dígitos. Uma simples inspeção visual revela que o número de caracteres parece estar diferente ao longo das linhas. Vamos ver se é verdade usando a função nchar().
+
+```{r}
+nchar(dados$cnpj[1:5])
+```
+Isso significa que o CNPJ realmente está com um número diferente de caracteres: o primeiro tem 13 (errado); o segundo, 14 (certo); o terceiro, 13 (errado); e assim por diante. Não é interessante que deixemos nossos dados assim, então precisamos investigar o que está errado. Nosso conhecimento prévio também indica uma possível falha: vários CNPJs são iniciados com o dígito zero. Como a AES Tietê Energia S.A. está listada na bolsa de valores, é fácil achar seu CNPJ fazendo uma busca no Google: 04.128.563/0001-10. Com isso, temos uma evidência do problema e é interessante analisar mais alguns casos similares (o que, aliás, se confirma).
+
+Feito isso, precisamos saber se o problema está na importação ou no arquivo original que continha os dados. Como o arquivo é pequeno (menos de 100kb), é fácil inspecioná-lo, abrindo em uma planilha eletrônica convencional ou até mesmo no Bloco de Notas (foi a minha opção). Com isso, constatamos que os "zeros do começo" realmente estão faltando no arquivo e podemos concluir que não há erro na nossa importação.
+
+Entretanto, não significa que o dado está como queríamos, devendo ser tratado. Primeiro, vamos avaliar se há algum com menos de 13 dígitos. Afinal, não é porque nas primeiras cinco linhas o menor valor fio 13 que isso seja representativo de todo o conjunto, podendo haver algum CNPJ iniciado por 00, por exemplo.
+
+```{r}
+caracteres <- nchar(dados$cnpj)
+table(caracteres)
+```
+Logo, há um ou mais CNPJs em que o primeiro dígito diferente de 0 é o 12º. Assim, precisaremos preencher com zeros até termos 14 dígitos.
+
+```{r}
+zeros <- NA
+for (i in 1:nrow(dados)){
+  numeroZeros <- 14 - nchar(dados$cnpj[i])
+  if(numeroZeros == 0){
+    next
+  } else {
+  zeros <- rep("0", numeroZeros)
+  zeros <- paste0(zeros, collapse = "")
+  dados$cnpj[i] <- paste0(zeros, dados$cnpj[i], collapse = "")
+  }
+}
+
+# Vamos atualizar o vetor de caracteres
+caracteres <- nchar(dados$cnpj)
+# E solicitar a frequência
+table(caracteres)
+
+```
+
+
 ## TXT (bloco de notas) e Word
 
 ## XML

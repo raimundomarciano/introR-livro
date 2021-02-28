@@ -47,78 +47,35 @@ mean(v[1:4]) # média dos quatro primeiros elementos de v
 
 ## Funções textuais básicas
 
-# Criando sua própria função
-
-No R, você pode criar suas próprias funções da mesma forma como você cria e guarda dados: as funções também são objetos. A função para criar funções é a function(). Vamos começar com um caso simples, produzindo uma função que apenas imprime um texto básico.
+Seja o seguinte data.frame:
 
 ```{r}
+cias <- data.frame(nome = c("Petrobras", "Petrobras", "Vale", "Banco do Brasil"),
+                   ticker = c("PETR3", "PETR4", "VALE3", "BBAS3"),
+                   tipo = c("ON", "PN", "ON", "ON"),
+                   segmento = c("N2", "N2", "NM", "NM"),
+                   stringsAsFactors = FALSE)
+cias
+```
 
-minhaFuncao <- function(){
-  # Esta função imprime a mensagem "Esta é a minha primeira função"
-  print("Esta é a minha primeira função.")
-}
+Podemos estar interessados em saber se há uma empresa chamada "Banco do Brasil". Para isso, há as funções grep() e grepl(). A grep() retorna um vetor com todas as posições em que foi encontrada a expressão desejada. A função grepl() retorna um vetor com a análise se cada elemento possui o padrão desejado ou não. Assim, se aplicássemos o grep() com a expressão "Petrobras" à lista de nomes, receberíamos a informação de que "Petrobras" foi localizada nas posições 1 e 2, sem qualquer menção às posições 3 e 4. Se usássemos o grepl(), o retorno seria uma lista composta por (TRUE, TRUE, FALSE, FALSE), que explicita a situação de cada observação.
 
+
+```{r}
+grep("Petrobras", cias$nome)
+grep("Banco do Brasil", cias$nome)
+grepl("Petrobras", cias$nome)
+grepl("Banco do Brasil", cias$nome)
 ```
 
 ```{r}
-minhaFuncao()
 ```
-
-Essa função ainda não aceita parâmetros, ou seja, ela ainda não é capaz de receber e processar dados. A função pode receber dados ou usar valores que estão presentes em variáveis anteriormente criadas. O argumento funciona como um apelido que será usado internamente para aquele valor. Por exemplo, posso querer que a função retorne quanto é 8% do salário do empregado. Assim, precisamos que a função receba o valor do salário empregado e que, a partir dele, calcule quanto é 8% e, por fim, exiba esse valor.
 
 ```{r}
-# a funcao recebera o 'salario'
-fgts <- function(salario){
-  # variavei INTERNA fgtsFuncionario guarda o valor calculado do FGTS
-  # ela não fica automaticamente disponível na memória do R após 
-  # a função ter terminado a execução
-  fgtsFuncionario <- salario * 0.08
-  # vamos gerar uma frase contendo o valor do FGTS
-  mensagem <- paste0("O valor do FGTS é R$ ", fgtsFuncionario, ".")
-  # para imprimir a mensagem
-  print(mensagem)
-  # podemos encerrar o código da função especificando uma última variável INTERNA
-  # que pode ser guardada em um objeto normal do R, por atribuição
-  # Se essa atribuição não ocorrer, todos os valores gerados internamente
-  # serão esquecidos
-  fgtsFuncionario
-}
-
-```
-Perceba que se simplesmente rodarmos a função sem guardar seu valor em um objeto
-
-```{r} 
-fgts(2000)
 ```
 
-A mensagem será impressa, mas posteriormente não será possível resgatar nem o valor contido em $fgtsFuncionario$ e nem em $mensagem$. Se você quer que o R realmente guarde esses valores, e não apenas os exiba na tela, é necessário que haja a atribuição a uma variável.
-
-```{r} 
-# estamos guardando o valor da execução de fgts(2000) em fgtsFunc1
-fgtsFunc1 <- fgts(2000)
+```{r}
 ```
 
-A função $fgts$ foi encerrada com $fgtsFuncionario$. Por isso, o valor que será atribuído para fgtsFunc1 será apenas $fgtsFuncionario$. A $mensagem$ não ficará gravada na memória.
-
-```{r} 
-# se solicitarmos o valor de fgtsFunc1, será exibido o valor 160.
-fgtsFunc1
+```{r}
 ```
-
-
-
-## Modularização do código
-
-Em certas situações, seu script pode começar a ficar muito extenso, dificultando a leitura do código e que você encontre problemas específicos. Assim, pode ser uma boa ideia criar scripts auxiliares com funções. Você cria um script separado (por exemplo, funcoes.R) e deixa nele o código com as funções que serão utilizadas.
-
-No script onde você está desenvolvendo a análise, você inclui o comando source(), informando o parâmetro com a localização e o nome do arquivo ("scripts/funcoes.R", por exemplo). 
-
-```{r eval = FALSE}
-# assumindo que o script auxiliar funcoes.R está na pasta scripts
-source("scripts/funcoes.R")
-```
-
-O source() faz e leitura do script auxiliar e importa todas as funções que constam nele, de forma muito similar ao que é feito pelo library().
-
-## Comentários
-
