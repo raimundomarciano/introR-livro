@@ -5,26 +5,26 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Introdução ao R</title>
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="description" content="Curso de Extensão da UFRN" />
   <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="Curso de Extensão da UFRN" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Introdução ao R" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="Curso de Extensão da UFRN" />
   
 
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-02-28" />
+<meta name="date" content="2021-03-22" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -152,8 +152,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
 <li class="chapter" data-level="4.2" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#matrizes"><i class="fa fa-check"></i><b>4.2</b> Matrizes</a></li>
 <li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#data-frames"><i class="fa fa-check"></i><b>4.3</b> Data frames</a></li>
-<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas"><i class="fa fa-check"></i><b>4.4</b> Listas</a></li>
-<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#factors"><i class="fa fa-check"></i><b>4.5</b> Factors</a></li>
+<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#tibbles"><i class="fa fa-check"></i><b>4.4</b> Tibbles</a></li>
+<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas"><i class="fa fa-check"></i><b>4.5</b> Listas</a></li>
+<li class="chapter" data-level="4.6" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#factors"><i class="fa fa-check"></i><b>4.6</b> Factors</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html"><i class="fa fa-check"></i><b>5</b> Trabalhando com variáveis no R Base</a><ul>
 <li class="chapter" data-level="5.1" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#manuseio-de-variáveis"><i class="fa fa-check"></i><b>5.1</b> Manuseio de variáveis</a></li>
@@ -200,17 +201,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="header">
 <h1 class="title">Introdução ao R</h1>
 <p class="author"><em>Raimundo Marciano de Freitas Neto</em></p>
-<p class="date"><em>2021-02-28</em></p>
+<p class="date"><em>2021-03-22</em></p>
 </div>
 <div id="boas-vindas" class="section level1">
 <h1><span class="header-section-number">1</span> Boas vindas</h1>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports, e.g., a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<p>The <strong>bookdown</strong> package can be installed from CRAN or Github:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1"></a><span class="kw">install.packages</span>(<span class="st">&quot;bookdown&quot;</span>)</span>
-<span id="cb1-2"><a href="index.html#cb1-2"></a><span class="co"># or the development version</span></span>
-<span id="cb1-3"><a href="index.html#cb1-3"></a><span class="co"># devtools::install_github(&quot;rstudio/bookdown&quot;)</span></span></code></pre></div>
-<p>Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading <code>#</code>.</p>
-<p>To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
+<p>O curso será composto por módulos teóricos e práticos e terá duração de XX horas, distribuídas em XX semanas, conforme o seguinte cronograma:</p>
+<ul>
+<li>S01 00-00 a 00-00 Introdução</li>
+<li>S02 00-00 a 00-00 Introdução</li>
+<li>S03 00-00 a 00-00 Introdução</li>
+<li>S04 00-00 a 00-00 Introdução</li>
+<li>S05 00-00 a 00-00 Introdução</li>
+<li>S06 00-00 a 00-00 Introdução</li>
+</ul>
+<p>O curso é essencialmente assíncrono e a frequência será registrada de acordo com a entrega das atividades nos prazos assinalados.</p>
+<p>Nas XX-feiras, das XXh às XXhXX, teremos um encontro síncrono para dúvidas via Google Meet.</p>
 
 </div>
             </section>

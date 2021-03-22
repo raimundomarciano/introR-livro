@@ -87,6 +87,8 @@ No Python, portanto, o que importa para definir que o print("Tivemos Lucro!") es
 
 ## Numéricas
 
+O R possui uma abordagem simplificada para o tratamento de números. Em tese, na computação os números possuem várias classificações, como: inteiro (integer), que não admitem casas decimais,  e ponto-flutuantes (float), que possuem casas decimais. Portanto, 3 pode ser um integer, enquanto 3,5 não pode (tem um dígito após a vírgula). Ainda há mais algumas classificações, como o double e o long, mas o integer e o float são suficientes para o que precisamos discutir.
+
 Basicamente existem os inteiros (integers) e os ponto-flutuantes (float). O integer não admite casas decimais, sendo usado para eventos contáveis, como a quantidade de vezes que algo ocorreu. O float admite casas decimais, sendo indicado para representar valores monetários.
 
 Veja, por exemplo, o caso da idade. Se a idade for calculada como a diferença entre anos (2021 - 1988 = 33), o resultado será um número inteiro, que pode ser representado por um integer. Contudo, se uma idade como 12,5 anos for admitida, então será necessário trabalhar com float. Se você está lendo isso em fevereiro, pense na representação correta da idade de alguém que nasceu em dezembro.

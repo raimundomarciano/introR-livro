@@ -2,6 +2,8 @@
 
 Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar. 
 
+> O R possui o conceito de objetos, que são estruturas especializadas e que podem conter tanto os valores dos dados quanto atributos. Quando você declara uma variável simples (a = 5) ou (b = "eu"), os atributos não são importantes - é fácil ter certeza que dentro da variável haverá um valor que a representa. Contudo, em estruturas mais complexas, com muitas linhas e colunas, é importante, por exemplo, que as colunas tenham nomes (atributos), a fim de facilitar a identificação.
+
 ## Vetores
 
 Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um **vetor**. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.  
@@ -166,6 +168,78 @@ Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes$cn
 clientes$cnpj[3]
 ```
 Não precisamos informar dois elementos dentro dos colchetes [,] porque um deles foi informado anteriormente (no caso, a coluna _cnpj_)! Assim, quando informarmos o [3] estamos automaticamente nos referindo à linha.
+
+## Tibbles
+
+O tibble é um tipo especial de data.frame, que realiza algumas operações de forma ligeiramente diferente que o data.frame convencional. Eles fazem menos e reclamam mais, induzindo o programador a tratar melhor certos aspectos do código. Essencialmente: não permitem referências parciais ao nome de variáveis contidas em um data.frame; são mais fiéis ao que se espera que as variáveis serão (em várias ocasiões, não produzem factors, ao invés de chars) e avisam se uma coluna que está sendo requerida não faz parte do banco de dados. 
+
+Para mais detalhes, acesse a documentação: < https://tibble.tidyverse.org/ >.
+
+Como o tibble não é uma estrutura nativa do R, deve ser acessada por meio do pacote tibble.
+
+```{r}
+# chamando o pacote tibble
+library(tibble)
+primeiroTibble <- tibble(nome = c("raimundo", "marciano"), numeros = c(29,12))
+primeiroDataFrame <- data.frame(nome = c("raimundo", "marciano"), numeros = c(29,12))
+primeiroTibble
+primeiroDataFrame
+str(primeiroDataFrame)
+```
+
+Perceba que o tibble exibido já indica os tipos das variáveis que o compõem. No caso do data frame, foi necessário solicitar, por meio do comando str(), essa informação. Além disso, o primeiroTibble tem um resultado mais previsível que o primeiroDataFrame: as variáveis textuais foram consideradas corretamente como <chr> no tibble, mas foram identificadas como <fct> no data frame, o que pode ser um comportamento não esperado. Para garantir que o data frame trate a primeira coluna como string, é necessário forçar esse comportamento, incluindo o parâmetro <stringsAsFactors = F>.
+
+```{r}
+segundoDataFrame <- data.frame(nome = c("raimundo", "marciano"), 
+                      numeros = c(29,12), stringsAsFactors = F)
+segundoDataFrame
+str(segundoDataFrame)
+```
+
+Agora temos um data.frame com os mesmos tipos de variáveis que o tibble. Em resumo, as diferenças são pequenas, mas o tibble é uma versão mais moderna, mais previsível e que gera mais alertas par ao programador que a está usando.
+
+A solicitação de partes do tibble é idêntica à do data.frame.
+
+```{r}
+#Para solicitar a colunha chamada de 'nome'
+primeiroTibble['nome']
+#Para solicitar a segunda coluna
+primeiroTibble[,2]
+```
+
+A principal diferença é que o tibble não aceita referência parcial. Isso significa que poderíamos solicitar ao data.frame uma coluna informando apenas parte do nome dela, ao passo que o tibble exige o nome completo.
+
+```{r}
+# O data.frame contém uma coluna chamada 'nome'. Veja o que acontece se, por descuido
+# pedirmos a coluna $nom (faltando o 'e')
+primeiroDataFrame$nom
+```
+
+O data.frame retorna os dados normalmente, como se o nome estivesse completo. Isso pode ser indesejável caso haja ambiguidade nos títulos das variáveis. Por exemplo, poderia haver uma variável chamada 'nome' e outra 'nomeCompleto'. Com a informação incompleta, você não garante estar usando a variável correta. O tibble exige que você informe o nome exato do que está sendo solicitado.
+
+```{r}
+# Veja o que acontece se você pedir o nome incompleto de uma variável
+primeiroTibble$nom
+```
+
+O R retorna um aviso que informa que não é possível identificar uma coluna chamada 'nom'. O mesmo aconteceria se você solicitasse qualquer outro nome não presente no banco de dados, como 
+
+```{r}
+# Aconteceria o mesmo se você usasse um nome 'nada a ver'
+primeiroTibble$valhaMeDeus
+```
+
+O retorno é NULL (nulo), porque não há uma coluna chamada 'valhaMeDeus'. Não custa lembrar que ele também diferencia letras maiúsculas de minúsculas (diz-se, nesse caso, que ele é 'case sensitive').
+
+Suponha que tenhamos (estranhamente) chamado a variável de 'nUmErOs'. Não adiantar solicitar 'numeros', porque seria uma grafia diferente da esperada.
+
+```{r}
+outroTibble <- tibble(nome = c("raimundo", "marciano"), nUmErOs = c(29,12))
+outroTibble$nUmErOs
+outroTibble$numeros
+```
+
+Por padrão, a exibição de um tibble é limitada a 10 colunas e a uma quantidade de colunas compatível com a tela, o que não acontece com o data.frame, que tenta exibir todas as colunas presentes no banco de dados. Essa característica é dispensável em bancos com poucas variáveis, mas é bastante interessante caso ele contenha algumas centenas, porque não gera um output ilegível (raramente será interessante visualizar simultaneamente centenas de colunas ao mesmo tempo). Caso queira exibir todas as colunas, bastar adicionar o parâmetro (width = Inf) dentro do print().
 
 ## Listas
 

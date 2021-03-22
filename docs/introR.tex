@@ -113,7 +113,7 @@
 
 \title{Introdução ao R}
 \author{Raimundo Marciano de Freitas Neto}
-\date{2021-02-28}
+\date{2021-03-22}
 
 \begin{document}
 \maketitle
@@ -125,26 +125,33 @@
 \hypertarget{boas-vindas}{%
 \chapter{Boas vindas}\label{boas-vindas}}
 
-This is a \emph{sample} book written in \textbf{Markdown}. You can use anything that Pandoc's Markdown supports, e.g., a math equation \(a^2 + b^2 = c^2\).
+O curso será composto por módulos teóricos e práticos e terá duração de XX horas, distribuídas em XX semanas, conforme o seguinte cronograma:
 
-The \textbf{bookdown} package can be installed from CRAN or Github:
+\begin{itemize}
+\tightlist
+\item
+  S01 00-00 a 00-00 Introdução
+\item
+  S02 00-00 a 00-00 Introdução
+\item
+  S03 00-00 a 00-00 Introdução
+\item
+  S04 00-00 a 00-00 Introdução
+\item
+  S05 00-00 a 00-00 Introdução
+\item
+  S06 00-00 a 00-00 Introdução
+\end{itemize}
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\KeywordTok{install.packages}\NormalTok{(}\StringTok{"bookdown"}\NormalTok{)}
-\CommentTok{# or the development version}
-\CommentTok{# devtools::install_github("rstudio/bookdown")}
-\end{Highlighting}
-\end{Shaded}
+O curso é essencialmente assíncrono e a frequência será registrada de acordo com a entrega das atividades nos prazos assinalados.
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading \texttt{\#}.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): \url{https://yihui.org/tinytex/}.
+Nas XX-feiras, das XXh às XXhXX, teremos um encontro síncrono para dúvidas via Google Meet.
 
 \hypertarget{intro}{%
 \chapter{O que é o R?}\label{intro}}
 
 R é uma linguagem de programação muito utilizada para o desenvolvimento de estatísticas e cálculos matemáticos. Entretanto, enquanto linguagem de programação, ela possui muitos usos, como a raspagem de sites, a automatização de download de arquivos, e a produção de dashboards e relatórios, sendo útil para a coleta de dados e para o reporte das análises, além de ser gratuita.
+
 Mas o que significa ser uma linguagem de programação? Basicamente, você irá dar ordens ao computador por meio de comandos. A vantagem de aprender a estruturar os comandos (ao invés de usar um programa estatístico já consolidado, como o Stata) é que você pode customizar a vontade suas análises. Os programas estatísticos trazem muitas opções pré-prontas. Por exemplo, no Stata é comum que você possa clicar em uma janela e solicitar um quadro com as estatísticas descritivas (média, moda, mediana) de um banco de dados. Entretanto, qualquer funcionalidade fora do padrão oferecido por aqueles pacotes precisará ser gerada pelo próprio usuário (e quando você usa algum recurso como o ssc install é porque alguém gastou um tempinho fazendo isso).
 
 Aliás, o Python (outra linguagem de programação) possui funcionalidades bem similares ao R, embora o modo de escrever os programas seja bem diferente. Imagine que o Português e o Espanhol têm o mesmo propósito - a comunicação - e que mesmo tendo uma mesma raiz (e inclusive diversos vocábulos bem parecidos), possuem algumas regras estruturais bem diferentes, o que inclui, por exemplo, as regras de acentuação e o som produzidos pelas letras: qual a diferença de cajá (PT-BR) para caja (ES); qual a diferença de pastel (PT-BR) para pastel (ES)?
@@ -301,6 +308,8 @@ No Python, portanto, o que importa para definir que o print(``Tivemos Lucro!'') 
 \hypertarget{numuxe9ricas}{%
 \section{Numéricas}\label{numuxe9ricas}}
 
+O R possui uma abordagem simplificada para o tratamento de números. Em tese, na computação os números possuem várias classificações, como: inteiro (integer), que não admitem casas decimais, e ponto-flutuantes (float), que possuem casas decimais. Portanto, 3 pode ser um integer, enquanto 3,5 não pode (tem um dígito após a vírgula). Ainda há mais algumas classificações, como o double e o long, mas o integer e o float são suficientes para o que precisamos discutir.
+
 Basicamente existem os inteiros (integers) e os ponto-flutuantes (float). O integer não admite casas decimais, sendo usado para eventos contáveis, como a quantidade de vezes que algo ocorreu. O float admite casas decimais, sendo indicado para representar valores monetários.
 
 Veja, por exemplo, o caso da idade. Se a idade for calculada como a diferença entre anos (2021 - 1988 = 33), o resultado será um número inteiro, que pode ser representado por um integer. Contudo, se uma idade como 12,5 anos for admitida, então será necessário trabalhar com float. Se você está lendo isso em fevereiro, pense na representação correta da idade de alguém que nasceu em dezembro.
@@ -442,7 +451,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "2021-02-28"
+## [1] "2021-03-22"
 \end{verbatim}
 
 \begin{Shaded}
@@ -453,7 +462,7 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "28/02/2021"
+## [1] "22/03/2021"
 \end{verbatim}
 
 \begin{Shaded}
@@ -464,13 +473,17 @@ Existe outro operador de igualdade (===), mas que não será tratado agora.
 \end{Shaded}
 
 \begin{verbatim}
-## [1] "28/02/2021"
+## [1] "22/03/2021"
 \end{verbatim}
 
 \hypertarget{estruturas-de-dados}{%
 \chapter{Estruturas de Dados}\label{estruturas-de-dados}}
 
 Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar.
+
+\begin{quote}
+O R possui o conceito de objetos, que são estruturas especializadas e que podem conter tanto os valores dos dados quanto atributos. Quando você declara uma variável simples (a = 5) ou (b = ``eu''), os atributos não são importantes - é fácil ter certeza que dentro da variável haverá um valor que a representa. Contudo, em estruturas mais complexas, com muitas linhas e colunas, é importante, por exemplo, que as colunas tenham nomes (atributos), a fim de facilitar a identificação.
+\end{quote}
 
 \hypertarget{vetores}{%
 \section{Vetores}\label{vetores}}
@@ -766,6 +779,199 @@ Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes\$c
 \end{verbatim}
 
 Não precisamos informar dois elementos dentro dos colchetes {[},{]} porque um deles foi informado anteriormente (no caso, a coluna \emph{cnpj})! Assim, quando informarmos o {[}3{]} estamos automaticamente nos referindo à linha.
+
+\hypertarget{tibbles}{%
+\section{Tibbles}\label{tibbles}}
+
+O tibble é um tipo especial de data.frame, que realiza algumas operações de forma ligeiramente diferente que o data.frame convencional. Eles fazem menos e reclamam mais, induzindo o programador a tratar melhor certos aspectos do código. Essencialmente: não permitem referências parciais ao nome de variáveis contidas em um data.frame; são mais fiéis ao que se espera que as variáveis serão (em várias ocasiões, não produzem factors, ao invés de chars) e avisam se uma coluna que está sendo requerida não faz parte do banco de dados.
+
+Para mais detalhes, acesse a documentação: \textless{} \url{https://tibble.tidyverse.org/} \textgreater.
+
+Como o tibble não é uma estrutura nativa do R, deve ser acessada por meio do pacote tibble.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# chamando o pacote tibble}
+\KeywordTok{library}\NormalTok{(tibble)}
+\NormalTok{primeiroTibble <-}\StringTok{ }\KeywordTok{tibble}\NormalTok{(}\DataTypeTok{nome =} \KeywordTok{c}\NormalTok{(}\StringTok{"raimundo"}\NormalTok{, }\StringTok{"marciano"}\NormalTok{), }\DataTypeTok{numeros =} \KeywordTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{,}\DecValTok{12}\NormalTok{))}
+\NormalTok{primeiroDataFrame <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{nome =} \KeywordTok{c}\NormalTok{(}\StringTok{"raimundo"}\NormalTok{, }\StringTok{"marciano"}\NormalTok{), }\DataTypeTok{numeros =} \KeywordTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{,}\DecValTok{12}\NormalTok{))}
+\NormalTok{primeiroTibble}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 2
+##   nome     numeros
+##   <chr>      <dbl>
+## 1 raimundo      29
+## 2 marciano      12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{primeiroDataFrame}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       nome numeros
+## 1 raimundo      29
+## 2 marciano      12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(primeiroDataFrame)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    2 obs. of  2 variables:
+##  $ nome   : Factor w/ 2 levels "marciano","raimundo": 2 1
+##  $ numeros: num  29 12
+\end{verbatim}
+
+Perceba que o tibble exibido já indica os tipos das variáveis que o compõem. No caso do data frame, foi necessário solicitar, por meio do comando str(), essa informação. Além disso, o primeiroTibble tem um resultado mais previsível que o primeiroDataFrame: as variáveis textuais foram consideradas corretamente como no tibble, mas foram identificadas como no data frame, o que pode ser um comportamento não esperado. Para garantir que o data frame trate a primeira coluna como string, é necessário forçar esse comportamento, incluindo o parâmetro \textless stringsAsFactors = F\textgreater.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{segundoDataFrame <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}\DataTypeTok{nome =} \KeywordTok{c}\NormalTok{(}\StringTok{"raimundo"}\NormalTok{, }\StringTok{"marciano"}\NormalTok{), }
+                      \DataTypeTok{numeros =} \KeywordTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{,}\DecValTok{12}\NormalTok{), }\DataTypeTok{stringsAsFactors =}\NormalTok{ F)}
+\NormalTok{segundoDataFrame}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       nome numeros
+## 1 raimundo      29
+## 2 marciano      12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{str}\NormalTok{(segundoDataFrame)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 'data.frame':    2 obs. of  2 variables:
+##  $ nome   : chr  "raimundo" "marciano"
+##  $ numeros: num  29 12
+\end{verbatim}
+
+Agora temos um data.frame com os mesmos tipos de variáveis que o tibble. Em resumo, as diferenças são pequenas, mas o tibble é uma versão mais moderna, mais previsível e que gera mais alertas par ao programador que a está usando.
+
+A solicitação de partes do tibble é idêntica à do data.frame.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Para solicitar a colunha chamada de 'nome'}
+\NormalTok{primeiroTibble[}\StringTok{'nome'}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 1
+##   nome    
+##   <chr>   
+## 1 raimundo
+## 2 marciano
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Para solicitar a segunda coluna}
+\NormalTok{primeiroTibble[,}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 2 x 1
+##   numeros
+##     <dbl>
+## 1      29
+## 2      12
+\end{verbatim}
+
+A principal diferença é que o tibble não aceita referência parcial. Isso significa que poderíamos solicitar ao data.frame uma coluna informando apenas parte do nome dela, ao passo que o tibble exige o nome completo.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# O data.frame contém uma coluna chamada 'nome'. Veja o que acontece se, por descuido}
+\CommentTok{# pedirmos a coluna $nom (faltando o 'e')}
+\NormalTok{primeiroDataFrame}\OperatorTok{$}\NormalTok{nom}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] raimundo marciano
+## Levels: marciano raimundo
+\end{verbatim}
+
+O data.frame retorna os dados normalmente, como se o nome estivesse completo. Isso pode ser indesejável caso haja ambiguidade nos títulos das variáveis. Por exemplo, poderia haver uma variável chamada `nome' e outra `nomeCompleto'. Com a informação incompleta, você não garante estar usando a variável correta. O tibble exige que você informe o nome exato do que está sendo solicitado.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Veja o que acontece se você pedir o nome incompleto de uma variável}
+\NormalTok{primeiroTibble}\OperatorTok{$}\NormalTok{nom}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Unknown or uninitialised column: `nom`.
+\end{verbatim}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+O R retorna um aviso que informa que não é possível identificar uma coluna chamada `nom'. O mesmo aconteceria se você solicitasse qualquer outro nome não presente no banco de dados, como
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Aconteceria o mesmo se você usasse um nome 'nada a ver'}
+\NormalTok{primeiroTibble}\OperatorTok{$}\NormalTok{valhaMeDeus}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Unknown or uninitialised column: `valhaMeDeus`.
+\end{verbatim}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+O retorno é NULL (nulo), porque não há uma coluna chamada `valhaMeDeus'. Não custa lembrar que ele também diferencia letras maiúsculas de minúsculas (diz-se, nesse caso, que ele é `case sensitive').
+
+Suponha que tenhamos (estranhamente) chamado a variável de `nUmErOs'. Não adiantar solicitar `numeros', porque seria uma grafia diferente da esperada.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outroTibble <-}\StringTok{ }\KeywordTok{tibble}\NormalTok{(}\DataTypeTok{nome =} \KeywordTok{c}\NormalTok{(}\StringTok{"raimundo"}\NormalTok{, }\StringTok{"marciano"}\NormalTok{), }\DataTypeTok{nUmErOs =} \KeywordTok{c}\NormalTok{(}\DecValTok{29}\NormalTok{,}\DecValTok{12}\NormalTok{))}
+\NormalTok{outroTibble}\OperatorTok{$}\NormalTok{nUmErOs}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 29 12
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{outroTibble}\OperatorTok{$}\NormalTok{numeros}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Unknown or uninitialised column: `numeros`.
+\end{verbatim}
+
+\begin{verbatim}
+## NULL
+\end{verbatim}
+
+Por padrão, a exibição de um tibble é limitada a 10 colunas e a uma quantidade de colunas compatível com a tela, o que não acontece com o data.frame, que tenta exibir todas as colunas presentes no banco de dados. Essa característica é dispensável em bancos com poucas variáveis, mas é bastante interessante caso ele contenha algumas centenas, porque não gera um output ilegível (raramente será interessante visualizar simultaneamente centenas de colunas ao mesmo tempo). Caso queira exibir todas as colunas, bastar adicionar o parâmetro (width = Inf) dentro do print().
 
 \hypertarget{listas}{%
 \section{Listas}\label{listas}}
