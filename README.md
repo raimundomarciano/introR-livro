@@ -1,1 +1,8 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+O livre seguirá o seguinte escopo:
+
+0 - Introdução ao Rstudio
+1-Estruturas de Dados
+2-Leitura de Dados
+3-Manipulação de dados
+4-Gráficos
+5-Funções
