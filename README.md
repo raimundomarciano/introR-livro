@@ -2,7 +2,7 @@ O livre seguirá o seguinte escopo:
 
 - 0. Introdução ao Rstudio
 - 1. Estruturas de Dados
-    - Strings, números; vetores, data.frames, matrizes, tibbles, listas, factors
+    - Strings, números, bool; vetores, data.frames, matrizes, tibbles, listas, factors
 - 2. Leitura de Dados 
     - Rbase e pacotes: readr, xml2
 - 3. Manipulação de dados
