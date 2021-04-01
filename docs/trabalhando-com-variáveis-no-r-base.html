@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-03-22" />
+<meta name="date" content="2021-04-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -137,8 +137,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Boas vindas</a></li>
 <li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> O que é o R?</a><ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.1</b> Scripts</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.2</b> Instalando o R</a></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.3</b> R Studio</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a><ul>
 <li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1</b> Numéricas</a></li>
@@ -206,66 +207,66 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="funções-numéricas-básicas" class="section level2">
 <h2><span class="header-section-number">5.2</span> Funções numéricas básicas</h2>
 <p>As principais operações matemáticas e de estatísticas descritivas já vêm instaladas no R.</p>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb95-1"></a><span class="co"># Sejam a = 5 e b = 2 e v um vetor de números inteiros</span></span>
-<span id="cb95-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb95-2"></a>a =<span class="st"> </span><span class="dv">5</span></span>
-<span id="cb95-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb95-3"></a>b =<span class="st"> </span><span class="dv">2</span></span>
-<span id="cb95-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb95-4"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb97-1"></a><span class="co"># Sejam a = 5 e b = 2 e v um vetor de números inteiros</span></span>
+<span id="cb97-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb97-2"></a>a =<span class="st"> </span><span class="dv">5</span></span>
+<span id="cb97-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb97-3"></a>b =<span class="st"> </span><span class="dv">2</span></span>
+<span id="cb97-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb97-4"></a>v =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
 <p>As operações básicas podem ser representadas por:</p>
-<div class="sourceCode" id="cb96"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb96-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb96-1"></a>a <span class="op">+</span><span class="st"> </span>b <span class="co"># soma</span></span></code></pre></div>
+<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb98-1"></a>a <span class="op">+</span><span class="st"> </span>b <span class="co"># soma</span></span></code></pre></div>
 <pre><code>## [1] 7</code></pre>
-<div class="sourceCode" id="cb98"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb98-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb98-1"></a>a <span class="op">-</span><span class="st"> </span>b <span class="co"># subtração</span></span></code></pre></div>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb100-1"></a>a <span class="op">-</span><span class="st"> </span>b <span class="co"># subtração</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb100-1"></a>a <span class="op">*</span><span class="st"> </span>b <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb102-1"></a>a <span class="op">*</span><span class="st"> </span>b <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb102-1"></a>a <span class="op">/</span><span class="st"> </span>b <span class="co"># divisão</span></span></code></pre></div>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb104-1"></a>a <span class="op">/</span><span class="st"> </span>b <span class="co"># divisão</span></span></code></pre></div>
 <pre><code>## [1] 2.5</code></pre>
-<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb104-1"></a>a <span class="op">^</span><span class="st"> </span>b <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb106-1"></a>a <span class="op">^</span><span class="st"> </span>b <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
 <pre><code>## [1] 25</code></pre>
 <p>Além disso, podemos estabelecer as operações no vetor, aplicando a elementos específicos:</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb106-1"></a>v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># soma</span></span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb108-1"></a>v[<span class="dv">1</span>] <span class="op">+</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># soma</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb108-1"></a>v[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># subtração</span></span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb110-1"></a>v[<span class="dv">1</span>] <span class="op">-</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># subtração</span></span></code></pre></div>
 <pre><code>## [1] -1</code></pre>
-<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb110-1"></a>v[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb112-1"></a>v[<span class="dv">1</span>] <span class="op">*</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb112-1"></a>v[<span class="dv">1</span>] <span class="op">/</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># divisão</span></span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb114-1"></a>v[<span class="dv">1</span>] <span class="op">/</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># divisão</span></span></code></pre></div>
 <pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb114-1"></a>v[<span class="dv">1</span>] <span class="op">^</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb116-1"></a>v[<span class="dv">1</span>] <span class="op">^</span><span class="st"> </span>v[<span class="dv">2</span>] <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
 <p>Quando queremos aplicar ao vetor inteiro, podemos usar funções instaladas no R base.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb116-1"></a><span class="kw">sum</span>(v) <span class="co"># soma de todos os elementos de v</span></span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb118-1"></a><span class="kw">sum</span>(v) <span class="co"># soma de todos os elementos de v</span></span></code></pre></div>
 <pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb118-1"></a><span class="kw">sum</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># soma dos quatro primeiros elementos de v</span></span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb120-1"></a><span class="kw">sum</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># soma dos quatro primeiros elementos de v</span></span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb120-1"></a><span class="kw">sum</span>(v[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>]) <span class="co"># soma dos três últimos elementos de v</span></span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb122-1"></a><span class="kw">sum</span>(v[<span class="dv">3</span><span class="op">:</span><span class="dv">5</span>]) <span class="co"># soma dos três últimos elementos de v</span></span></code></pre></div>
 <pre><code>## [1] 12</code></pre>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb122-1"></a><span class="kw">mean</span>(v) <span class="co"># média aritmérica de todos os elementos de v</span></span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb124-1"></a><span class="kw">mean</span>(v) <span class="co"># média aritmérica de todos os elementos de v</span></span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb124-1"></a><span class="kw">mean</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># média dos quatro primeiros elementos de v</span></span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-1"></a><span class="kw">mean</span>(v[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>]) <span class="co"># média dos quatro primeiros elementos de v</span></span></code></pre></div>
 <pre><code>## [1] 2.5</code></pre>
 </div>
 <div id="funções-textuais-básicas" class="section level2">
 <h2><span class="header-section-number">5.3</span> Funções textuais básicas</h2>
 <p>Seja o seguinte data.frame:</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-1"></a>cias &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> <span class="kw">c</span>(<span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Vale&quot;</span>, <span class="st">&quot;Banco do Brasil&quot;</span>),</span>
-<span id="cb126-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-2"></a>                   <span class="dt">ticker =</span> <span class="kw">c</span>(<span class="st">&quot;PETR3&quot;</span>, <span class="st">&quot;PETR4&quot;</span>, <span class="st">&quot;VALE3&quot;</span>, <span class="st">&quot;BBAS3&quot;</span>),</span>
-<span id="cb126-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-3"></a>                   <span class="dt">tipo =</span> <span class="kw">c</span>(<span class="st">&quot;ON&quot;</span>, <span class="st">&quot;PN&quot;</span>, <span class="st">&quot;ON&quot;</span>, <span class="st">&quot;ON&quot;</span>),</span>
-<span id="cb126-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-4"></a>                   <span class="dt">segmento =</span> <span class="kw">c</span>(<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N2&quot;</span>, <span class="st">&quot;NM&quot;</span>, <span class="st">&quot;NM&quot;</span>),</span>
-<span id="cb126-5"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-5"></a>                   <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
-<span id="cb126-6"><a href="trabalhando-com-variáveis-no-r-base.html#cb126-6"></a>cias</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-1"></a>cias &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">nome =</span> <span class="kw">c</span>(<span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Vale&quot;</span>, <span class="st">&quot;Banco do Brasil&quot;</span>),</span>
+<span id="cb128-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-2"></a>                   <span class="dt">ticker =</span> <span class="kw">c</span>(<span class="st">&quot;PETR3&quot;</span>, <span class="st">&quot;PETR4&quot;</span>, <span class="st">&quot;VALE3&quot;</span>, <span class="st">&quot;BBAS3&quot;</span>),</span>
+<span id="cb128-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-3"></a>                   <span class="dt">tipo =</span> <span class="kw">c</span>(<span class="st">&quot;ON&quot;</span>, <span class="st">&quot;PN&quot;</span>, <span class="st">&quot;ON&quot;</span>, <span class="st">&quot;ON&quot;</span>),</span>
+<span id="cb128-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-4"></a>                   <span class="dt">segmento =</span> <span class="kw">c</span>(<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N2&quot;</span>, <span class="st">&quot;NM&quot;</span>, <span class="st">&quot;NM&quot;</span>),</span>
+<span id="cb128-5"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-5"></a>                   <span class="dt">stringsAsFactors =</span> <span class="ot">FALSE</span>)</span>
+<span id="cb128-6"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-6"></a>cias</span></code></pre></div>
 <pre><code>##              nome ticker tipo segmento
 ## 1       Petrobras  PETR3   ON       N2
 ## 2       Petrobras  PETR4   PN       N2
 ## 3            Vale  VALE3   ON       NM
 ## 4 Banco do Brasil  BBAS3   ON       NM</code></pre>
 <p>Podemos estar interessados em saber se há uma empresa chamada “Banco do Brasil”. Para isso, há as funções grep() e grepl(). A grep() retorna um vetor com todas as posições em que foi encontrada a expressão desejada. A função grepl() retorna um vetor com a análise se cada elemento possui o padrão desejado ou não. Assim, se aplicássemos o grep() com a expressão “Petrobras” à lista de nomes, receberíamos a informação de que “Petrobras” foi localizada nas posições 1 e 2, sem qualquer menção às posições 3 e 4. Se usássemos o grepl(), o retorno seria uma lista composta por (TRUE, TRUE, FALSE, FALSE), que explicita a situação de cada observação.</p>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb128-1"></a><span class="kw">grep</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb130-1"></a><span class="kw">grep</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
 <pre><code>## [1] 1 2</code></pre>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb130-1"></a><span class="kw">grep</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-1"></a><span class="kw">grep</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
 <pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-1"></a><span class="kw">grepl</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb134-1"></a><span class="kw">grepl</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
 <pre><code>## [1]  TRUE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb134-1"></a><span class="kw">grepl</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb136-1"></a><span class="kw">grepl</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="op">$</span>nome)</span></code></pre></div>
 <pre><code>## [1] FALSE FALSE FALSE  TRUE</code></pre>
 
 </div>

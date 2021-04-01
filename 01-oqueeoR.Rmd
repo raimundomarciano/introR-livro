@@ -31,6 +31,30 @@ Aliás, o Python (outra linguagem de programação) possui funcionalidades bem s
 
 ## Scripts
 
+## Instalando o R
+
+O R é instalado como um programa normal. Primeiro, você deve acessar a página do [R Project](https://cran.r-project.org/mirrors.html). Há vários links para baixar. Todos funcionam e disponibilizam os mesmos arquivos, mas sugere-se clicar no local mais próximo ao que você se encontra.
+
+Na nova página, clique em Download R for Windows. Depois, clique em base. Caso você queira baixar a versão mais recente, clique em Download R xxx for Windows. Caso você prefira uma versão mais antiga, clique em Previous releases (fica um pouco abaixo, na seção Other Builds).
+
+Alternativamente, [clique aqui](https://vps.fmvz.usp.br/CRAN/bin/windows/base/release.html).
+
+![Aparência do R-GUI](r-gui.PNG)
+
+Na parte superior, é possível visualizar a versão do R que está sendo executada. Nem sempre é interessante, para o programador novato, usar a última versão disponível, porque ela ainda pode conter alguns bugs. Por isso, mesmo que a versão mais atual seja a 4.0.4, pode ser interessante nos mantermos na 4.0.3 ou até mesmo na 3.6.3.
+
+Na linha iniciada por $>$ podemos dar instruções ao R. Por exemplo, digite 1+1 e depois aperte ENTER.
+
+```{r}
+1+1
+```
+
+O R executou a soma solicitada e retornou o resultado.
+
 ## R Studio
+
+O R Studio é um programa que permite trabalhar o R de forma aprimorada. Ele é o que os desenvolvedores chamada de Ambiente Integrado de Desenvolvimento (ou Integrated Development Environment (IDE), no original). Já tendo instalado o R, que fornece a base da linguagem de programação e a interface básica com o computador, podemos agora instalar o R Studio.
+
+Primeiramente acesse o site do [R Studio](https://www.rstudio.com/products/rstudio/download/#download). Embora existam versões pagas com recursos interessantes, todos os recursos necessários ao programador iniciante estão incluídos na versão gratuita. Clique no botão DOWNLOAD R STUDIO FOR WINDOWS. Depois do download concluído, instale o programa na sua máquina normalmente. O R Studio automaticamente identifica o R-base instalado na sua máquina (é realmente necessário já ter instalado o R antes!).
 
 ## R nas Nuvens
