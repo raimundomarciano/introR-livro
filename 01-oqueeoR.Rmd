@@ -57,4 +57,61 @@ O R Studio é um programa que permite trabalhar o R de forma aprimorada. Ele é 
 
 Primeiramente acesse o site do [R Studio](https://www.rstudio.com/products/rstudio/download/#download). Embora existam versões pagas com recursos interessantes, todos os recursos necessários ao programador iniciante estão incluídos na versão gratuita. Clique no botão DOWNLOAD R STUDIO FOR WINDOWS. Depois do download concluído, instale o programa na sua máquina normalmente. O R Studio automaticamente identifica o R-base instalado na sua máquina (é realmente necessário já ter instalado o R antes!).
 
+![O RStudio](r-studio-all.PNG)
+
+O RStudio tem quatro áreas relevantes. Na parte superior esquerda, ficam os scripts; na parte inferior esquerda, o console; na parte superior direita, o ambiente; no parte inferior direita, os diretórios, gráficos, pacotes, e a ajuda.
+
+O script é um arquivo com um roteiro. Você não é obrigado a usar um script, mas é muito útil usá-lo, porque pode ser interessante que você retome o trabalho posteriormente. Você começa a preparar um roteiro em um dia e, posteriormente, continua a escrevê-lo, ou a ajustá-lo. Nesses roteiros, há linhas de código (comandos que o R executará) e linhas de comentários (texto que o R deve ignorar, mas que é muito útil para os humanos que estão lendo o script). Os comentários podem servir para dividir o roteiro em seções, informando que as linhas de código seguintes tem tal utilidade; ou para lembrar o próprio programador de algo, como o que ele ainda precisa fazer ou que tipo de informação aquele código irá produzir.
+
+> É uma boa prática de programação incluir comentários no código. 
+> Lembre-se que se você precisar ver novamente seu código depois de um tempo, você pode não lembrar bem de várias coisas que você tinha em mente quando o estava escrevendo.
+> Por exemplo, se você está escrevendo um código para uma disciplina de um curso, pode ser que você precise meses depois desse mesmo código. Será que você lembrará de tudo o que é necessário?
+
+No Console, você pode passar informações para o R que não foram incorporadas ao Script. ÀS vezes você quer ficar testando algum procedimento, até encontrar a solução correta para um problema, podendo ser útil fazer isso direto no Console, para depois incluí-la no Script.
+
+Uma das principais vantagens do R Studio é que facilita o acompanhamento das informações que estão sendo trabalhadas. Essa IDE exibe, no painel lateral, os bancos de dados que estão ativos, as variáveis que foram salvas e as funções criadas pelo próprio usuário.
+
+
+![Ambiente Global do RStudio](r-studio-environment.PNG)
+
+Como o programa acabou de ser aberto, ainda não tem nada na memória. Entretanto, se você 
+
+
+### Exercício
+
+Copie o seguinte texto pro Script do R Studio.
+
+```{r eval = FALSE}
+
+meu_primeiro_objeto = "Hello World"
+# Há uma tradição entre programadores de que você deve incluir na primeira lição
+# sobre uma linguagem de programação o print do Hello World. Esse comando faz com que 
+# Seja exibida a mensagem "Hello World" (Olá Mundo). Não fazer isso dá azar.
+print(meu_primeiro_objeto)
+
+taxa = 0.05
+valor_presente = 1000
+tempo = 10
+valor_futuro = valor_presente*(1+taxa)^tempo
+mensagem = paste("O valor futuro do empréstimo é", valor_futuro)
+
+print(mensagem)
+```
+
+- Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console?
+- Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console?
+- Clique no botão Source. O que aconteceu com o Global Environment e com o Console?
+
 ## R nas Nuvens
+
+
+
+
+
+### Gabarito Exercício
+
+> Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console? O R cria um objeto contendo "Hello World" e temporariamente o grava na memória. Esse objeto aparece no Global Environment. No Console, aparece o comando que foi dado.
+
+> Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console? A segunda linha é iniciada por um #, o que significa que é uma linha de comentário. O R irá levá-la para o Console, mas não a executará (justamente porque é um comentário). Então irá tentar executar a terceira linha. Como também é um comentário, será registrada no Console, mas sem qualquer efeito. O mesmo vale para a quarta linha. A quinta linha contém código, solicitando que o comando print(meu_primeiro_objeto) seja executado. Esse comando será registrado no Console; o R irá ler o conteúdo do objeto meu_primeiro_objeto e exibirá seu conteúdo: "Hello World".
+
+> Clique no botão Source. O que aconteceu com o Global Environment e com o Console? Todo o script é lido; e todas as linhas de código, executadas. São temporariamente armazenados na memória, além do meu_primeiro_objeto, a taxa, o tempo, o valor_presente, o valor_futuro (no caso, o resultado do cálculo proposto) e a mensagem. NO console aparecem todas as linhas lidas e é exibido o conteúdo do objeto mensagem: "O valor futuro do empréstimo é 1628.89462677744".
