@@ -1,5 +1,7 @@
 # Variáveis
 
+TESTE
+
 Os dados são inseridos no R como variáveis. Eles podem ser importados (trazidos de um arquivo para o R) ou digitados no próprio console. Quando você deseja armazenar um valor na memória, você deve atribuí-lo, usando o sinal = ou <-.
 
 ```{r echo=TRUE}
