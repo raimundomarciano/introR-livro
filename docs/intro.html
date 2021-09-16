@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>2 O que é o R? | Introdução ao R</title>
   <meta name="description" content="Curso de Extensão da UFRN" />
-  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="2 O que é o R? | Introdução ao R" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-04-02" />
+<meta name="date" content="2021-09-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,6 +33,7 @@
   
 <link rel="prev" href="index.html"/>
 <link rel="next" href="variáveis.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -50,22 +51,23 @@
 
 
 
-<script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
 <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -85,7 +87,7 @@ pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-le
 div.sourceCode
   {   }
 @media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 code span.al { color: #ff0000; font-weight: bold; } /* Alert */
 code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
@@ -118,6 +120,7 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
 
@@ -135,25 +138,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Boas vindas</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> O que é o R?</a><ul>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> O que é o R?</a>
+<ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.1</b> Scripts</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.2</b> Instalando o R</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.3</b> R Studio</a><ul>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.3</b> R Studio</a>
+<ul>
 <li class="chapter" data-level="2.3.1" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3.1</b> Exercício</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a><ul>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a>
+<ul>
 <li class="chapter" data-level="2.4.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.4.1</b> Gabarito Exercício</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a><ul>
+<li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
+<ul>
 <li class="chapter" data-level="3.1" data-path="variáveis.html"><a href="variáveis.html#numéricas"><i class="fa fa-check"></i><b>3.1</b> Numéricas</a></li>
-<li class="chapter" data-level="3.2" data-path="variáveis.html"><a href="variáveis.html#textuais"><i class="fa fa-check"></i><b>3.2</b> Textuais</a><ul>
+<li class="chapter" data-level="3.2" data-path="variáveis.html"><a href="variáveis.html#textuais"><i class="fa fa-check"></i><b>3.2</b> Textuais</a>
+<ul>
 <li class="chapter" data-level="3.2.1" data-path="variáveis.html"><a href="variáveis.html#numérica-ou-textual"><i class="fa fa-check"></i><b>3.2.1</b> Numérica ou textual?</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="variáveis.html"><a href="variáveis.html#lógicas"><i class="fa fa-check"></i><b>3.3</b> Lógicas</a></li>
 <li class="chapter" data-level="3.4" data-path="variáveis.html"><a href="variáveis.html#datas"><i class="fa fa-check"></i><b>3.4</b> Datas</a></li>
+<li class="chapter" data-level="3.5" data-path="variáveis.html"><a href="variáveis.html#r-x-outras-linguagens"><i class="fa fa-check"></i><b>3.5</b> R x outras linguagens</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de Dados</a><ul>
+<li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de Dados</a>
+<ul>
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
 <li class="chapter" data-level="4.2" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#matrizes"><i class="fa fa-check"></i><b>4.2</b> Matrizes</a></li>
 <li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#data-frames"><i class="fa fa-check"></i><b>4.3</b> Data frames</a></li>
@@ -161,21 +171,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas"><i class="fa fa-check"></i><b>4.5</b> Listas</a></li>
 <li class="chapter" data-level="4.6" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#factors"><i class="fa fa-check"></i><b>4.6</b> Factors</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html"><i class="fa fa-check"></i><b>5</b> Trabalhando com variáveis no R Base</a><ul>
+<li class="chapter" data-level="5" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html"><i class="fa fa-check"></i><b>5</b> Trabalhando com variáveis no R Base</a>
+<ul>
 <li class="chapter" data-level="5.1" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#manuseio-de-variáveis"><i class="fa fa-check"></i><b>5.1</b> Manuseio de variáveis</a></li>
 <li class="chapter" data-level="5.2" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-numéricas-básicas"><i class="fa fa-check"></i><b>5.2</b> Funções numéricas básicas</a></li>
 <li class="chapter" data-level="5.3" data-path="trabalhando-com-variáveis-no-r-base.html"><a href="trabalhando-com-variáveis-no-r-base.html#funções-textuais-básicas"><i class="fa fa-check"></i><b>5.3</b> Funções textuais básicas</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>6</b> Criando sua própria função</a><ul>
+<li class="chapter" data-level="6" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html"><i class="fa fa-check"></i><b>6</b> Criando sua própria função</a>
+<ul>
 <li class="chapter" data-level="6.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#modularização-do-código"><i class="fa fa-check"></i><b>6.1</b> Modularização do código</a></li>
 <li class="chapter" data-level="6.2" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>6.2</b> Comentários</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>7</b> Pacotes / Bibliotecas</a></li>
-<li class="chapter" data-level="8" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>8</b> Obtendo dados</a><ul>
+<li class="chapter" data-level="8" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>8</b> Obtendo dados</a>
+<ul>
 <li class="chapter" data-level="8.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#planilhas-csv-excel"><i class="fa fa-check"></i><b>8.1</b> Planilhas (csv / Excel)</a></li>
 <li class="chapter" data-level="8.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#txt-bloco-de-notas-e-word"><i class="fa fa-check"></i><b>8.2</b> TXT (bloco de notas) e Word</a></li>
 <li class="chapter" data-level="8.3" data-path="obtendo-dados.html"><a href="obtendo-dados.html#xml"><i class="fa fa-check"></i><b>8.3</b> XML</a></li>
-<li class="chapter" data-level="8.4" data-path="obtendo-dados.html"><a href="obtendo-dados.html#dados-coletados-por-meio-de-pacotes"><i class="fa fa-check"></i><b>8.4</b> Dados coletados por meio de pacotes</a><ul>
+<li class="chapter" data-level="8.4" data-path="obtendo-dados.html"><a href="obtendo-dados.html#dados-coletados-por-meio-de-pacotes"><i class="fa fa-check"></i><b>8.4</b> Dados coletados por meio de pacotes</a>
+<ul>
 <li class="chapter" data-level="8.4.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#getdfpdata"><i class="fa fa-check"></i><b>8.4.1</b> GetDFPData</a></li>
 <li class="chapter" data-level="8.4.2" data-path="obtendo-dados.html"><a href="obtendo-dados.html#bcbdata"><i class="fa fa-check"></i><b>8.4.2</b> BCBData</a></li>
 </ul></li>
@@ -203,7 +217,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="intro" class="section level1">
+<div id="intro" class="section level1" number="2">
 <h1><span class="header-section-number">2</span> O que é o R?</h1>
 <p>R é uma linguagem de programação muito utilizada para o desenvolvimento de estatísticas e cálculos matemáticos. Entretanto, enquanto linguagem de programação, ela possui muitos usos, como a raspagem de sites, a automatização de download de arquivos, e a produção de dashboards e relatórios, sendo útil para a coleta de dados e para o reporte das análises, além de ser gratuita.</p>
 <p>Mas o que significa ser uma linguagem de programação? Basicamente, você irá dar ordens ao computador por meio de comandos. A vantagem de aprender a estruturar os comandos (ao invés de usar um programa estatístico já consolidado, como o Stata) é que você pode customizar a vontade suas análises. Os programas estatísticos trazem muitas opções pré-prontas. Por exemplo, no Stata é comum que você possa clicar em uma janela e solicitar um quadro com as estatísticas descritivas (média, moda, mediana) de um banco de dados. Entretanto, qualquer funcionalidade fora do padrão oferecido por aqueles pacotes precisará ser gerada pelo próprio usuário (e quando você usa algum recurso como o ssc install é porque alguém gastou um tempinho fazendo isso).</p>
@@ -223,10 +237,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- ) -->
 <!-- ``` -->
 <!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
-<div id="scripts" class="section level2">
+<div id="scripts" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Scripts</h2>
 </div>
-<div id="instalando-o-r" class="section level2">
+<div id="instalando-o-r" class="section level2" number="2.2">
 <h2><span class="header-section-number">2.2</span> Instalando o R</h2>
 <p>O R é instalado como um programa normal. Primeiro, você deve acessar a página do <a href="https://cran.r-project.org/mirrors.html">R Project</a>. Há vários links para baixar. Todos funcionam e disponibilizam os mesmos arquivos, mas sugere-se clicar no local mais próximo ao que você se encontra.</p>
 <p>Na nova página, clique em Download R for Windows. Depois, clique em base. Caso você queira baixar a versão mais recente, clique em Download R xxx for Windows. Caso você prefira uma versão mais antiga, clique em Previous releases (fica um pouco abaixo, na seção Other Builds).</p>
@@ -237,11 +251,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>Na parte superior, é possível visualizar a versão do R que está sendo executada. Nem sempre é interessante, para o programador novato, usar a última versão disponível, porque ela ainda pode conter alguns bugs. Por isso, mesmo que a versão mais atual seja a 4.0.4, pode ser interessante nos mantermos na 4.0.3 ou até mesmo na 3.6.3.</p>
 <p>Na linha iniciada por <span class="math inline">\(&gt;\)</span> podemos dar instruções ao R. Por exemplo, digite 1+1 e depois aperte ENTER.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1"></a><span class="dv">1</span><span class="op">+</span><span class="dv">1</span></span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="intro.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
 <p>O R executou a soma solicitada e retornou o resultado.</p>
 </div>
-<div id="r-studio" class="section level2">
+<div id="r-studio" class="section level2" number="2.3">
 <h2><span class="header-section-number">2.3</span> R Studio</h2>
 <p>O R Studio é um programa que permite trabalhar o R de forma aprimorada. Ele é o que os desenvolvedores chamada de Ambiente Integrado de Desenvolvimento (ou Integrated Development Environment (IDE), no original). Já tendo instalado o R, que fornece a base da linguagem de programação e a interface básica com o computador, podemos agora instalar o R Studio.</p>
 <p>Primeiramente acesse o site do <a href="https://www.rstudio.com/products/rstudio/download/#download">R Studio</a>. Embora existam versões pagas com recursos interessantes, todos os recursos necessários ao programador iniciante estão incluídos na versão gratuita. Clique no botão DOWNLOAD R STUDIO FOR WINDOWS. Depois do download concluído, instale o programa na sua máquina normalmente. O R Studio automaticamente identifica o R-base instalado na sua máquina (é realmente necessário já ter instalado o R antes!).</p>
@@ -263,22 +277,22 @@ Por exemplo, se você está escrevendo um código para uma disciplina de um curs
 <p class="caption">Ambiente Global do RStudio</p>
 </div>
 <p>Como o programa acabou de ser aberto, ainda não tem nada na memória. Entretanto, se você</p>
-<div id="exercício" class="section level3">
+<div id="exercício" class="section level3" number="2.3.1">
 <h3><span class="header-section-number">2.3.1</span> Exercício</h3>
 <p>Copie o seguinte texto pro Script do R Studio.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1"></a>meu_primeiro_objeto =<span class="st"> &quot;Hello World&quot;</span></span>
-<span id="cb3-2"><a href="intro.html#cb3-2"></a><span class="co"># Há uma tradição entre programadores de que você deve incluir na primeira lição</span></span>
-<span id="cb3-3"><a href="intro.html#cb3-3"></a><span class="co"># sobre uma linguagem de programação o print do Hello World. Esse comando faz com que </span></span>
-<span id="cb3-4"><a href="intro.html#cb3-4"></a><span class="co"># Seja exibida a mensagem &quot;Hello World&quot; (Olá Mundo). Não fazer isso dá azar.</span></span>
-<span id="cb3-5"><a href="intro.html#cb3-5"></a><span class="kw">print</span>(meu_primeiro_objeto)</span>
-<span id="cb3-6"><a href="intro.html#cb3-6"></a></span>
-<span id="cb3-7"><a href="intro.html#cb3-7"></a>taxa =<span class="st"> </span><span class="fl">0.05</span></span>
-<span id="cb3-8"><a href="intro.html#cb3-8"></a>valor_presente =<span class="st"> </span><span class="dv">1000</span></span>
-<span id="cb3-9"><a href="intro.html#cb3-9"></a>tempo =<span class="st"> </span><span class="dv">10</span></span>
-<span id="cb3-10"><a href="intro.html#cb3-10"></a>valor_futuro =<span class="st"> </span>valor_presente<span class="op">*</span>(<span class="dv">1</span><span class="op">+</span>taxa)<span class="op">^</span>tempo</span>
-<span id="cb3-11"><a href="intro.html#cb3-11"></a>mensagem =<span class="st"> </span><span class="kw">paste</span>(<span class="st">&quot;O valor futuro do empréstimo é&quot;</span>, valor_futuro)</span>
-<span id="cb3-12"><a href="intro.html#cb3-12"></a></span>
-<span id="cb3-13"><a href="intro.html#cb3-13"></a><span class="kw">print</span>(mensagem)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a>meu_primeiro_objeto <span class="ot">=</span> <span class="st">&quot;Hello World&quot;</span></span>
+<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Há uma tradição entre programadores de que você deve incluir na primeira lição</span></span>
+<span id="cb3-3"><a href="intro.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sobre uma linguagem de programação o print do Hello World. Esse comando faz com que </span></span>
+<span id="cb3-4"><a href="intro.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Seja exibida a mensagem &quot;Hello World&quot; (Olá Mundo). Não fazer isso dá azar.</span></span>
+<span id="cb3-5"><a href="intro.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(meu_primeiro_objeto)</span>
+<span id="cb3-6"><a href="intro.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="intro.html#cb3-7" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb3-8"><a href="intro.html#cb3-8" aria-hidden="true" tabindex="-1"></a>valor_presente <span class="ot">=</span> <span class="dv">1000</span></span>
+<span id="cb3-9"><a href="intro.html#cb3-9" aria-hidden="true" tabindex="-1"></a>tempo <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb3-10"><a href="intro.html#cb3-10" aria-hidden="true" tabindex="-1"></a>valor_futuro <span class="ot">=</span> valor_presente<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>taxa)<span class="sc">^</span>tempo</span>
+<span id="cb3-11"><a href="intro.html#cb3-11" aria-hidden="true" tabindex="-1"></a>mensagem <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;O valor futuro do empréstimo é&quot;</span>, valor_futuro)</span>
+<span id="cb3-12"><a href="intro.html#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="intro.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mensagem)</span></code></pre></div>
 <ul>
 <li>Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console?</li>
 <li>Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console?</li>
@@ -286,18 +300,18 @@ Por exemplo, se você está escrevendo um código para uma disciplina de um curs
 </ul>
 </div>
 </div>
-<div id="r-nas-nuvens" class="section level2">
+<div id="r-nas-nuvens" class="section level2" number="2.4">
 <h2><span class="header-section-number">2.4</span> R nas Nuvens</h2>
-<div id="gabarito-exercício" class="section level3">
+<div id="gabarito-exercício" class="section level3" number="2.4.1">
 <h3><span class="header-section-number">2.4.1</span> Gabarito Exercício</h3>
 <blockquote>
 <p>Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console? O R cria um objeto contendo “Hello World” e temporariamente o grava na memória. Esse objeto aparece no Global Environment. No Console, aparece o comando que foi dado.</p>
 </blockquote>
 <blockquote>
-<p>Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console? A segunda linha é iniciada por um #, o que significa que é uma linha de comentário. O R irá levá-la para o Console, mas não a executará (justamente porque é um comentário). Então irá tentar executar a terceira linha. Como também é um comentário, será registrada no Console, mas sem qualquer efeito. O mesmo vale para a quarta linha. A quinta linha contém código, solicitando que o comando print(meu_primeiro_objeto) seja executado. Esse comando será registrado no Console; o R irá ler o conteúdo do objeto meu_primeiro_objeto e exibirá seu conteúdo: “Hello World”.</p>
+<p>Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console? A segunda linha é iniciada por um #, o que significa que é uma linha de comentário. O R irá levá-la para o Console, mas não a executará (justamente porque é um comentário). Então irá tentar executar a terceira linha. Como também é um comentário, será registrada no Console, mas sem qualquer efeito. O mesmo vale para a quarta linha. A quinta linha contém código, solicitando que o comando print(meu_primeiro_objeto) seja executado. Esse comando será registrado no Console; o R irá ler o conteúdo do objeto meu_primeiro_objeto e exibirá seu conteúdo: “Hello World.”</p>
 </blockquote>
 <blockquote>
-<p>Clique no botão Source. O que aconteceu com o Global Environment e com o Console? Todo o script é lido; e todas as linhas de código, executadas. São temporariamente armazenados na memória, além do meu_primeiro_objeto, a taxa, o tempo, o valor_presente, o valor_futuro (no caso, o resultado do cálculo proposto) e a mensagem. NO console aparecem todas as linhas lidas e é exibido o conteúdo do objeto mensagem: “O valor futuro do empréstimo é 1628.89462677744”.</p>
+<p>Clique no botão Source. O que aconteceu com o Global Environment e com o Console? Todo o script é lido; e todas as linhas de código, executadas. São temporariamente armazenados na memória, além do meu_primeiro_objeto, a taxa, o tempo, o valor_presente, o valor_futuro (no caso, o resultado do cálculo proposto) e a mensagem. NO console aparecem todas as linhas lidas e é exibido o conteúdo do objeto mensagem: “O valor futuro do empréstimo é 1628.89462677744.”</p>
 </blockquote>
 
 </div>
@@ -332,6 +346,7 @@ gitbook.start({
 "weibo": false,
 "instapaper": false,
 "vk": false,
+"whatsapp": false,
 "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {

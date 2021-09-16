@@ -3,13 +3,16 @@ intro
 scripts
 instalando-o-r
 r-studio
+exercício
 r-nas-nuvens
+gabarito-exercício
 variáveis
 numéricas
 textuais
 numérica-ou-textual
 lógicas
 datas
+r-x-outras-linguagens
 estruturas-de-dados
 vetores
 matrizes
@@ -34,5 +37,3 @@ getdfpdata
 bcbdata
 juntando-bases
 final-words
-exercício
-gabarito-exercício
