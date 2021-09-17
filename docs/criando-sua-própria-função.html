@@ -221,47 +221,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="criando-sua-própria-função" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Criando sua própria função</h1>
 <p>No R, você pode criar suas próprias funções da mesma forma como você cria e guarda dados: as funções também são objetos. A função para criar funções é a function(). Vamos começar com um caso simples, produzindo uma função que apenas imprime um texto básico.</p>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="criando-sua-própria-função.html#cb157-1" aria-hidden="true" tabindex="-1"></a>minhaFuncao <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
-<span id="cb157-2"><a href="criando-sua-própria-função.html#cb157-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Esta função imprime a mensagem &quot;Esta é a minha primeira função&quot;</span></span>
-<span id="cb157-3"><a href="criando-sua-própria-função.html#cb157-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Esta é a minha primeira função.&quot;</span>)</span>
-<span id="cb157-4"><a href="criando-sua-própria-função.html#cb157-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="criando-sua-própria-função.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">minhaFuncao</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="criando-sua-própria-função.html#cb163-1" aria-hidden="true" tabindex="-1"></a>minhaFuncao <span class="ot">&lt;-</span> <span class="cf">function</span>(){</span>
+<span id="cb163-2"><a href="criando-sua-própria-função.html#cb163-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Esta função imprime a mensagem &quot;Esta é a minha primeira função&quot;</span></span>
+<span id="cb163-3"><a href="criando-sua-própria-função.html#cb163-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Esta é a minha primeira função.&quot;</span>)</span>
+<span id="cb163-4"><a href="criando-sua-própria-função.html#cb163-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="criando-sua-própria-função.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="fu">minhaFuncao</span>()</span></code></pre></div>
 <pre><code>## [1] &quot;Esta é a minha primeira função.&quot;</code></pre>
 <p>Essa função ainda não aceita parâmetros, ou seja, ela ainda não é capaz de receber e processar dados. A função pode receber dados ou usar valores que estão presentes em variáveis anteriormente criadas. O argumento funciona como um apelido que será usado internamente para aquele valor. Por exemplo, posso querer que a função retorne quanto é 8% do salário do empregado. Assim, precisamos que a função receba o valor do salário empregado e que, a partir dele, calcule quanto é 8% e, por fim, exiba esse valor.</p>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="criando-sua-própria-função.html#cb160-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a funcao recebera o &#39;salario&#39;</span></span>
-<span id="cb160-2"><a href="criando-sua-própria-função.html#cb160-2" aria-hidden="true" tabindex="-1"></a>fgts <span class="ot">&lt;-</span> <span class="cf">function</span>(salario){</span>
-<span id="cb160-3"><a href="criando-sua-própria-função.html#cb160-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># variavei INTERNA fgtsFuncionario guarda o valor calculado do FGTS</span></span>
-<span id="cb160-4"><a href="criando-sua-própria-função.html#cb160-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ela não fica automaticamente disponível na memória do R após </span></span>
-<span id="cb160-5"><a href="criando-sua-própria-função.html#cb160-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># a função ter terminado a execução</span></span>
-<span id="cb160-6"><a href="criando-sua-própria-função.html#cb160-6" aria-hidden="true" tabindex="-1"></a>  fgtsFuncionario <span class="ot">&lt;-</span> salario <span class="sc">*</span> <span class="fl">0.08</span></span>
-<span id="cb160-7"><a href="criando-sua-própria-função.html#cb160-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># vamos gerar uma frase contendo o valor do FGTS</span></span>
-<span id="cb160-8"><a href="criando-sua-própria-função.html#cb160-8" aria-hidden="true" tabindex="-1"></a>  mensagem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;O valor do FGTS é R$ &quot;</span>, fgtsFuncionario, <span class="st">&quot;.&quot;</span>)</span>
-<span id="cb160-9"><a href="criando-sua-própria-função.html#cb160-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># para imprimir a mensagem</span></span>
-<span id="cb160-10"><a href="criando-sua-própria-função.html#cb160-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(mensagem)</span>
-<span id="cb160-11"><a href="criando-sua-própria-função.html#cb160-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># podemos encerrar o código da função especificando uma última variável INTERNA</span></span>
-<span id="cb160-12"><a href="criando-sua-própria-função.html#cb160-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># que pode ser guardada em um objeto normal do R, por atribuição</span></span>
-<span id="cb160-13"><a href="criando-sua-própria-função.html#cb160-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Se essa atribuição não ocorrer, todos os valores gerados internamente</span></span>
-<span id="cb160-14"><a href="criando-sua-própria-função.html#cb160-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># serão esquecidos</span></span>
-<span id="cb160-15"><a href="criando-sua-própria-função.html#cb160-15" aria-hidden="true" tabindex="-1"></a>  fgtsFuncionario</span>
-<span id="cb160-16"><a href="criando-sua-própria-função.html#cb160-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="criando-sua-própria-função.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># a funcao recebera o &#39;salario&#39;</span></span>
+<span id="cb166-2"><a href="criando-sua-própria-função.html#cb166-2" aria-hidden="true" tabindex="-1"></a>fgts <span class="ot">&lt;-</span> <span class="cf">function</span>(salario){</span>
+<span id="cb166-3"><a href="criando-sua-própria-função.html#cb166-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># variavei INTERNA fgtsFuncionario guarda o valor calculado do FGTS</span></span>
+<span id="cb166-4"><a href="criando-sua-própria-função.html#cb166-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ela não fica automaticamente disponível na memória do R após </span></span>
+<span id="cb166-5"><a href="criando-sua-própria-função.html#cb166-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># a função ter terminado a execução</span></span>
+<span id="cb166-6"><a href="criando-sua-própria-função.html#cb166-6" aria-hidden="true" tabindex="-1"></a>  fgtsFuncionario <span class="ot">&lt;-</span> salario <span class="sc">*</span> <span class="fl">0.08</span></span>
+<span id="cb166-7"><a href="criando-sua-própria-função.html#cb166-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># vamos gerar uma frase contendo o valor do FGTS</span></span>
+<span id="cb166-8"><a href="criando-sua-própria-função.html#cb166-8" aria-hidden="true" tabindex="-1"></a>  mensagem <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;O valor do FGTS é R$ &quot;</span>, fgtsFuncionario, <span class="st">&quot;.&quot;</span>)</span>
+<span id="cb166-9"><a href="criando-sua-própria-função.html#cb166-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># para imprimir a mensagem</span></span>
+<span id="cb166-10"><a href="criando-sua-própria-função.html#cb166-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(mensagem)</span>
+<span id="cb166-11"><a href="criando-sua-própria-função.html#cb166-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># podemos encerrar o código da função especificando uma última variável INTERNA</span></span>
+<span id="cb166-12"><a href="criando-sua-própria-função.html#cb166-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># que pode ser guardada em um objeto normal do R, por atribuição</span></span>
+<span id="cb166-13"><a href="criando-sua-própria-função.html#cb166-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Se essa atribuição não ocorrer, todos os valores gerados internamente</span></span>
+<span id="cb166-14"><a href="criando-sua-própria-função.html#cb166-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># serão esquecidos</span></span>
+<span id="cb166-15"><a href="criando-sua-própria-função.html#cb166-15" aria-hidden="true" tabindex="-1"></a>  fgtsFuncionario</span>
+<span id="cb166-16"><a href="criando-sua-própria-função.html#cb166-16" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <p>Perceba que se simplesmente rodarmos a função sem guardar seu valor em um objeto</p>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="criando-sua-própria-função.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fgts</span>(<span class="dv">2000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="criando-sua-própria-função.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fgts</span>(<span class="dv">2000</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;O valor do FGTS é R$ 160.&quot;</code></pre>
 <pre><code>## [1] 160</code></pre>
 <p>A mensagem será impressa, mas posteriormente não será possível resgatar nem o valor contido em <span class="math inline">\(fgtsFuncionario\)</span> e nem em <span class="math inline">\(mensagem\)</span>. Se você quer que o R realmente guarde esses valores, e não apenas os exiba na tela, é necessário que haja a atribuição a uma variável.</p>
-<div class="sourceCode" id="cb164"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb164-1"><a href="criando-sua-própria-função.html#cb164-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estamos guardando o valor da execução de fgts(2000) em fgtsFunc1</span></span>
-<span id="cb164-2"><a href="criando-sua-própria-função.html#cb164-2" aria-hidden="true" tabindex="-1"></a>fgtsFunc1 <span class="ot">&lt;-</span> <span class="fu">fgts</span>(<span class="dv">2000</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="criando-sua-própria-função.html#cb170-1" aria-hidden="true" tabindex="-1"></a><span class="co"># estamos guardando o valor da execução de fgts(2000) em fgtsFunc1</span></span>
+<span id="cb170-2"><a href="criando-sua-própria-função.html#cb170-2" aria-hidden="true" tabindex="-1"></a>fgtsFunc1 <span class="ot">&lt;-</span> <span class="fu">fgts</span>(<span class="dv">2000</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;O valor do FGTS é R$ 160.&quot;</code></pre>
 <p>A função <span class="math inline">\(fgts\)</span> foi encerrada com <span class="math inline">\(fgtsFuncionario\)</span>. Por isso, o valor que será atribuído para fgtsFunc1 será apenas <span class="math inline">\(fgtsFuncionario\)</span>. A <span class="math inline">\(mensagem\)</span> não ficará gravada na memória.</p>
-<div class="sourceCode" id="cb166"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb166-1"><a href="criando-sua-própria-função.html#cb166-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se solicitarmos o valor de fgtsFunc1, será exibido o valor 160.</span></span>
-<span id="cb166-2"><a href="criando-sua-própria-função.html#cb166-2" aria-hidden="true" tabindex="-1"></a>fgtsFunc1</span></code></pre></div>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="criando-sua-própria-função.html#cb172-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se solicitarmos o valor de fgtsFunc1, será exibido o valor 160.</span></span>
+<span id="cb172-2"><a href="criando-sua-própria-função.html#cb172-2" aria-hidden="true" tabindex="-1"></a>fgtsFunc1</span></code></pre></div>
 <pre><code>## [1] 160</code></pre>
 <div id="modularização-do-código" class="section level2" number="6.1">
 <h2><span class="header-section-number">6.1</span> Modularização do código</h2>
 <p>Em certas situações, seu script pode começar a ficar muito extenso, dificultando a leitura do código e que você encontre problemas específicos. Assim, pode ser uma boa ideia criar scripts auxiliares com funções. Você cria um script separado (por exemplo, funcoes.R) e deixa nele o código com as funções que serão utilizadas.</p>
 <p>No script onde você está desenvolvendo a análise, você inclui o comando source(), informando o parâmetro com a localização e o nome do arquivo (“scripts/funcoes.R,” por exemplo).</p>
-<div class="sourceCode" id="cb168"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb168-1"><a href="criando-sua-própria-função.html#cb168-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assumindo que o script auxiliar funcoes.R está na pasta scripts</span></span>
-<span id="cb168-2"><a href="criando-sua-própria-função.html#cb168-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;scripts/funcoes.R&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="criando-sua-própria-função.html#cb174-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assumindo que o script auxiliar funcoes.R está na pasta scripts</span></span>
+<span id="cb174-2"><a href="criando-sua-própria-função.html#cb174-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">&quot;scripts/funcoes.R&quot;</span>)</span></code></pre></div>
 <p>O source() faz e leitura do script auxiliar e importa todas as funções que constam nele, de forma muito similar ao que é feito pelo library().</p>
 </div>
 <div id="comentários" class="section level2" number="6.2">

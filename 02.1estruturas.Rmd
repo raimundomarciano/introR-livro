@@ -282,3 +282,16 @@ Cada método tem suas vantagens e desvantagens. Se forem muitas filiais, o (i) p
 
 ## Factors
 
+O factor é um tipo especial de vetor que pode ser ordenado. O R não possui um mecanismo interno para entender expressões textuais, de forma que o programador precisa explicar para o R que certas strings possuem valor superior a outras. É fácil para um ser humano entender que "excelente" é melhor que "bom", mas como o R não sabe o que significa nem bom, nem excelente, podemos criar um factor.
+
+```{r}
+
+vetor = c("bom", "bom", "excelente")
+fat = factor(vetor, levels = c("bom", "excelente"), ordered = TRUE)
+
+fat
+fat[1] < fat[3]
+
+```
+Caso os dados não possuam ordenação especifica ou comparabilidade, geralmente recomenda-se que sejam deixados como strings "normais", ao invés de factors. Várias funções de importações incluem um comando para que você informe qual tratamento deseja (geralmente o parâmetro é _stringsAsFactors_).
+
