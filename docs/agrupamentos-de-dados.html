@@ -513,7 +513,9 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 </div>
 <div id="factors" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Factors</h2>
-<p>O factor é um tipo especial de vetor que pode ser ordenado. O R não possui um mecanismo interno para entender expressões textuais, de forma que o programador precisa explicar para o R que certas strings possuem valor superior a outras. É fácil para um ser humano entender que “excelente” é melhor que “bom,” mas como o R não sabe o que significa nem bom, nem excelente, podemos criar um factor.</p>
+<p>O factor é um tipo especial de vetor, utilizado para variáveis categóricas, ou seja, qualidades ou atributos de algo que serão usadas em alguma análise. Assim, se você está desenvolvendo um estudo comparativo por setor econômico, pode ser uma ideia interessante incluir o setor econômico como um factor. Note que setores econômicos não possuem um critério específico de ordenação; normalmente esse tipo de análise não define que um setor é mais importante que outro, sendo apenas um critério de separação entre as empresas que pertencem a cada um. Por exemplo, se eu quero comparar que setores sofreram mais com a Covid19 durante o ano de 2020, eu devo identificar que empresas pertencem a cada setor e analisar o que aconteceu com elas. Não há, a priori, qualquer ordem entre eles.</p>
+<p>Note que isso é bem diferente de perguntas, feitas em questionários, com graus de comparação. Por exemplo, se perguntamos ao entrevistado se ele está “pouco satisfeito,” “satisfeito” ou “muito satisfeito,” a resposta tem níveis. É claro que “muito satisfeito” possui um valor maior que “satisfeito” e é claro que “satisfeito” possui um valor maior que “pouco satisfeito.”</p>
+<p>O R não possui um mecanismo interno para entender expressões textuais, de forma que o programador precisa explicar para o R que certas strings possuem valor superior a outras. É fácil para um ser humano entender que “excelente” é melhor que “bom,” mas como o R não sabe o que significa nem bom, nem excelente, podemos criar um factor.</p>
 <div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="agrupamentos-de-dados.html#cb118-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>)</span>
 <span id="cb118-2"><a href="agrupamentos-de-dados.html#cb118-2" aria-hidden="true" tabindex="-1"></a>fat <span class="ot">=</span> <span class="fu">factor</span>(vetor, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb118-3"><a href="agrupamentos-de-dados.html#cb118-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -522,7 +524,7 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 ## Levels: bom &lt; excelente</code></pre>
 <div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="agrupamentos-de-dados.html#cb120-1" aria-hidden="true" tabindex="-1"></a>fat[<span class="dv">1</span>] <span class="sc">&lt;</span> fat[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<p>Caso os dados não possuam ordenação especifica ou comparabilidade, geralmente recomenda-se que sejam deixados como strings “normais,” ao invés de factors. Várias funções de importações incluem um comando para que você informe qual tratamento deseja (geralmente o parâmetro é <em>stringsAsFactors</em>).</p>
+<p>Várias funções de importações incluem um comando para que você informe qual tratamento deseja (geralmente o parâmetro é <em>stringsAsFactors</em>).</p>
 
 </div>
 </div>
