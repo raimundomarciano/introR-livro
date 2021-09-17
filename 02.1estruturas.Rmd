@@ -245,15 +245,30 @@ Um array é uma extensão do conceito de vetor, que ganha atributos: quantidade 
 
 ```{r}
 
-linhas = c("linhaA", "linhaB")
-colunas = c("colA", "colB", "colC")
-dimensoes = c("dimA", "dimB")
+linhas = c(2019, 2020)
+colunas = c("ROA", "ROE", "Liquidez")
+dimensoes = c("Empresa A", "Empresa B")
 
-array(1:12, dim = c(2,3,2), dimnames = list(linhas,colunas,dimensoes))
+array(c(0.30, 0.35, 0.32, 0.36, 1.08, 1.12, 
+        0.40, 0.25, 0.45, 0.30, 0.99, 1.13), 
+      dim = c(2,3,2), dimnames = list(linhas,colunas,dimensoes))
 
 ```
 
+Dessaa forma, criamos uma matriz para cada dimensão (empresa A ou B), contendo os respectivos valores de cada indicador (ROA, ROE e Liquidez) em cada ano (2019 e 2020). Uma apresentação alternativa seria um data frame com dados empilhados.
 
+```{r}
+
+linhas = c(2019, 2020, 2019, 2020)
+colunas = c("ROA", "ROE", "Liquidez")
+dimensoes = c("Empresa A", "Empresa A", "Empresa B", "Empresa B")
+
+data.frame(Empresas = dimensoes, Anos = linhas, ROA = c(0.30, 0.35, 0.40, 0.25),
+           ROE = c(0.32, 0.36,0.45, 0.30), Liquidez = c(1.08, 1.12,0.99, 1.13))
+
+
+```
+Note que esse data frame condensa as informações, em comparação ao array com 3 dimensões. Pesquisadores que desejam trabalhar com dados em painel geralmente recorrem a essa estratégia de organização dos dados.
 
 
 ## Listas
