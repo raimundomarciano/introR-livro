@@ -94,7 +94,17 @@ No caso de pessoas físicas, o mesmo raciocínio vale para o CPF.
 
 ## Lógicas
 
-Em muitos casos, é importante ter variáveis que indiquem VERDADEIRO (TRUE) ou FALSO (FALSE).O tipo de variável que admite apenas esses dois valores lógicos é chamado de Booleana (boolean ou bool). Essas variáveis seguem a lógica de primeira ordem. Por exemplo, TRUE AND FALSE resulta em FALSE, enquanto TRUE OR FALSE resulta em TRUE.
+Em muitos casos, é importante ter variáveis que indiquem TRUE (Verdadeiro) ou FALSE (Falso). Por exemplo, podemos querer verificar se cada entidade possui determinada característica (digamos, seu endividamento de curto prazo é menor que o Ativo Circulante); se a empresa tiver essa característica, receberá o valor TRUE; caso contrário, FALSE. O tipo de variável que admite apenas esses dois valores lógicos é chamado de Booleana (boolean ou bool). 
+
+Nos estudos sobre lógica, frequentemente nos deparamos com Tabelas de Verdade e alguns operadores lógicos, dentre os quais os mais comuns são o AND (e) e o OR (ou). É preciso um pouco de atenção para usá-los corretamente.
+
+Se dizemos que estamos precisando de um relatório que contenha apenas as empresas que tiveram lucros no ano passado (2020) **e** que abriram capital nos últimos cinco anos (2016-2020), estamos exigindo que as empresas necessariamente atendam aos dois requisitos; ou seja, o relatório só deve conter as empresas que, além de terem aberto o capital entre 2016 e 2020, também apresentaram, em seus demonstrativos financeiros de 2020, um resultado contábil positivo. Com o uso do operador **AND** (**e**), não basta uma característica, é necessário que atenda as duas.
+
+
+Se tivéssemos dito que queríamos um relatório com empresas que têm Patrimônio Líquido Negativo **ou** que estão em Recuperação Judicial, precisaríamos pegar todas as empresas que atendem a qualquer um dos critérios (inclusive as que atendem a ambos os critérios). Assim, se a empresa tem PL negativo, mas não está em recuperação judicial, ela deve constar no relatório. Se ela está em recuperação judicial, mas não tem PL negativo, ela deve constar no relatório. Se ela tem PL negativo e está em recuperação judicial, ela também deve estar no relatório. A única situação em que ela deve ser deixada de fora é caso ela tenha PL maior ou igual a zero e não esteja em recuperação judicial.
+
+
+No R, o operador AND é representado por & ("e comercial"), enquanto o OR é representado por | (uma barra vertical).
 
 ```{r eval=TRUE, message=FALSE}
 # AND ou E é representado por &
@@ -102,6 +112,17 @@ print(TRUE & FALSE)
 # OR ou OU é representado por |
 print(TRUE | FALSE) 
 ```
+
+Além disso, é possível realizar a negação de um valor lógico. Dizer que algo não é verdadeiro equivale a dizer que é falso. Dizer que algo não é falso equivale a dizer que algo é verdadeiro. No R, a negação é representada por um ! (ponto de exclamação).
+
+```{r eval=TRUE, message=FALSE}
+# AND ou E é representado por &
+2 < 5
+# OR ou OU é representado por |
+!(2 < 5) 
+```
+
+Sabemos que 2 é menor que 5. Por isso, a expressão 2 < 5 retorna um valor TRUE (verdadeiro). Quando adicionamos o operador de negação (!), estamos pedindo para que o R retorne "não" verdadeiro, o que equivale a Falso.
 
 Variáveis lógicas podem ter muitos usos, como parâmetros em funções ou filtros para listas de dados. Por exemplo, você pode querer que o usuário informe se ele quer imprimir o relatório dos valores ao final. Nesse caso, ele deveria informar que o valor do parâmetro imprimir_relatorio deveria ser TRUE. Caso ele não queira imprimir o relatório, deveria informar imprimir_relatorio como FALSE.
 

@@ -1,8 +1,6 @@
-# Estruturas de Dados
+# Agrupamentos de Dados
 
 Pode ser desejável juntar vários valores em um único objeto gravado na memória usada pelo R. Por exemplo, você pode querer criar um objeto que contenha o nome das empresas que tiveram as maiores ofertas públicas iniciais na bolsa de valores brasileira em 2020; ou você pode querer a relação dos nomes e dos valores. Dependendo dos tipos de dados envolvidos, a forma de fazer isso pode mudar. 
-
-> O R possui o conceito de objetos, que são estruturas especializadas e que podem conter tanto os valores dos dados quanto atributos. Quando você declara uma variável simples (a = 5) ou (b = "eu"), os atributos não são importantes - é fácil ter certeza que dentro da variável haverá um valor que a representa. Contudo, em estruturas mais complexas, com muitas linhas e colunas, é importante, por exemplo, que as colunas tenham nomes (atributos), a fim de facilitar a identificação.
 
 ## Vetores
 
@@ -241,7 +239,31 @@ outroTibble$numeros
 
 Por padrão, a exibição de um tibble é limitada a 10 colunas e a uma quantidade de colunas compatível com a tela, o que não acontece com o data.frame, que tenta exibir todas as colunas presentes no banco de dados. Essa característica é dispensável em bancos com poucas variáveis, mas é bastante interessante caso ele contenha algumas centenas, porque não gera um output ilegível (raramente será interessante visualizar simultaneamente centenas de colunas ao mesmo tempo). Caso queira exibir todas as colunas, bastar adicionar o parâmetro (width = Inf) dentro do print().
 
+## Array
+
+Um array é uma extensão do conceito de vetor, que ganha atributos: quantidade de dimensões (pode ser maior que 2, ao contrário das matrizes) e essas dimensões podem receber nomes. Note que por ser uma "extensão do conceito de vetor," o array não é exatamente um vetor! 
+
+```{r}
+
+linhas = c("linhaA", "linhaB")
+colunas = c("colA", "colB", "colC")
+dimensoes = c("dimA", "dimB")
+
+array(1:12, dim = c(2,3,2), dimnames = list(linhas,colunas,dimensoes))
+
+```
+
+
+
+
 ## Listas
+
+A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões. O vetor é unidimensional e só admite um tipo de variável. A matriz é bidimensional (pode ter várias linhas e várias colunas), mas todas de um mesmo tipo. O data frame também é bidimensional, mas admite elementos de tipos diferentes (número e texto, por exemplo). Entretanto, podemos estar precisando de mais dimensões. 
+
+Por exemplo, um vetor poderia conter o faturamento de uma filial ao longo dos meses de um ano. Um data frame poderia conter o faturamento, as despesas e a quantidade de reclamações recebidas para uma única filial (cada coluna representando uma variável e cada linha representando um mês). Se quiséssemos apresentar os valores para todas as filiais, poderíamos: i) empilhar os dados - ou seja, adicionar os valores para cada filial no mesmo data frame, sequencialmente, formando uma grande lista; ii) criar um data frame para cada filial; ou iii) criar uma lista, ao invés de data frame, adicionando a filial como uma nova dimensão.
+
+Cada método tem suas vantagens e desvantagens. Se forem muitas filiais, o (i) pode deixar a lista extensa demais. Criar data frames individuais (ii) pode tornar o processo de condensar a informação muito repetitivo, não havendo uma fonte única de dados. Não temos o hábito de trabalhar com dados em múltiplas dimensões (os experts em Excel lidam apenas com duas, por exemplo).
+
 
 ## Factors
 

@@ -13,11 +13,12 @@ numérica-ou-textual
 lógicas
 datas
 r-x-outras-linguagens
-estruturas-de-dados
+agrupamentos-de-dados
 vetores
 matrizes
 data-frames
 tibbles
+array
 listas
 factors
 trabalhando-com-variáveis-no-r-base
