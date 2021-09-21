@@ -273,11 +273,38 @@ Note que esse data frame condensa as informações, em comparação ao array com
 
 ## Listas
 
-A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões. O vetor é unidimensional e só admite um tipo de variável. A matriz é bidimensional (pode ter várias linhas e várias colunas), mas todas de um mesmo tipo. O data frame também é bidimensional, mas admite elementos de tipos diferentes (número e texto, por exemplo). Entretanto, podemos estar precisando de mais dimensões. 
+A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões e com tipos diferentes de dados. 
 
-Por exemplo, um vetor poderia conter o faturamento de uma filial ao longo dos meses de um ano. Um data frame poderia conter o faturamento, as despesas e a quantidade de reclamações recebidas para uma única filial (cada coluna representando uma variável e cada linha representando um mês). Se quiséssemos apresentar os valores para todas as filiais, poderíamos: i) empilhar os dados - ou seja, adicionar os valores para cada filial no mesmo data frame, sequencialmente, formando uma grande lista; ii) criar um data frame para cada filial; ou iii) criar uma lista, ao invés de data frame, adicionando a filial como uma nova dimensão.
+```{r}
 
-Cada método tem suas vantagens e desvantagens. Se forem muitas filiais, o (i) pode deixar a lista extensa demais. Criar data frames individuais (ii) pode tornar o processo de condensar a informação muito repetitivo, não havendo uma fonte única de dados. Não temos o hábito de trabalhar com dados em múltiplas dimensões (os experts em Excel lidam apenas com duas, por exemplo).
+identificador1 = c("matriz")
+dados1 = c(1,9,37)
+
+identificador2 = c("filial")
+dados2 = c(2, 18, 74)
+
+lista = list(identificador1, dados1, identificador2, dados2)
+lista
+```
+
+Eventualmente, pode ser necessário "descaracterizar" a lista. Com a função **unlist**, podemos converter a lista anteriormente utilizada em um vetor. Note que a lista possuía elementos string e numéricos, o que era admitido em uma lista, mas não em um vetor.
+
+```{r}
+unlist(lista)
+```
+Como esperado, o vetor converte todos os elementos em strings (texto), já que ele não consegue transformar "matriz" em um número.
+
+
+Outro exemplo:
+
+```{r}
+
+lista2 = list(c("primeiro", "segundo"), matrix(1:9, ncol = 3))
+names(lista2) <- c("ordem", "dados")
+lista2
+
+```
+O uso de nomes é opcional, mas facilita o manuseio dos dados posteriormente.
 
 
 ## Factors

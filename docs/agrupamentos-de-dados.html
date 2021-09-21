@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-17" />
+<meta name="date" content="2021-09-21" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -507,22 +507,56 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 </div>
 <div id="listas" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Listas</h2>
-<p>A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões. O vetor é unidimensional e só admite um tipo de variável. A matriz é bidimensional (pode ter várias linhas e várias colunas), mas todas de um mesmo tipo. O data frame também é bidimensional, mas admite elementos de tipos diferentes (número e texto, por exemplo). Entretanto, podemos estar precisando de mais dimensões.</p>
-<p>Por exemplo, um vetor poderia conter o faturamento de uma filial ao longo dos meses de um ano. Um data frame poderia conter o faturamento, as despesas e a quantidade de reclamações recebidas para uma única filial (cada coluna representando uma variável e cada linha representando um mês). Se quiséssemos apresentar os valores para todas as filiais, poderíamos: i) empilhar os dados - ou seja, adicionar os valores para cada filial no mesmo data frame, sequencialmente, formando uma grande lista; ii) criar um data frame para cada filial; ou iii) criar uma lista, ao invés de data frame, adicionando a filial como uma nova dimensão.</p>
-<p>Cada método tem suas vantagens e desvantagens. Se forem muitas filiais, o (i) pode deixar a lista extensa demais. Criar data frames individuais (ii) pode tornar o processo de condensar a informação muito repetitivo, não havendo uma fonte única de dados. Não temos o hábito de trabalhar com dados em múltiplas dimensões (os experts em Excel lidam apenas com duas, por exemplo).</p>
+<p>A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões e com tipos diferentes de dados.</p>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="agrupamentos-de-dados.html#cb118-1" aria-hidden="true" tabindex="-1"></a>identificador1 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;matriz&quot;</span>)</span>
+<span id="cb118-2"><a href="agrupamentos-de-dados.html#cb118-2" aria-hidden="true" tabindex="-1"></a>dados1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">37</span>)</span>
+<span id="cb118-3"><a href="agrupamentos-de-dados.html#cb118-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-4"><a href="agrupamentos-de-dados.html#cb118-4" aria-hidden="true" tabindex="-1"></a>identificador2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;filial&quot;</span>)</span>
+<span id="cb118-5"><a href="agrupamentos-de-dados.html#cb118-5" aria-hidden="true" tabindex="-1"></a>dados2 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">18</span>, <span class="dv">74</span>)</span>
+<span id="cb118-6"><a href="agrupamentos-de-dados.html#cb118-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-7"><a href="agrupamentos-de-dados.html#cb118-7" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">=</span> <span class="fu">list</span>(identificador1, dados1, identificador2, dados2)</span>
+<span id="cb118-8"><a href="agrupamentos-de-dados.html#cb118-8" aria-hidden="true" tabindex="-1"></a>lista</span></code></pre></div>
+<pre><code>## [[1]]
+## [1] &quot;matriz&quot;
+## 
+## [[2]]
+## [1]  1  9 37
+## 
+## [[3]]
+## [1] &quot;filial&quot;
+## 
+## [[4]]
+## [1]  2 18 74</code></pre>
+<p>Eventualmente, pode ser necessário “descaracterizar” a lista. Com a função <strong>unlist</strong>, podemos converter a lista anteriormente utilizada em um vetor. Note que a lista possuía elementos string e numéricos, o que era admitido em uma lista, mas não em um vetor.</p>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="agrupamentos-de-dados.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(lista)</span></code></pre></div>
+<pre><code>## [1] &quot;matriz&quot; &quot;1&quot;      &quot;9&quot;      &quot;37&quot;     &quot;filial&quot; &quot;2&quot;      &quot;18&quot;     &quot;74&quot;</code></pre>
+<p>Como esperado, o vetor converte todos os elementos em strings (texto), já que ele não consegue transformar “matriz” em um número.</p>
+<p>Outro exemplo:</p>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="agrupamentos-de-dados.html#cb122-1" aria-hidden="true" tabindex="-1"></a>lista2 <span class="ot">=</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;primeiro&quot;</span>, <span class="st">&quot;segundo&quot;</span>), <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
+<span id="cb122-2"><a href="agrupamentos-de-dados.html#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lista2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ordem&quot;</span>, <span class="st">&quot;dados&quot;</span>)</span>
+<span id="cb122-3"><a href="agrupamentos-de-dados.html#cb122-3" aria-hidden="true" tabindex="-1"></a>lista2</span></code></pre></div>
+<pre><code>## $ordem
+## [1] &quot;primeiro&quot; &quot;segundo&quot; 
+## 
+## $dados
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<p>O uso de nomes é opcional, mas facilita o manuseio dos dados posteriormente.</p>
 </div>
 <div id="factors" class="section level2" number="4.7">
 <h2><span class="header-section-number">4.7</span> Factors</h2>
 <p>O factor é um tipo especial de vetor, utilizado para variáveis categóricas, ou seja, qualidades ou atributos de algo que serão usadas em alguma análise. Assim, se você está desenvolvendo um estudo comparativo por setor econômico, pode ser uma ideia interessante incluir o setor econômico como um factor. Note que setores econômicos não possuem um critério específico de ordenação; normalmente esse tipo de análise não define que um setor é mais importante que outro, sendo apenas um critério de separação entre as empresas que pertencem a cada um. Por exemplo, se eu quero comparar que setores sofreram mais com a Covid19 durante o ano de 2020, eu devo identificar que empresas pertencem a cada setor e analisar o que aconteceu com elas. Não há, a priori, qualquer ordem entre eles.</p>
 <p>Note que isso é bem diferente de perguntas, feitas em questionários, com graus de comparação. Por exemplo, se perguntamos ao entrevistado se ele está “pouco satisfeito,” “satisfeito” ou “muito satisfeito,” a resposta tem níveis. É claro que “muito satisfeito” possui um valor maior que “satisfeito” e é claro que “satisfeito” possui um valor maior que “pouco satisfeito.”</p>
 <p>O R não possui um mecanismo interno para entender expressões textuais, de forma que o programador precisa explicar para o R que certas strings possuem valor superior a outras. É fácil para um ser humano entender que “excelente” é melhor que “bom,” mas como o R não sabe o que significa nem bom, nem excelente, podemos criar um factor.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="agrupamentos-de-dados.html#cb118-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>)</span>
-<span id="cb118-2"><a href="agrupamentos-de-dados.html#cb118-2" aria-hidden="true" tabindex="-1"></a>fat <span class="ot">=</span> <span class="fu">factor</span>(vetor, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb118-3"><a href="agrupamentos-de-dados.html#cb118-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-4"><a href="agrupamentos-de-dados.html#cb118-4" aria-hidden="true" tabindex="-1"></a>fat</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="agrupamentos-de-dados.html#cb124-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>)</span>
+<span id="cb124-2"><a href="agrupamentos-de-dados.html#cb124-2" aria-hidden="true" tabindex="-1"></a>fat <span class="ot">=</span> <span class="fu">factor</span>(vetor, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb124-3"><a href="agrupamentos-de-dados.html#cb124-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb124-4"><a href="agrupamentos-de-dados.html#cb124-4" aria-hidden="true" tabindex="-1"></a>fat</span></code></pre></div>
 <pre><code>## [1] bom       bom       excelente
 ## Levels: bom &lt; excelente</code></pre>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="agrupamentos-de-dados.html#cb120-1" aria-hidden="true" tabindex="-1"></a>fat[<span class="dv">1</span>] <span class="sc">&lt;</span> fat[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="agrupamentos-de-dados.html#cb126-1" aria-hidden="true" tabindex="-1"></a>fat[<span class="dv">1</span>] <span class="sc">&lt;</span> fat[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Várias funções de importações incluem um comando para que você informe qual tratamento deseja (geralmente o parâmetro é <em>stringsAsFactors</em>).</p>
 
