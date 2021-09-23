@@ -25,6 +25,7 @@ trabalhando-com-variáveis-no-r-base
 manuseio-de-variáveis
 funções-numéricas-básicas
 funções-textuais-básicas
+final-words
 criando-sua-própria-função
 modularização-do-código
 comentários
@@ -37,4 +38,4 @@ dados-coletados-por-meio-de-pacotes
 getdfpdata
 bcbdata
 juntando-bases
-final-words
+relatórios-em-markdown
