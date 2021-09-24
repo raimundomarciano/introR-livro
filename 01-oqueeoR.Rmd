@@ -29,8 +29,6 @@ Aliás, o Python (outra linguagem de programação) possui funcionalidades bem s
 <!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
 
 
-## Scripts
-
 ## Instalando o R
 
 O R é instalado como um programa normal. Primeiro, você deve acessar a página do [R Project](https://cran.r-project.org/mirrors.html). Há vários links para baixar. Todos funcionam e disponibilizam os mesmos arquivos, mas sugere-se clicar no local mais próximo ao que você se encontra.
@@ -69,15 +67,33 @@ O script é um arquivo com um roteiro. Você não é obrigado a usar um script, 
 
 No Console, você pode passar informações para o R que não foram incorporadas ao Script. ÀS vezes você quer ficar testando algum procedimento, até encontrar a solução correta para um problema, podendo ser útil fazer isso direto no Console, para depois incluí-la no Script.
 
-Uma das principais vantagens do R Studio é que facilita o acompanhamento das informações que estão sendo trabalhadas. Essa IDE exibe, no painel lateral, os bancos de dados que estão ativos, as variáveis que foram salvas e as funções criadas pelo próprio usuário.
+![Ambiente Global do RStudio](r-studio-console2.png)
 
+Na linha iniciada por um > podemos digitar comandos. Uma das principais vantagens do R Studio é que facilita o acompanhamento das informações que estão sendo trabalhadas. Essa IDE exibe, no painel lateral, os bancos de dados que estão ativos, as variáveis que foram salvas e as funções criadas pelo próprio usuário.
 
 ![Ambiente Global do RStudio](r-studio-environment.PNG)
 
-Como o programa acabou de ser aberto, ainda não tem nada na memória. Entretanto, se você 
+Como o programa acabou de ser aberto pela primeira vez, ainda não tem nada na memória. Entretanto, se você digitar no Console 
 
+> mensagem = "Olá Mundo"
 
-### Exercício
+E pressionar ENTER no teclado, aparecerá no "Environment" a informação de que há uma "mensagem" cujo conteúdo é "Olá Mundo". Essa informação pode ser tratada posteriormente. Por enquanto, digite:
+
+> x = 1
+
+E agora perceba que há um "x" que contém o valor "1". É possível modificar o conteúdo desse x.
+
+> x = x + 1
+
+Estamos pedindo que o R some ao X o número 1; em outras palavras, o x agora é igual ao que já havia no próprio x mais 1. Obviamente, o resultado é 2. No environment é possível checar isso. Para ver isso no Console, digite apenas 
+
+> x
+
+E o console exibirá o conteúdo desse x, o número 2.
+
+![Outros menus](r-studio-support.png)
+
+## Exercício
 
 Copie o seguinte texto pro Script do R Studio.
 
@@ -104,7 +120,11 @@ print(mensagem)
 
 ## R nas Nuvens
 
+O R Studio Cloud permite que você use o R Studio sem precisar instalá-lo na sua máquina. Para o usuário iniciante com uma conta gratuita, a principal limitação é a do tempo de uso, que é de 25 horas mensais. Por isso, essa pode ser uma opção circunstancialmente viável (você pode estar em um computador diferente do que você habitualmente utiliza), mas normalmente é recomendável que você instale os programas no seu computador e rode localmente os códigos.
 
+De toda forma, é sempre útil conhecer essa opção, criando uma conta gratuita em [https://rstudio.cloud/](https://rstudio.cloud/). 
+
+## Scripts
 
 
 

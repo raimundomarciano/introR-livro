@@ -1,6 +1,10 @@
 # Relatórios em Markdown
 
 Uma forma interessante de fazer relatórios é a combinação entre a simplicidade do Markdown e o poder do R. O Markdown é um estilo fácil de marcação. Quando estamos usando um arquivo do tipo. Rmd (R Markdown) assinalamos certos blocos com caracteres especiais, de forma a indicar o que eles representam e como queremos que eles sejam formatados ou interpretados. Assim, se incluímos um trecho entre pares de asteriscos, queremos que esteja em negrito; mas se for antecedido por uma cerquilha (jogo da velha), trata-se do título da seção, devendo estar em negrito e com tamanho de fonte superior ao do corpo do texto. É possível, inclusive, combinar com o $\LaTeX$, o que facilita consideravelmente aa inserção de equações. 
+
 ## Markdown 
 
-O Markdown 
+O Markdown possui um cabeçalho configurável, o Yaml.
+
+
+[@rmdcook21] 
