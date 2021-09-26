@@ -51,7 +51,7 @@ O R executou a soma solicitada e retornou o resultado.
 
 ## R Studio
 
-O R Studio é um programa que permite trabalhar o R de forma aprimorada. Ele é o que os desenvolvedores chamada de Ambiente Integrado de Desenvolvimento (ou Integrated Development Environment (IDE), no original). Já tendo instalado o R, que fornece a base da linguagem de programação e a interface básica com o computador, podemos agora instalar o R Studio.
+O R Studio é um programa que permite trabalhar o R de forma aprimorada. Ele é o que os desenvolvedores chamada de Ambiente Integrado de Desenvolvimento (ou Integrated Development Environment (IDE), no original). Já tendo instalado o R, que fornece a base da linguagem de programação e a interface básica com o computador, podemos agora instalar o R Studio. 
 
 Primeiramente acesse o site do [R Studio](https://www.rstudio.com/products/rstudio/download/#download). Embora existam versões pagas com recursos interessantes, todos os recursos necessários ao programador iniciante estão incluídos na versão gratuita. Clique no botão DOWNLOAD R STUDIO FOR WINDOWS. Depois do download concluído, instale o programa na sua máquina normalmente. O R Studio automaticamente identifica o R-base instalado na sua máquina (é realmente necessário já ter instalado o R antes!).
 
@@ -93,6 +93,33 @@ E o console exibirá o conteúdo desse x, o número 2.
 
 ![Outros menus](r-studio-support.png)
 
+## R nas Nuvens
+
+O R Studio Cloud permite que você use o R Studio sem precisar instalá-lo na sua máquina. Para o usuário iniciante com uma conta gratuita, a principal limitação é a do tempo de uso, que é de 25 horas mensais. Por isso, essa pode ser uma opção circunstancialmente viável (você pode estar em um computador diferente do que você habitualmente utiliza), mas normalmente é recomendável que você instale os programas no seu computador e rode localmente os códigos.
+
+De toda forma, é sempre útil conhecer essa opção, criando uma conta gratuita em [https://rstudio.cloud/](https://rstudio.cloud/). 
+
+## Scripts
+
+Algumas informações adicionais sobre os scripts. O arquivo de script funciona como um roteiro e deve conter dois tipos de informações: linhas de código e linhas de comentário. 
+
+As linhas de código são aquelas que o R irá ler, interpretar e executar; ou seja, produzirão algum efeito. Pode-se usar linhas de código para gravar informações na memória do sistema, trazendo os dados contidos em um arquivo ou declarando o conteúdo de uma variável (*x = 1* significa que há uma variável *x* cujo conteúdo é o número *1*). Também são usadas para transformar o que está contido na memória, e para gerar saídas, como a criação de arquivos cujo conteúdo são os objetos que estão armazenados na memória (depois que você "importou" para o R os dados das vendas, você produziu os relatórios, transformando os dados em informação útil e por fim disponibilizou essa informação em algum modo mais acessível a pessoas que não usam o R, como um .pdf)
+
+As linhas de comentário são utilizadas para descrever o código, sem que isso represente um detalhamento. A ideia é que haja informações que ajudem a esclarecer o que está acontecendo. Se seu script possui apenas duas linhas de código, você pode incluir apenas uma linha de comentário informando o objetivo daquela rotina. Entretanto, conforme o script vai crescendo e atinge algumas centenas ou milhares de linhas de código torna-se imprescindível que haja mais linhas de comentário. Elas ajudam a separar as funcionalidades (esse primeiro bloco é usado para a importação de dados; o segundo, para ver se os dados estão corretos; o terceiro, para o tratamento; e assim por diante...); a indicar que tipos de dados são esperados nas funções; que tipo de saída será produzida; o que aquele pedaço de código realmente faz. As linhas de comentário devem começar com um # (jogo da velha ou cerquilha). Essas linhas são "ignoradas", não surtindo efeito sobre o que está sendo desenvolvido.
+
+```{r}
+# Essa é uma linha de comentário
+1+1 # os comentários também podem vir imediatamente após o código
+```
+
+Às vezes, temos a intenção de fazer com que um bloco (conjunto) de linhas de código seja ignorado. Isso geralmente acontece quando estamos escrevendo um programa e queremos testar diferentes possibilidades. Uma forma simples de fazer isso sem apagar aquele bloco é deixando-o "comentado", ou seja, fazendo com que todas as suas linhas sejam iniciadas por um #. No R Studio, isso pode ser feito convenientemente: selecione o bloco que você pretende deixar "comentado" e aperte Ctrl + Shift + C. Se você usa um sistema operacional diferente do Windows, a tecla de atalho pode ser outra.
+
+```{r}
+# Essa é uma linha de comentário
+#1+1 # essa linha não será executada
+2+2 # apenas essa linha produzirá efeito
+```
+
 ## Exercício
 
 Copie o seguinte texto pro Script do R Studio.
@@ -118,17 +145,7 @@ print(mensagem)
 - Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console?
 - Clique no botão Source. O que aconteceu com o Global Environment e com o Console?
 
-## R nas Nuvens
-
-O R Studio Cloud permite que você use o R Studio sem precisar instalá-lo na sua máquina. Para o usuário iniciante com uma conta gratuita, a principal limitação é a do tempo de uso, que é de 25 horas mensais. Por isso, essa pode ser uma opção circunstancialmente viável (você pode estar em um computador diferente do que você habitualmente utiliza), mas normalmente é recomendável que você instale os programas no seu computador e rode localmente os códigos.
-
-De toda forma, é sempre útil conhecer essa opção, criando uma conta gratuita em [https://rstudio.cloud/](https://rstudio.cloud/). 
-
-## Scripts
-
-
-
-### Gabarito Exercício
+## Gabarito Exercício
 
 > Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console? O R cria um objeto contendo "Hello World" e temporariamente o grava na memória. Esse objeto aparece no Global Environment. No Console, aparece o comando que foi dado.
 

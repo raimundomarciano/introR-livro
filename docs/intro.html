@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-24" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,12 +164,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.1</b> Instalando o R</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3</b> Exercício</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.5</b> Scripts</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.5.1</b> Gabarito Exercício</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.4</b> Scripts</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.5</b> Exercício</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.6</b> Gabarito Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
 <ul>
@@ -323,37 +321,49 @@ Por exemplo, se você está escrevendo um código para uma disciplina de um curs
 <p class="caption">Outros menus</p>
 </div>
 </div>
-<div id="exercício" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Exercício</h2>
+<div id="r-nas-nuvens" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> R nas Nuvens</h2>
+<p>O R Studio Cloud permite que você use o R Studio sem precisar instalá-lo na sua máquina. Para o usuário iniciante com uma conta gratuita, a principal limitação é a do tempo de uso, que é de 25 horas mensais. Por isso, essa pode ser uma opção circunstancialmente viável (você pode estar em um computador diferente do que você habitualmente utiliza), mas normalmente é recomendável que você instale os programas no seu computador e rode localmente os códigos.</p>
+<p>De toda forma, é sempre útil conhecer essa opção, criando uma conta gratuita em <a href="https://rstudio.cloud/">https://rstudio.cloud/</a>.</p>
+</div>
+<div id="scripts" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Scripts</h2>
+<p>Algumas informações adicionais sobre os scripts. O arquivo de script funciona como um roteiro e deve conter dois tipos de informações: linhas de código e linhas de comentário.</p>
+<p>As linhas de código são aquelas que o R irá ler, interpretar e executar; ou seja, produzirão algum efeito. Pode-se usar linhas de código para gravar informações na memória do sistema, trazendo os dados contidos em um arquivo ou declarando o conteúdo de uma variável (<em>x = 1</em> significa que há uma variável <em>x</em> cujo conteúdo é o número <em>1</em>). Também são usadas para transformar o que está contido na memória, e para gerar saídas, como a criação de arquivos cujo conteúdo são os objetos que estão armazenados na memória (depois que você “importou” para o R os dados das vendas, você produziu os relatórios, transformando os dados em informação útil e por fim disponibilizou essa informação em algum modo mais acessível a pessoas que não usam o R, como um .pdf)</p>
+<p>As linhas de comentário são utilizadas para descrever o código, sem que isso represente um detalhamento. A ideia é que haja informações que ajudem a esclarecer o que está acontecendo. Se seu script possui apenas duas linhas de código, você pode incluir apenas uma linha de comentário informando o objetivo daquela rotina. Entretanto, conforme o script vai crescendo e atinge algumas centenas ou milhares de linhas de código torna-se imprescindível que haja mais linhas de comentário. Elas ajudam a separar as funcionalidades (esse primeiro bloco é usado para a importação de dados; o segundo, para ver se os dados estão corretos; o terceiro, para o tratamento; e assim por diante…); a indicar que tipos de dados são esperados nas funções; que tipo de saída será produzida; o que aquele pedaço de código realmente faz. As linhas de comentário devem começar com um # (jogo da velha ou cerquilha). Essas linhas são “ignoradas,” não surtindo efeito sobre o que está sendo desenvolvido.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Essa é uma linha de comentário</span></span>
+<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span><span class="sc">+</span><span class="dv">1</span> <span class="co"># os comentários também podem vir imediatamente após o código</span></span></code></pre></div>
+<pre><code>## [1] 2</code></pre>
+<p>Às vezes, temos a intenção de fazer com que um bloco (conjunto) de linhas de código seja ignorado. Isso geralmente acontece quando estamos escrevendo um programa e queremos testar diferentes possibilidades. Uma forma simples de fazer isso sem apagar aquele bloco é deixando-o “comentado,” ou seja, fazendo com que todas as suas linhas sejam iniciadas por um #. No R Studio, isso pode ser feito convenientemente: selecione o bloco que você pretende deixar “comentado” e aperte Ctrl + Shift + C. Se você usa um sistema operacional diferente do Windows, a tecla de atalho pode ser outra.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="intro.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Essa é uma linha de comentário</span></span>
+<span id="cb5-2"><a href="intro.html#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">#1+1 # essa linha não será executada</span></span>
+<span id="cb5-3"><a href="intro.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span><span class="sc">+</span><span class="dv">2</span> <span class="co"># apenas essa linha produzirá efeito</span></span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+</div>
+<div id="exercício" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Exercício</h2>
 <p>Copie o seguinte texto pro Script do R Studio.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="intro.html#cb3-1" aria-hidden="true" tabindex="-1"></a>meu_primeiro_objeto <span class="ot">=</span> <span class="st">&quot;Hello World&quot;</span></span>
-<span id="cb3-2"><a href="intro.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Há uma tradição entre programadores de que você deve incluir na primeira lição</span></span>
-<span id="cb3-3"><a href="intro.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sobre uma linguagem de programação o print do Hello World. Esse comando faz com que </span></span>
-<span id="cb3-4"><a href="intro.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Seja exibida a mensagem &quot;Hello World&quot; (Olá Mundo). Não fazer isso dá azar.</span></span>
-<span id="cb3-5"><a href="intro.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(meu_primeiro_objeto)</span>
-<span id="cb3-6"><a href="intro.html#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="intro.html#cb3-7" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">=</span> <span class="fl">0.05</span></span>
-<span id="cb3-8"><a href="intro.html#cb3-8" aria-hidden="true" tabindex="-1"></a>valor_presente <span class="ot">=</span> <span class="dv">1000</span></span>
-<span id="cb3-9"><a href="intro.html#cb3-9" aria-hidden="true" tabindex="-1"></a>tempo <span class="ot">=</span> <span class="dv">10</span></span>
-<span id="cb3-10"><a href="intro.html#cb3-10" aria-hidden="true" tabindex="-1"></a>valor_futuro <span class="ot">=</span> valor_presente<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>taxa)<span class="sc">^</span>tempo</span>
-<span id="cb3-11"><a href="intro.html#cb3-11" aria-hidden="true" tabindex="-1"></a>mensagem <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;O valor futuro do empréstimo é&quot;</span>, valor_futuro)</span>
-<span id="cb3-12"><a href="intro.html#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-13"><a href="intro.html#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mensagem)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="intro.html#cb7-1" aria-hidden="true" tabindex="-1"></a>meu_primeiro_objeto <span class="ot">=</span> <span class="st">&quot;Hello World&quot;</span></span>
+<span id="cb7-2"><a href="intro.html#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Há uma tradição entre programadores de que você deve incluir na primeira lição</span></span>
+<span id="cb7-3"><a href="intro.html#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># sobre uma linguagem de programação o print do Hello World. Esse comando faz com que </span></span>
+<span id="cb7-4"><a href="intro.html#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Seja exibida a mensagem &quot;Hello World&quot; (Olá Mundo). Não fazer isso dá azar.</span></span>
+<span id="cb7-5"><a href="intro.html#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(meu_primeiro_objeto)</span>
+<span id="cb7-6"><a href="intro.html#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="intro.html#cb7-7" aria-hidden="true" tabindex="-1"></a>taxa <span class="ot">=</span> <span class="fl">0.05</span></span>
+<span id="cb7-8"><a href="intro.html#cb7-8" aria-hidden="true" tabindex="-1"></a>valor_presente <span class="ot">=</span> <span class="dv">1000</span></span>
+<span id="cb7-9"><a href="intro.html#cb7-9" aria-hidden="true" tabindex="-1"></a>tempo <span class="ot">=</span> <span class="dv">10</span></span>
+<span id="cb7-10"><a href="intro.html#cb7-10" aria-hidden="true" tabindex="-1"></a>valor_futuro <span class="ot">=</span> valor_presente<span class="sc">*</span>(<span class="dv">1</span><span class="sc">+</span>taxa)<span class="sc">^</span>tempo</span>
+<span id="cb7-11"><a href="intro.html#cb7-11" aria-hidden="true" tabindex="-1"></a>mensagem <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">&quot;O valor futuro do empréstimo é&quot;</span>, valor_futuro)</span>
+<span id="cb7-12"><a href="intro.html#cb7-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-13"><a href="intro.html#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mensagem)</span></code></pre></div>
 <ul>
 <li>Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console?</li>
 <li>Selecione a segunda linha e clique em Run. O que aconteceu com o Global Environment e com o Console?</li>
 <li>Clique no botão Source. O que aconteceu com o Global Environment e com o Console?</li>
 </ul>
 </div>
-<div id="r-nas-nuvens" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> R nas Nuvens</h2>
-<p>O R Studio Cloud permite que você use o R Studio sem precisar instalá-lo na sua máquina. Para o usuário iniciante com uma conta gratuita, a principal limitação é a do tempo de uso, que é de 25 horas mensais. Por isso, essa pode ser uma opção circunstancialmente viável (você pode estar em um computador diferente do que você habitualmente utiliza), mas normalmente é recomendável que você instale os programas no seu computador e rode localmente os códigos.</p>
-<p>De toda forma, é sempre útil conhecer essa opção, criando uma conta gratuita em <a href="https://rstudio.cloud/">https://rstudio.cloud/</a>.</p>
-</div>
-<div id="scripts" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Scripts</h2>
-<div id="gabarito-exercício" class="section level3" number="2.5.1">
-<h3><span class="header-section-number">2.5.1</span> Gabarito Exercício</h3>
+<div id="gabarito-exercício" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Gabarito Exercício</h2>
 <blockquote>
 <p>Selecione a primeira linha e clique em Run. O que aconteceu com o Global Environment e com o Console? O R cria um objeto contendo “Hello World” e temporariamente o grava na memória. Esse objeto aparece no Global Environment. No Console, aparece o comando que foi dado.</p>
 </blockquote>
@@ -364,7 +374,6 @@ Por exemplo, se você está escrevendo um código para uma disciplina de um curs
 <p>Clique no botão Source. O que aconteceu com o Global Environment e com o Console? Todo o script é lido; e todas as linhas de código, executadas. São temporariamente armazenados na memória, além do meu_primeiro_objeto, a taxa, o tempo, o valor_presente, o valor_futuro (no caso, o resultado do cálculo proposto) e a mensagem. NO console aparecem todas as linhas lidas e é exibido o conteúdo do objeto mensagem: “O valor futuro do empréstimo é 1628.89462677744.”</p>
 </blockquote>
 
-</div>
 </div>
 </div>
             </section>

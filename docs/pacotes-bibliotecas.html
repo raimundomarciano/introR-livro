@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-24" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,12 +164,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.1</b> Instalando o R</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3</b> Exercício</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.5</b> Scripts</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.5.1</b> Gabarito Exercício</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.4</b> Scripts</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.5</b> Exercício</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.6</b> Gabarito Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
 <ul>
@@ -246,28 +244,28 @@ div.csl-indent {
 <p>Muito do que precisamos usar já foi criado por alguém e disponibilizado na internet. No caso do R, a plataforma “oficial” para isso é o CRAN, mas há outras formas de conseguir esses códigos, como o Github.</p>
 <p>Diversas bibliotecas já vêm pré-instaladas no R.</p>
 <p>Quando precisamos instalar, usamos o comando</p>
-<div class="sourceCode" id="cb181"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb181-1"><a href="pacotes-bibliotecas.html#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="pacotes-bibliotecas.html#cb185-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code></pre></div>
 <p>O nome do pacote deve ser informado entre aspas, como todo bom texto.</p>
-<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="pacotes-bibliotecas.html#cb182-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="pacotes-bibliotecas.html#cb186-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
 <p>A instalação do pacote dplyr permite o acesso a várias funções, como filter(), select() e group_by(). Quando um pacote é instalado, as funções ficam dentro dele. ISso significa que quando queremos acessá-las, precisamos identificar a fonte.</p>
-<div class="sourceCode" id="cb183"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb183-1"><a href="pacotes-bibliotecas.html#cb183-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>()</span>
-<span id="cb183-2"><a href="pacotes-bibliotecas.html#cb183-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="pacotes-bibliotecas.html#cb187-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>()</span>
+<span id="cb187-2"><a href="pacotes-bibliotecas.html#cb187-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>()</span></code></pre></div>
 <p>Em outras palavras, primeiro dizemos qual é o pacote (dplyr, no caso), seguido de <span class="math inline">\(::\)</span> (dois pontos, duas vezes) e concluímos informando a função desejada e que se encontra desse pacote.</p>
 <p>Alternativamente, podemos usar library(dplyr). Isso deixa, durante a sessão ativa, as funções do pacote dplyr prontamente disponíveis. Quando você fechar o R (ou o R Studio), isso será desfeito. Portanto, da próxima vez que abrir o programa, precisará executar novamente o comando library(dplyr).</p>
 <p>É possível que existam duas funções com o mesmo nome, o que gera um conflito. Por exemplo, na minha máquina, há um pacote chamado <em>stats</em> que contém uma função chamada <em>lag</em>. Quando carrego o <em>dplyr</em>, que também possui uma função chamada lag(), recebo a seguinte mensagem:</p>
-<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="pacotes-bibliotecas.html#cb184-1" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘dplyr’</span>
-<span id="cb184-2"><a href="pacotes-bibliotecas.html#cb184-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-3"><a href="pacotes-bibliotecas.html#cb184-3" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>stats’<span class="sc">:</span></span>
-<span id="cb184-4"><a href="pacotes-bibliotecas.html#cb184-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-5"><a href="pacotes-bibliotecas.html#cb184-5" aria-hidden="true" tabindex="-1"></a>    filter, lag</span>
-<span id="cb184-6"><a href="pacotes-bibliotecas.html#cb184-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-7"><a href="pacotes-bibliotecas.html#cb184-7" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>base’<span class="sc">:</span></span>
-<span id="cb184-8"><a href="pacotes-bibliotecas.html#cb184-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb184-9"><a href="pacotes-bibliotecas.html#cb184-9" aria-hidden="true" tabindex="-1"></a>    intersect, setdiff, setequal, union</span></code></pre></div>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="pacotes-bibliotecas.html#cb188-1" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘dplyr’</span>
+<span id="cb188-2"><a href="pacotes-bibliotecas.html#cb188-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-3"><a href="pacotes-bibliotecas.html#cb188-3" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>stats’<span class="sc">:</span></span>
+<span id="cb188-4"><a href="pacotes-bibliotecas.html#cb188-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-5"><a href="pacotes-bibliotecas.html#cb188-5" aria-hidden="true" tabindex="-1"></a>    filter, lag</span>
+<span id="cb188-6"><a href="pacotes-bibliotecas.html#cb188-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-7"><a href="pacotes-bibliotecas.html#cb188-7" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>base’<span class="sc">:</span></span>
+<span id="cb188-8"><a href="pacotes-bibliotecas.html#cb188-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb188-9"><a href="pacotes-bibliotecas.html#cb188-9" aria-hidden="true" tabindex="-1"></a>    intersect, setdiff, setequal, union</span></code></pre></div>
 <p>Isso significa que a função lag() do <em>stats</em> foi ocultada pelo <em>dplyr</em>. Em outras palavras, se eu for usar a função lag() sem dizer a que pacote ela pertence, o R automaticamente entenderá que eu estou usando a do <em>dplyr</em>, que está sendo dominante em relação ao <em>stats</em>.</p>
 <p>Sempre que você estiver confuso sobre qual função está dominando e qual está oculta, você pode incluir o nome do pacote no comando. Se você usar dplyr::lag(), com certeza será o lag() do dplyr. Se você usar stats::lag(), com certeza será o lag() do stats.</p>
 <p>Se o pacote que você deseja instalar está disponível no Github, você deve usar a função install_github() do pacote remotes.</p>
-<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="pacotes-bibliotecas.html#cb185-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="pacotes-bibliotecas.html#cb189-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code></pre></div>
 
 </div>
             </section>

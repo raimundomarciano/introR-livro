@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-24" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,12 +164,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.1</b> Instalando o R</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3</b> Exercício</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.5</b> Scripts</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.5.1</b> Gabarito Exercício</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.4</b> Scripts</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.5</b> Exercício</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.6</b> Gabarito Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
 <ul>
@@ -246,9 +244,9 @@ div.csl-indent {
 <p>O R oferece muitas opções de pacotes para importar os dados presentes em um arquivo. Além disso, alguns pacotes permitem que você colete dados de fontes oficiais facilmente.</p>
 <div id="planilhas-csv-excel" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Planilhas (csv / Excel)</h2>
-<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="obtendo-dados.html#cb186-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/df_info.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>, <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="st">&quot;cnpj&quot;</span> <span class="ot">=</span> <span class="st">&quot;character&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="obtendo-dados.html#cb190-1" aria-hidden="true" tabindex="-1"></a>dados <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;data/df_info.csv&quot;</span>, <span class="at">encoding =</span> <span class="st">&quot;UTF-8&quot;</span>, <span class="at">colClasses =</span> <span class="fu">c</span>(<span class="st">&quot;cnpj&quot;</span> <span class="ot">=</span> <span class="st">&quot;character&quot;</span>))</span></code></pre></div>
 <p>Solicitamos as cinco primeiras colunas das cinco primeiras linhas:</p>
-<div class="sourceCode" id="cb187"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb187-1"><a href="obtendo-dados.html#cb187-1" aria-hidden="true" tabindex="-1"></a>dados[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="obtendo-dados.html#cb191-1" aria-hidden="true" tabindex="-1"></a>dados[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span></code></pre></div>
 <pre><code>##                                       name.company id.company           cnpj
 ## 1                             524 PARTICIPAÇOES SA      16284  1851771000155
 ## 2 ADVANCED DIGITAL HEALTH MEDICINA PREVENTIVA S.A.      21725 10345009000198
@@ -262,33 +260,33 @@ div.csl-indent {
 ## 4        2010-09-24        2008-08-18
 ## 5        1997-12-08        1997-10-06</code></pre>
 <p>O CNPJ está parecendo um pouco estranho. O nosso conhecimento prévio nos diz que todos os CNPJs possuem 14 dígitos. Uma simples inspeção visual revela que o número de caracteres parece estar diferente ao longo das linhas. Vamos ver se é verdade usando a função nchar().</p>
-<div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="obtendo-dados.html#cb189-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
+<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="obtendo-dados.html#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>])</span></code></pre></div>
 <pre><code>## [1] 13 14 13 14 13</code></pre>
 <p>Isso significa que o CNPJ realmente está com um número diferente de caracteres: o primeiro tem 13 (errado); o segundo, 14 (certo); o terceiro, 13 (errado); e assim por diante. Não é interessante que deixemos nossos dados assim, então precisamos investigar o que está errado. Nosso conhecimento prévio também indica uma possível falha: vários CNPJs são iniciados com o dígito zero. Como a AES Tietê Energia S.A. está listada na bolsa de valores, é fácil achar seu CNPJ fazendo uma busca no Google: 04.128.563/0001-10. Com isso, temos uma evidência do problema e é interessante analisar mais alguns casos similares (o que, aliás, se confirma).</p>
 <p>Feito isso, precisamos saber se o problema está na importação ou no arquivo original que continha os dados. Como o arquivo é pequeno (menos de 100kb), é fácil inspecioná-lo, abrindo em uma planilha eletrônica convencional ou até mesmo no Bloco de Notas (foi a minha opção). Com isso, constatamos que os “zeros do começo” realmente estão faltando no arquivo e podemos concluir que não há erro na nossa importação.</p>
 <p>Entretanto, não significa que o dado está como queríamos, devendo ser tratado. Primeiro, vamos avaliar se há algum com menos de 13 dígitos. Afinal, não é porque nas primeiras cinco linhas o menor valor fio 13 que isso seja representativo de todo o conjunto, podendo haver algum CNPJ iniciado por 00, por exemplo.</p>
-<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="obtendo-dados.html#cb191-1" aria-hidden="true" tabindex="-1"></a>caracteres <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj)</span>
-<span id="cb191-2"><a href="obtendo-dados.html#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(caracteres)</span></code></pre></div>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="obtendo-dados.html#cb195-1" aria-hidden="true" tabindex="-1"></a>caracteres <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj)</span>
+<span id="cb195-2"><a href="obtendo-dados.html#cb195-2" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(caracteres)</span></code></pre></div>
 <pre><code>## caracteres
 ##   3   9  10  11  12  13  14 
 ##   1   1   1   1  10 117 199</code></pre>
 <p>Logo, há um ou mais CNPJs em que o primeiro dígito diferente de 0 é o 12º. Assim, precisaremos preencher com zeros até termos 14 dígitos.</p>
-<div class="sourceCode" id="cb193"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb193-1"><a href="obtendo-dados.html#cb193-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
-<span id="cb193-2"><a href="obtendo-dados.html#cb193-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dados)){</span>
-<span id="cb193-3"><a href="obtendo-dados.html#cb193-3" aria-hidden="true" tabindex="-1"></a>  numeroZeros <span class="ot">&lt;-</span> <span class="dv">14</span> <span class="sc">-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj[i])</span>
-<span id="cb193-4"><a href="obtendo-dados.html#cb193-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(numeroZeros <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb193-5"><a href="obtendo-dados.html#cb193-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
-<span id="cb193-6"><a href="obtendo-dados.html#cb193-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
-<span id="cb193-7"><a href="obtendo-dados.html#cb193-7" aria-hidden="true" tabindex="-1"></a>  zeros <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;0&quot;</span>, numeroZeros)</span>
-<span id="cb193-8"><a href="obtendo-dados.html#cb193-8" aria-hidden="true" tabindex="-1"></a>  zeros <span class="ot">&lt;-</span> <span class="fu">paste0</span>(zeros, <span class="at">collapse =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb193-9"><a href="obtendo-dados.html#cb193-9" aria-hidden="true" tabindex="-1"></a>  dados<span class="sc">$</span>cnpj[i] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(zeros, dados<span class="sc">$</span>cnpj[i], <span class="at">collapse =</span> <span class="st">&quot;&quot;</span>)</span>
-<span id="cb193-10"><a href="obtendo-dados.html#cb193-10" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb193-11"><a href="obtendo-dados.html#cb193-11" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb193-12"><a href="obtendo-dados.html#cb193-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb193-13"><a href="obtendo-dados.html#cb193-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos atualizar o vetor de caracteres</span></span>
-<span id="cb193-14"><a href="obtendo-dados.html#cb193-14" aria-hidden="true" tabindex="-1"></a>caracteres <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj)</span>
-<span id="cb193-15"><a href="obtendo-dados.html#cb193-15" aria-hidden="true" tabindex="-1"></a><span class="co"># E solicitar a frequência</span></span>
-<span id="cb193-16"><a href="obtendo-dados.html#cb193-16" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(caracteres)</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="obtendo-dados.html#cb197-1" aria-hidden="true" tabindex="-1"></a>zeros <span class="ot">&lt;-</span> <span class="cn">NA</span></span>
+<span id="cb197-2"><a href="obtendo-dados.html#cb197-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(dados)){</span>
+<span id="cb197-3"><a href="obtendo-dados.html#cb197-3" aria-hidden="true" tabindex="-1"></a>  numeroZeros <span class="ot">&lt;-</span> <span class="dv">14</span> <span class="sc">-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj[i])</span>
+<span id="cb197-4"><a href="obtendo-dados.html#cb197-4" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(numeroZeros <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb197-5"><a href="obtendo-dados.html#cb197-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">next</span></span>
+<span id="cb197-6"><a href="obtendo-dados.html#cb197-6" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb197-7"><a href="obtendo-dados.html#cb197-7" aria-hidden="true" tabindex="-1"></a>  zeros <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;0&quot;</span>, numeroZeros)</span>
+<span id="cb197-8"><a href="obtendo-dados.html#cb197-8" aria-hidden="true" tabindex="-1"></a>  zeros <span class="ot">&lt;-</span> <span class="fu">paste0</span>(zeros, <span class="at">collapse =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb197-9"><a href="obtendo-dados.html#cb197-9" aria-hidden="true" tabindex="-1"></a>  dados<span class="sc">$</span>cnpj[i] <span class="ot">&lt;-</span> <span class="fu">paste0</span>(zeros, dados<span class="sc">$</span>cnpj[i], <span class="at">collapse =</span> <span class="st">&quot;&quot;</span>)</span>
+<span id="cb197-10"><a href="obtendo-dados.html#cb197-10" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb197-11"><a href="obtendo-dados.html#cb197-11" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb197-12"><a href="obtendo-dados.html#cb197-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb197-13"><a href="obtendo-dados.html#cb197-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos atualizar o vetor de caracteres</span></span>
+<span id="cb197-14"><a href="obtendo-dados.html#cb197-14" aria-hidden="true" tabindex="-1"></a>caracteres <span class="ot">&lt;-</span> <span class="fu">nchar</span>(dados<span class="sc">$</span>cnpj)</span>
+<span id="cb197-15"><a href="obtendo-dados.html#cb197-15" aria-hidden="true" tabindex="-1"></a><span class="co"># E solicitar a frequência</span></span>
+<span id="cb197-16"><a href="obtendo-dados.html#cb197-16" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(caracteres)</span></code></pre></div>
 <pre><code>## caracteres
 ##  14 
 ## 330</code></pre>

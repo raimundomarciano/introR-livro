@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-24" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,12 +164,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.1</b> Instalando o R</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3</b> Exercício</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.5</b> Scripts</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.5.1</b> Gabarito Exercício</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.4</b> Scripts</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.5</b> Exercício</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.6</b> Gabarito Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
 <ul>
@@ -249,13 +247,13 @@ div.csl-indent {
 <p>Quando a sua relação trata de apenas um conjunto de valores de mesmo tipo (todos numéricos, todos textuais ou todos lógicos), pode ser formada como um <strong>vetor</strong>. Por exemplo, poderia haver um vetor com o nome dos CEOs das empresas do setor bancário; ou um vetor com o salário desses CEOs.<br />
 Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <strong>e</strong> os salários, seria inadequado usarmos o vetor, porque agora teríamos duas dimensões, além de dois tipos: uma mesma pessoa (o CEO) possui duas características: o nome (textual / string) e o salário (numérica / num).</p>
 <p>A criação de vetores é feita com o uso do c( ), em que os valores que devem ser atribuídos ao vetor são incluídos dentro dos parênteses e separados por vírgula.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="agrupamentos-de-dados.html#cb57-1" aria-hidden="true" tabindex="-1"></a>vetorNumerico <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
-<span id="cb57-2"><a href="agrupamentos-de-dados.html#cb57-2" aria-hidden="true" tabindex="-1"></a>vetorLogico <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>,<span class="cn">FALSE</span>)</span>
-<span id="cb57-3"><a href="agrupamentos-de-dados.html#cb57-3" aria-hidden="true" tabindex="-1"></a>vetorTextual <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Eu&quot;</span>, <span class="st">&quot;Nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;10.000&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="agrupamentos-de-dados.html#cb61-1" aria-hidden="true" tabindex="-1"></a>vetorNumerico <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span>
+<span id="cb61-2"><a href="agrupamentos-de-dados.html#cb61-2" aria-hidden="true" tabindex="-1"></a>vetorLogico <span class="ot">=</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">TRUE</span>, <span class="cn">FALSE</span>,<span class="cn">FALSE</span>)</span>
+<span id="cb61-3"><a href="agrupamentos-de-dados.html#cb61-3" aria-hidden="true" tabindex="-1"></a>vetorTextual <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Eu&quot;</span>, <span class="st">&quot;Nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;10.000&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>)</span></code></pre></div>
 <p>Note que todos os vetores foram criados com dados de mesmo tipo. O vetor numérico tem apenas números inteiros (1 a 5); o vetor lógico tem apenas Verdadeiro (TRUE) e Falso (FALSE); o vetor de texto tem apenas elementos textuais (mesmo o número está entre aspas, o que força que aqueles dígitos sejam lidos como “texto”).</p>
 <p>Caso você tente misturar tipos, o R irá forçar a padronização. Por exemplo, o que aconteceria se você tentasse criar um vetor com números e textos?</p>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="agrupamentos-de-dados.html#cb58-1" aria-hidden="true" tabindex="-1"></a>vetorNumTex <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;três&quot;</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">5</span>)</span>
-<span id="cb58-2"><a href="agrupamentos-de-dados.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vetorNumTex)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="agrupamentos-de-dados.html#cb62-1" aria-hidden="true" tabindex="-1"></a>vetorNumTex <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="st">&quot;três&quot;</span>,<span class="st">&quot;4&quot;</span>,<span class="dv">5</span>)</span>
+<span id="cb62-2"><a href="agrupamentos-de-dados.html#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(vetorNumTex)</span></code></pre></div>
 <pre><code>## [1] &quot;1&quot;    &quot;2&quot;    &quot;três&quot; &quot;4&quot;    &quot;5&quot;</code></pre>
 <p>Todos os elementos apresentados estão entre aspas. Como o R não tem uma forma de transformar “três” em um número, ele converte todos os outros números em texto. Por isso, 1 vira “1,” 2 vira “2” e 5 vira “5.”</p>
 <blockquote>
@@ -268,27 +266,27 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <div id="matrizes" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Matrizes</h2>
 <p>A matriz é um conjunto de dados do mesmo tipo, ordenados em linhas (filas horizontais) e colunas (filas verticais). É criada pelo matrix(), devendo ser informados os dados que irão compor a matriz (normalmente dispostos em um vetor), o número de linhas (nrow), o número de colunas (ncol) e se o preenchimento deve ser feito por linha (byrow = TRUE) ou por coluna (byrow = FALSE).</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="agrupamentos-de-dados.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.</span></span>
-<span id="cb60-2"><a href="agrupamentos-de-dados.html#cb60-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb60-3"><a href="agrupamentos-de-dados.html#cb60-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="agrupamentos-de-dados.html#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das linhas.</span></span>
+<span id="cb64-2"><a href="agrupamentos-de-dados.html#cb64-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb64-3"><a href="agrupamentos-de-dados.html#cb64-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    2
 ## [2,]    3    4
 ## [3,]    5    6</code></pre>
 <p>Ou seja, os números foram distribuídos até o fim da primeira linha, depois até o fim da segunda linha e depois até o fim da terceira (e última) linha.</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="agrupamentos-de-dados.html#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas</span></span>
-<span id="cb62-2"><a href="agrupamentos-de-dados.html#cb62-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb62-3"><a href="agrupamentos-de-dados.html#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="agrupamentos-de-dados.html#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Se a matriz dos inteiros de 1 a 6, dispostos em 3 linhas e 2 colunas, preenchida pela ordem das colunas</span></span>
+<span id="cb66-2"><a href="agrupamentos-de-dados.html#cb66-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>), <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb66-3"><a href="agrupamentos-de-dados.html#cb66-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    4
 ## [2,]    2    5
 ## [3,]    3    6</code></pre>
 <p>Em contraste, aqui o preenchimento foi por colunas. Foi preenchida toda a primeira coluna e depois toda a segunda coluna.</p>
 <p>Se já tivéssemos um vetor salvo na memória, poderíamos usá-lo para compor a matriz.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="agrupamentos-de-dados.html#cb64-1" aria-hidden="true" tabindex="-1"></a>vetorParaMatriz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;eu&quot;</span>, <span class="st">&quot;nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;dez mil&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>) </span>
-<span id="cb64-2"><a href="agrupamentos-de-dados.html#cb64-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb64-3"><a href="agrupamentos-de-dados.html#cb64-3" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(vetorParaMatriz, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb64-4"><a href="agrupamentos-de-dados.html#cb64-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="agrupamentos-de-dados.html#cb68-1" aria-hidden="true" tabindex="-1"></a>vetorParaMatriz <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;eu&quot;</span>, <span class="st">&quot;nasci&quot;</span>, <span class="st">&quot;há&quot;</span>, <span class="st">&quot;dez mil&quot;</span>, <span class="st">&quot;anos&quot;</span>, <span class="st">&quot;atrás&quot;</span>) </span>
+<span id="cb68-2"><a href="agrupamentos-de-dados.html#cb68-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-3"><a href="agrupamentos-de-dados.html#cb68-3" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">=</span> <span class="fu">matrix</span>(vetorParaMatriz, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb68-4"><a href="agrupamentos-de-dados.html#cb68-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(mat)</span></code></pre></div>
 <pre><code>##      [,1]   [,2]     
 ## [1,] &quot;eu&quot;   &quot;nasci&quot;  
 ## [2,] &quot;há&quot;   &quot;dez mil&quot;
@@ -346,24 +344,24 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 </tbody>
 </table>
 <p>Eventualmente, pode ser interessante informar os nomes para as linhas e para as colunas. Por exemplo, se você estiver precisando mapear a distância entre as unidades de uma empresa, seria importante dizer quais são as filiais.</p>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="agrupamentos-de-dados.html#cb66-1" aria-hidden="true" tabindex="-1"></a>vetorFiliais <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>, <span class="st">&quot;Macaíba&quot;</span>)</span>
-<span id="cb66-2"><a href="agrupamentos-de-dados.html#cb66-2" aria-hidden="true" tabindex="-1"></a>vetorDistancias <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">0</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="agrupamentos-de-dados.html#cb70-1" aria-hidden="true" tabindex="-1"></a>vetorFiliais <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>, <span class="st">&quot;Macaíba&quot;</span>)</span>
+<span id="cb70-2"><a href="agrupamentos-de-dados.html#cb70-2" aria-hidden="true" tabindex="-1"></a>vetorDistancias <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">12</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">12</span>, <span class="dv">2</span>, <span class="dv">0</span>)</span></code></pre></div>
 <p>Por isso, vamos incluir o argumento</p>
 <blockquote>
 <p>dimnames = list(row_names, col_names)</p>
 </blockquote>
 <p><em>dimnames</em> significa nome das dimensões, que é informado por meio de dois vetores: o vetor com o nomes das linhas (row_names) e o vetor com o nome das colunas (col_names).</p>
 <p>No nosso exemplo, as linhas e as colunas devem possuir os mesmos nomes (porque queremos estabelecer uma matriz com a distância entre cada unidade da empresa). Por isso, trocaremos row_names por vetorFiliais e <strong>também</strong> trocaremos col_names por vetorFiliais.</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="agrupamentos-de-dados.html#cb67-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais <span class="ot">=</span> <span class="fu">matrix</span>(vetorDistancias, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb67-2"><a href="agrupamentos-de-dados.html#cb67-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">dimnames =</span> <span class="fu">list</span>(vetorFiliais, vetorFiliais))</span>
-<span id="cb67-3"><a href="agrupamentos-de-dados.html#cb67-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb67-4"><a href="agrupamentos-de-dados.html#cb67-4" aria-hidden="true" tabindex="-1"></a>distanciaFiliais</span></code></pre></div>
+<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="agrupamentos-de-dados.html#cb71-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais <span class="ot">=</span> <span class="fu">matrix</span>(vetorDistancias, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb71-2"><a href="agrupamentos-de-dados.html#cb71-2" aria-hidden="true" tabindex="-1"></a>             <span class="at">dimnames =</span> <span class="fu">list</span>(vetorFiliais, vetorFiliais))</span>
+<span id="cb71-3"><a href="agrupamentos-de-dados.html#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="agrupamentos-de-dados.html#cb71-4" aria-hidden="true" tabindex="-1"></a>distanciaFiliais</span></code></pre></div>
 <pre><code>##            Natal Parnamirim Macaíba
 ## Natal          0         10      12
 ## Parnamirim    10          0       2
 ## Macaíba       12          2       0</code></pre>
 <p>Por que o elemento [1,1] da matriz foi 0? A distância de uma unidade para ela mesmo, por definição, é zero. Para solicitar a distância entre a filial Natal e a filial Parnamirim:</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="agrupamentos-de-dados.html#cb69-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="agrupamentos-de-dados.html#cb73-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>, <span class="st">&quot;Parnamirim&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] 10</code></pre>
 <p>Perceba que, nessa matriz, a distância entre Natal - Parnamirim é a mesma que Parnamirim - Natal. Se pensarmos em termos de rodovias, isso pode não ser necessariamente verdade, pois em casos específicos pode ser necessário um deslocamento adicional em um dos sentidos (por exemplo, ir adiante x quilômetros para conseguir fazer um retorno). No caso dessa matriz, solicitar o valor como:</p>
 <blockquote>
@@ -374,11 +372,11 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>distanciaFiliais[“Parnamirim,” “Natal”]</p>
 </blockquote>
 <p>produziria o mesmo resultado e, nesse caso, é irrelevante. Entretanto, é importante ter em mente que isso nem sempre será verdade. Além disso, se quiséssemos saber a distância da filial Natal para todas as demais, deveríamos informar apenas a linha, omitindo a informação após a vírgula.</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="agrupamentos-de-dados.html#cb71-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="agrupamentos-de-dados.html#cb75-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="st">&quot;Natal&quot;</span>,]</span></code></pre></div>
 <pre><code>##      Natal Parnamirim    Macaíba 
 ##          0         10         12</code></pre>
 <p>Alternativamente, sabendo que Natal é a primeira linha da matriz, também seria possível executar</p>
-<div class="sourceCode" id="cb73"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb73-1"><a href="agrupamentos-de-dados.html#cb73-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="dv">1</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="agrupamentos-de-dados.html#cb77-1" aria-hidden="true" tabindex="-1"></a>distanciaFiliais[<span class="dv">1</span>,]</span></code></pre></div>
 <pre><code>##      Natal Parnamirim    Macaíba 
 ##          0         10         12</code></pre>
 <p>A segunda opção é particularmente importante quando as filas (linhas ou colunas) não estão nomeadas.</p>
@@ -388,33 +386,33 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>O data frame é similar a matrix, mas admite colunas com tipos diferentes. Nesse caso, é possível incluir uma coluna para o nome de uma empresa (string), uma coluna para o CNPJ (string), uma coluna para o número de empregados (integer), uma coluna para o faturamento (float) e uma coluna para identificar se as demonstrações já foram encerradas ou se ainda estão pendentes (boolean).</p>
 <p>O data frame é criado por meio do data.frame(), onde são passados os valores que irão entrar na estrutura. Uma possibilidade é passarmos vetores que representem as colunas. Assim, usaríamos um vetor para a empresa, um vetor para o CNPJ, um vetor para os empregados e um vetor para o faturamento.</p>
 <p>Não é necessário informar a quantidade de linhas ou colunas, já que o R não precisará organizar os dados (no caso da matriz, foi necessário informar como ela deveria ser preenchida). Os vetores serão incluídos como colunas na mesma ordem em que forem aparecendo dentro do data.frame().</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="agrupamentos-de-dados.html#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.</span></span>
-<span id="cb75-2"><a href="agrupamentos-de-dados.html#cb75-2" aria-hidden="true" tabindex="-1"></a>clientes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">empresa =</span> <span class="fu">c</span>(<span class="st">&quot;Marte S.A.&quot;</span>, <span class="st">&quot;Deimos S.A.&quot;</span>, <span class="st">&quot;Phobos S.A.&quot;</span>), </span>
-<span id="cb75-3"><a href="agrupamentos-de-dados.html#cb75-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cnpj =</span> <span class="fu">c</span>(<span class="st">&quot;00.000.001/0001-00&quot;</span>,<span class="st">&quot;00.000.011/0001-10&quot;</span>, <span class="st">&quot;99.000.001/0001-55&quot;</span>),</span>
-<span id="cb75-4"><a href="agrupamentos-de-dados.html#cb75-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">empregados =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>), </span>
-<span id="cb75-5"><a href="agrupamentos-de-dados.html#cb75-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">encerramento =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>),</span>
-<span id="cb75-6"><a href="agrupamentos-de-dados.html#cb75-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb75-7"><a href="agrupamentos-de-dados.html#cb75-7" aria-hidden="true" tabindex="-1"></a>clientes</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="agrupamentos-de-dados.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ainda discutiremos o que são factors, mas por enquanto insiram esse argumento.</span></span>
+<span id="cb79-2"><a href="agrupamentos-de-dados.html#cb79-2" aria-hidden="true" tabindex="-1"></a>clientes <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">empresa =</span> <span class="fu">c</span>(<span class="st">&quot;Marte S.A.&quot;</span>, <span class="st">&quot;Deimos S.A.&quot;</span>, <span class="st">&quot;Phobos S.A.&quot;</span>), </span>
+<span id="cb79-3"><a href="agrupamentos-de-dados.html#cb79-3" aria-hidden="true" tabindex="-1"></a>                       <span class="at">cnpj =</span> <span class="fu">c</span>(<span class="st">&quot;00.000.001/0001-00&quot;</span>,<span class="st">&quot;00.000.011/0001-10&quot;</span>, <span class="st">&quot;99.000.001/0001-55&quot;</span>),</span>
+<span id="cb79-4"><a href="agrupamentos-de-dados.html#cb79-4" aria-hidden="true" tabindex="-1"></a>                       <span class="at">empregados =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">20</span>, <span class="dv">25</span>), </span>
+<span id="cb79-5"><a href="agrupamentos-de-dados.html#cb79-5" aria-hidden="true" tabindex="-1"></a>                       <span class="at">encerramento =</span> <span class="fu">c</span>(<span class="cn">FALSE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>),</span>
+<span id="cb79-6"><a href="agrupamentos-de-dados.html#cb79-6" aria-hidden="true" tabindex="-1"></a>                       <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb79-7"><a href="agrupamentos-de-dados.html#cb79-7" aria-hidden="true" tabindex="-1"></a>clientes</span></code></pre></div>
 <pre><code>##       empresa               cnpj empregados encerramento
 ## 1  Marte S.A. 00.000.001/0001-00         10        FALSE
 ## 2 Deimos S.A. 00.000.011/0001-10         20        FALSE
 ## 3 Phobos S.A. 99.000.001/0001-55         25         TRUE</code></pre>
 <p>Por conta dessa permissão para uso de tipos diferentes em uma mesma estrutura, os data frames são consideravalmente importantes. Para solicitar uma fila específica (linha ou coluna) ou um elemento, é possível usar a mesma notação das matrizes.</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="agrupamentos-de-dados.html#cb77-1" aria-hidden="true" tabindex="-1"></a>clientes[<span class="dv">1</span>,]</span></code></pre></div>
+<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="agrupamentos-de-dados.html#cb81-1" aria-hidden="true" tabindex="-1"></a>clientes[<span class="dv">1</span>,]</span></code></pre></div>
 <pre><code>##      empresa               cnpj empregados encerramento
 ## 1 Marte S.A. 00.000.001/0001-00         10        FALSE</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="agrupamentos-de-dados.html#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="co"># para gerar uma relação com os CNPJs:</span></span>
-<span id="cb79-2"><a href="agrupamentos-de-dados.html#cb79-2" aria-hidden="true" tabindex="-1"></a>clientes[,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="agrupamentos-de-dados.html#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="co"># para gerar uma relação com os CNPJs:</span></span>
+<span id="cb83-2"><a href="agrupamentos-de-dados.html#cb83-2" aria-hidden="true" tabindex="-1"></a>clientes[,<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Da mesma forma que fizemos com as matrizes, podemos solicitar uma coluna com base em seu nome.</p>
-<div class="sourceCode" id="cb81"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb81-1"><a href="agrupamentos-de-dados.html#cb81-1" aria-hidden="true" tabindex="-1"></a>clientes[,<span class="st">&quot;cnpj&quot;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="agrupamentos-de-dados.html#cb85-1" aria-hidden="true" tabindex="-1"></a>clientes[,<span class="st">&quot;cnpj&quot;</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Percebea que nesse caso as linhas não foram nomeadas. No caso dos data frames, é bem comum que o identificador seja inserido como um dado</p>
 <p>O data frame ainda admite uma forma adicional de solicitar uma coluna, informando o nome do objeto seguido do cifrão ($) e do nome da coluna.</p>
-<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="agrupamentos-de-dados.html#cb83-1" aria-hidden="true" tabindex="-1"></a>clientes<span class="sc">$</span>cnpj</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="agrupamentos-de-dados.html#cb87-1" aria-hidden="true" tabindex="-1"></a>clientes<span class="sc">$</span>cnpj</span></code></pre></div>
 <pre><code>## [1] &quot;00.000.001/0001-00&quot; &quot;00.000.011/0001-10&quot; &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Perceba como a notação do R evolui. Quando resolvemos solicitar um clientes$cnpj, estamos usando um procedimento equivalente a clientes[,“cnpj”]. Como poderíamos fazer para usando a notação com cifrão, solicitar o terceiro elemento dessa relação?</p>
-<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="agrupamentos-de-dados.html#cb85-1" aria-hidden="true" tabindex="-1"></a>clientes<span class="sc">$</span>cnpj[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="agrupamentos-de-dados.html#cb89-1" aria-hidden="true" tabindex="-1"></a>clientes<span class="sc">$</span>cnpj[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] &quot;99.000.001/0001-55&quot;</code></pre>
 <p>Não precisamos informar dois elementos dentro dos colchetes [,] porque um deles foi informado anteriormente (no caso, a coluna <em>cnpj</em>)! Assim, quando informarmos o [3] estamos automaticamente nos referindo à linha.</p>
 </div>
@@ -423,72 +421,72 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>O tibble é um tipo especial de data.frame, que realiza algumas operações de forma ligeiramente diferente que o data.frame convencional. Eles fazem menos e reclamam mais, induzindo o programador a tratar melhor certos aspectos do código. Essencialmente: não permitem referências parciais ao nome de variáveis contidas em um data.frame; são mais fiéis ao que se espera que as variáveis serão (em várias ocasiões, não produzem factors, ao invés de chars) e avisam se uma coluna que está sendo requerida não faz parte do banco de dados.</p>
 <p>Para mais detalhes, acesse a documentação: &lt; <a href="https://tibble.tidyverse.org/" class="uri">https://tibble.tidyverse.org/</a> &gt;.</p>
 <p>Como o tibble não é uma estrutura nativa do R, deve ser acessada por meio do pacote tibble.</p>
-<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="agrupamentos-de-dados.html#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando o pacote tibble</span></span>
-<span id="cb87-2"><a href="agrupamentos-de-dados.html#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
-<span id="cb87-3"><a href="agrupamentos-de-dados.html#cb87-3" aria-hidden="true" tabindex="-1"></a>primeiroTibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
-<span id="cb87-4"><a href="agrupamentos-de-dados.html#cb87-4" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
-<span id="cb87-5"><a href="agrupamentos-de-dados.html#cb87-5" aria-hidden="true" tabindex="-1"></a>primeiroTibble</span></code></pre></div>
+<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="agrupamentos-de-dados.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="co"># chamando o pacote tibble</span></span>
+<span id="cb91-2"><a href="agrupamentos-de-dados.html#cb91-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tibble)</span>
+<span id="cb91-3"><a href="agrupamentos-de-dados.html#cb91-3" aria-hidden="true" tabindex="-1"></a>primeiroTibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
+<span id="cb91-4"><a href="agrupamentos-de-dados.html#cb91-4" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
+<span id="cb91-5"><a href="agrupamentos-de-dados.html#cb91-5" aria-hidden="true" tabindex="-1"></a>primeiroTibble</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   nome     numeros
 ##   &lt;chr&gt;      &lt;dbl&gt;
 ## 1 raimundo      29
 ## 2 marciano      12</code></pre>
-<div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="agrupamentos-de-dados.html#cb89-1" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame</span></code></pre></div>
+<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="agrupamentos-de-dados.html#cb93-1" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame</span></code></pre></div>
 <pre><code>##       nome numeros
 ## 1 raimundo      29
 ## 2 marciano      12</code></pre>
-<div class="sourceCode" id="cb91"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb91-1"><a href="agrupamentos-de-dados.html#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(primeiroDataFrame)</span></code></pre></div>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="agrupamentos-de-dados.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(primeiroDataFrame)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    2 obs. of  2 variables:
 ##  $ nome   : chr  &quot;raimundo&quot; &quot;marciano&quot;
 ##  $ numeros: num  29 12</code></pre>
 <p>Perceba que o tibble exibido já indica os tipos das variáveis que o compõem. No caso do data frame, foi necessário solicitar, por meio do comando str(), essa informação. Além disso, o primeiroTibble tem um resultado mais previsível que o primeiroDataFrame: as variáveis textuais foram consideradas corretamente como <chr> no tibble, mas foram identificadas como <fct> no data frame, o que pode ser um comportamento não esperado. Para garantir que o data frame trate a primeira coluna como string, é necessário forçar esse comportamento, incluindo o parâmetro &lt;stringsAsFactors = F&gt;.</p>
-<div class="sourceCode" id="cb93"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb93-1"><a href="agrupamentos-de-dados.html#cb93-1" aria-hidden="true" tabindex="-1"></a>segundoDataFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), </span>
-<span id="cb93-2"><a href="agrupamentos-de-dados.html#cb93-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>), <span class="at">stringsAsFactors =</span> F)</span>
-<span id="cb93-3"><a href="agrupamentos-de-dados.html#cb93-3" aria-hidden="true" tabindex="-1"></a>segundoDataFrame</span></code></pre></div>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="agrupamentos-de-dados.html#cb97-1" aria-hidden="true" tabindex="-1"></a>segundoDataFrame <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), </span>
+<span id="cb97-2"><a href="agrupamentos-de-dados.html#cb97-2" aria-hidden="true" tabindex="-1"></a>                      <span class="at">numeros =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>), <span class="at">stringsAsFactors =</span> F)</span>
+<span id="cb97-3"><a href="agrupamentos-de-dados.html#cb97-3" aria-hidden="true" tabindex="-1"></a>segundoDataFrame</span></code></pre></div>
 <pre><code>##       nome numeros
 ## 1 raimundo      29
 ## 2 marciano      12</code></pre>
-<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="agrupamentos-de-dados.html#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(segundoDataFrame)</span></code></pre></div>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="agrupamentos-de-dados.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(segundoDataFrame)</span></code></pre></div>
 <pre><code>## &#39;data.frame&#39;:    2 obs. of  2 variables:
 ##  $ nome   : chr  &quot;raimundo&quot; &quot;marciano&quot;
 ##  $ numeros: num  29 12</code></pre>
 <p>Agora temos um data.frame com os mesmos tipos de variáveis que o tibble. Em resumo, as diferenças são pequenas, mas o tibble é uma versão mais moderna, mais previsível e que gera mais alertas par ao programador que a está usando.</p>
 <p>A solicitação de partes do tibble é idêntica à do data.frame.</p>
-<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="agrupamentos-de-dados.html#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Para solicitar a colunha chamada de &#39;nome&#39;</span></span>
-<span id="cb97-2"><a href="agrupamentos-de-dados.html#cb97-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble[<span class="st">&#39;nome&#39;</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="agrupamentos-de-dados.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Para solicitar a colunha chamada de &#39;nome&#39;</span></span>
+<span id="cb101-2"><a href="agrupamentos-de-dados.html#cb101-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble[<span class="st">&#39;nome&#39;</span>]</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 1
 ##   nome    
 ##   &lt;chr&gt;   
 ## 1 raimundo
 ## 2 marciano</code></pre>
-<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="agrupamentos-de-dados.html#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Para solicitar a segunda coluna</span></span>
-<span id="cb99-2"><a href="agrupamentos-de-dados.html#cb99-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble[,<span class="dv">2</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="agrupamentos-de-dados.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Para solicitar a segunda coluna</span></span>
+<span id="cb103-2"><a href="agrupamentos-de-dados.html#cb103-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble[,<span class="dv">2</span>]</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 1
 ##   numeros
 ##     &lt;dbl&gt;
 ## 1      29
 ## 2      12</code></pre>
 <p>A principal diferença é que o tibble não aceita referência parcial. Isso significa que poderíamos solicitar ao data.frame uma coluna informando apenas parte do nome dela, ao passo que o tibble exige o nome completo.</p>
-<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="agrupamentos-de-dados.html#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O data.frame contém uma coluna chamada &#39;nome&#39;. Veja o que acontece se, por descuido</span></span>
-<span id="cb101-2"><a href="agrupamentos-de-dados.html#cb101-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pedirmos a coluna $nom (faltando o &#39;e&#39;)</span></span>
-<span id="cb101-3"><a href="agrupamentos-de-dados.html#cb101-3" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame<span class="sc">$</span>nom</span></code></pre></div>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="agrupamentos-de-dados.html#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O data.frame contém uma coluna chamada &#39;nome&#39;. Veja o que acontece se, por descuido</span></span>
+<span id="cb105-2"><a href="agrupamentos-de-dados.html#cb105-2" aria-hidden="true" tabindex="-1"></a><span class="co"># pedirmos a coluna $nom (faltando o &#39;e&#39;)</span></span>
+<span id="cb105-3"><a href="agrupamentos-de-dados.html#cb105-3" aria-hidden="true" tabindex="-1"></a>primeiroDataFrame<span class="sc">$</span>nom</span></code></pre></div>
 <pre><code>## [1] &quot;raimundo&quot; &quot;marciano&quot;</code></pre>
 <p>O data.frame retorna os dados normalmente, como se o nome estivesse completo. Isso pode ser indesejável caso haja ambiguidade nos títulos das variáveis. Por exemplo, poderia haver uma variável chamada ‘nome’ e outra ‘nomeCompleto.’ Com a informação incompleta, você não garante estar usando a variável correta. O tibble exige que você informe o nome exato do que está sendo solicitado.</p>
-<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="agrupamentos-de-dados.html#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veja o que acontece se você pedir o nome incompleto de uma variável</span></span>
-<span id="cb103-2"><a href="agrupamentos-de-dados.html#cb103-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble<span class="sc">$</span>nom</span></code></pre></div>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="agrupamentos-de-dados.html#cb107-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Veja o que acontece se você pedir o nome incompleto de uma variável</span></span>
+<span id="cb107-2"><a href="agrupamentos-de-dados.html#cb107-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble<span class="sc">$</span>nom</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `nom`.</code></pre>
 <pre><code>## NULL</code></pre>
 <p>O R retorna um aviso que informa que não é possível identificar uma coluna chamada ‘nom.’ O mesmo aconteceria se você solicitasse qualquer outro nome não presente no banco de dados, como</p>
-<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="agrupamentos-de-dados.html#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aconteceria o mesmo se você usasse um nome &#39;nada a ver&#39;</span></span>
-<span id="cb106-2"><a href="agrupamentos-de-dados.html#cb106-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble<span class="sc">$</span>valhaMeDeus</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="agrupamentos-de-dados.html#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Aconteceria o mesmo se você usasse um nome &#39;nada a ver&#39;</span></span>
+<span id="cb110-2"><a href="agrupamentos-de-dados.html#cb110-2" aria-hidden="true" tabindex="-1"></a>primeiroTibble<span class="sc">$</span>valhaMeDeus</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `valhaMeDeus`.</code></pre>
 <pre><code>## NULL</code></pre>
 <p>O retorno é NULL (nulo), porque não há uma coluna chamada ‘valhaMeDeus.’ Não custa lembrar que ele também diferencia letras maiúsculas de minúsculas (diz-se, nesse caso, que ele é ‘case sensitive’).</p>
 <p>Suponha que tenhamos (estranhamente) chamado a variável de ‘nUmErOs.’ Não adiantar solicitar ‘numeros,’ porque seria uma grafia diferente da esperada.</p>
-<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="agrupamentos-de-dados.html#cb109-1" aria-hidden="true" tabindex="-1"></a>outroTibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">nUmErOs =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
-<span id="cb109-2"><a href="agrupamentos-de-dados.html#cb109-2" aria-hidden="true" tabindex="-1"></a>outroTibble<span class="sc">$</span>nUmErOs</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="agrupamentos-de-dados.html#cb113-1" aria-hidden="true" tabindex="-1"></a>outroTibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;raimundo&quot;</span>, <span class="st">&quot;marciano&quot;</span>), <span class="at">nUmErOs =</span> <span class="fu">c</span>(<span class="dv">29</span>,<span class="dv">12</span>))</span>
+<span id="cb113-2"><a href="agrupamentos-de-dados.html#cb113-2" aria-hidden="true" tabindex="-1"></a>outroTibble<span class="sc">$</span>nUmErOs</span></code></pre></div>
 <pre><code>## [1] 29 12</code></pre>
-<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="agrupamentos-de-dados.html#cb111-1" aria-hidden="true" tabindex="-1"></a>outroTibble<span class="sc">$</span>numeros</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="agrupamentos-de-dados.html#cb115-1" aria-hidden="true" tabindex="-1"></a>outroTibble<span class="sc">$</span>numeros</span></code></pre></div>
 <pre><code>## Warning: Unknown or uninitialised column: `numeros`.</code></pre>
 <pre><code>## NULL</code></pre>
 <p>Por padrão, a exibição de um tibble é limitada a 10 colunas e a uma quantidade de colunas compatível com a tela, o que não acontece com o data.frame, que tenta exibir todas as colunas presentes no banco de dados. Essa característica é dispensável em bancos com poucas variáveis, mas é bastante interessante caso ele contenha algumas centenas, porque não gera um output ilegível (raramente será interessante visualizar simultaneamente centenas de colunas ao mesmo tempo). Caso queira exibir todas as colunas, bastar adicionar o parâmetro (width = Inf) dentro do print().</p>
@@ -496,13 +494,13 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <div id="array" class="section level2" number="4.5">
 <h2><span class="header-section-number">4.5</span> Array</h2>
 <p>Um array é uma extensão do conceito de vetor, que ganha atributos: quantidade de dimensões (pode ser maior que 2, ao contrário das matrizes) e essas dimensões podem receber nomes. Note que por ser uma “extensão do conceito de vetor,” o array não é exatamente um vetor!</p>
-<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="agrupamentos-de-dados.html#cb114-1" aria-hidden="true" tabindex="-1"></a>linhas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>)</span>
-<span id="cb114-2"><a href="agrupamentos-de-dados.html#cb114-2" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;ROA&quot;</span>, <span class="st">&quot;ROE&quot;</span>, <span class="st">&quot;Liquidez&quot;</span>)</span>
-<span id="cb114-3"><a href="agrupamentos-de-dados.html#cb114-3" aria-hidden="true" tabindex="-1"></a>dimensoes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>)</span>
-<span id="cb114-4"><a href="agrupamentos-de-dados.html#cb114-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb114-5"><a href="agrupamentos-de-dados.html#cb114-5" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.35</span>, <span class="fl">0.32</span>, <span class="fl">0.36</span>, <span class="fl">1.08</span>, <span class="fl">1.12</span>, </span>
-<span id="cb114-6"><a href="agrupamentos-de-dados.html#cb114-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.40</span>, <span class="fl">0.25</span>, <span class="fl">0.45</span>, <span class="fl">0.30</span>, <span class="fl">0.99</span>, <span class="fl">1.13</span>), </span>
-<span id="cb114-7"><a href="agrupamentos-de-dados.html#cb114-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="at">dimnames =</span> <span class="fu">list</span>(linhas,colunas,dimensoes))</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="agrupamentos-de-dados.html#cb118-1" aria-hidden="true" tabindex="-1"></a>linhas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>)</span>
+<span id="cb118-2"><a href="agrupamentos-de-dados.html#cb118-2" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;ROA&quot;</span>, <span class="st">&quot;ROE&quot;</span>, <span class="st">&quot;Liquidez&quot;</span>)</span>
+<span id="cb118-3"><a href="agrupamentos-de-dados.html#cb118-3" aria-hidden="true" tabindex="-1"></a>dimensoes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>)</span>
+<span id="cb118-4"><a href="agrupamentos-de-dados.html#cb118-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb118-5"><a href="agrupamentos-de-dados.html#cb118-5" aria-hidden="true" tabindex="-1"></a><span class="fu">array</span>(<span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.35</span>, <span class="fl">0.32</span>, <span class="fl">0.36</span>, <span class="fl">1.08</span>, <span class="fl">1.12</span>, </span>
+<span id="cb118-6"><a href="agrupamentos-de-dados.html#cb118-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">0.40</span>, <span class="fl">0.25</span>, <span class="fl">0.45</span>, <span class="fl">0.30</span>, <span class="fl">0.99</span>, <span class="fl">1.13</span>), </span>
+<span id="cb118-7"><a href="agrupamentos-de-dados.html#cb118-7" aria-hidden="true" tabindex="-1"></a>      <span class="at">dim =</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">2</span>), <span class="at">dimnames =</span> <span class="fu">list</span>(linhas,colunas,dimensoes))</span></code></pre></div>
 <pre><code>## , , Empresa A
 ## 
 ##       ROA  ROE Liquidez
@@ -515,12 +513,12 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 ## 2019 0.40 0.45     0.99
 ## 2020 0.25 0.30     1.13</code></pre>
 <p>Dessaa forma, criamos uma matriz para cada dimensão (empresa A ou B), contendo os respectivos valores de cada indicador (ROA, ROE e Liquidez) em cada ano (2019 e 2020). Uma apresentação alternativa seria um data frame com dados empilhados.</p>
-<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="agrupamentos-de-dados.html#cb116-1" aria-hidden="true" tabindex="-1"></a>linhas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2019</span>, <span class="dv">2020</span>)</span>
-<span id="cb116-2"><a href="agrupamentos-de-dados.html#cb116-2" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;ROA&quot;</span>, <span class="st">&quot;ROE&quot;</span>, <span class="st">&quot;Liquidez&quot;</span>)</span>
-<span id="cb116-3"><a href="agrupamentos-de-dados.html#cb116-3" aria-hidden="true" tabindex="-1"></a>dimensoes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>)</span>
-<span id="cb116-4"><a href="agrupamentos-de-dados.html#cb116-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb116-5"><a href="agrupamentos-de-dados.html#cb116-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">Empresas =</span> dimensoes, <span class="at">Anos =</span> linhas, <span class="at">ROA =</span> <span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.35</span>, <span class="fl">0.40</span>, <span class="fl">0.25</span>),</span>
-<span id="cb116-6"><a href="agrupamentos-de-dados.html#cb116-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">ROE =</span> <span class="fu">c</span>(<span class="fl">0.32</span>, <span class="fl">0.36</span>,<span class="fl">0.45</span>, <span class="fl">0.30</span>), <span class="at">Liquidez =</span> <span class="fu">c</span>(<span class="fl">1.08</span>, <span class="fl">1.12</span>,<span class="fl">0.99</span>, <span class="fl">1.13</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="agrupamentos-de-dados.html#cb120-1" aria-hidden="true" tabindex="-1"></a>linhas <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2019</span>, <span class="dv">2020</span>)</span>
+<span id="cb120-2"><a href="agrupamentos-de-dados.html#cb120-2" aria-hidden="true" tabindex="-1"></a>colunas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;ROA&quot;</span>, <span class="st">&quot;ROE&quot;</span>, <span class="st">&quot;Liquidez&quot;</span>)</span>
+<span id="cb120-3"><a href="agrupamentos-de-dados.html#cb120-3" aria-hidden="true" tabindex="-1"></a>dimensoes <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa A&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>, <span class="st">&quot;Empresa B&quot;</span>)</span>
+<span id="cb120-4"><a href="agrupamentos-de-dados.html#cb120-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb120-5"><a href="agrupamentos-de-dados.html#cb120-5" aria-hidden="true" tabindex="-1"></a><span class="fu">data.frame</span>(<span class="at">Empresas =</span> dimensoes, <span class="at">Anos =</span> linhas, <span class="at">ROA =</span> <span class="fu">c</span>(<span class="fl">0.30</span>, <span class="fl">0.35</span>, <span class="fl">0.40</span>, <span class="fl">0.25</span>),</span>
+<span id="cb120-6"><a href="agrupamentos-de-dados.html#cb120-6" aria-hidden="true" tabindex="-1"></a>           <span class="at">ROE =</span> <span class="fu">c</span>(<span class="fl">0.32</span>, <span class="fl">0.36</span>,<span class="fl">0.45</span>, <span class="fl">0.30</span>), <span class="at">Liquidez =</span> <span class="fu">c</span>(<span class="fl">1.08</span>, <span class="fl">1.12</span>,<span class="fl">0.99</span>, <span class="fl">1.13</span>))</span></code></pre></div>
 <pre><code>##    Empresas Anos  ROA  ROE Liquidez
 ## 1 Empresa A 2019 0.30 0.32     1.08
 ## 2 Empresa A 2020 0.35 0.36     1.12
@@ -531,14 +529,14 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <div id="listas" class="section level2" number="4.6">
 <h2><span class="header-section-number">4.6</span> Listas</h2>
 <p>A lista é uma forma que podemos usar para criar estruturas mais complexas, quando precisamos, por exemplo de mais dimensões e com tipos diferentes de dados.</p>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="agrupamentos-de-dados.html#cb118-1" aria-hidden="true" tabindex="-1"></a>identificador1 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;matriz&quot;</span>)</span>
-<span id="cb118-2"><a href="agrupamentos-de-dados.html#cb118-2" aria-hidden="true" tabindex="-1"></a>dados1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">37</span>)</span>
-<span id="cb118-3"><a href="agrupamentos-de-dados.html#cb118-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-4"><a href="agrupamentos-de-dados.html#cb118-4" aria-hidden="true" tabindex="-1"></a>identificador2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;filial&quot;</span>)</span>
-<span id="cb118-5"><a href="agrupamentos-de-dados.html#cb118-5" aria-hidden="true" tabindex="-1"></a>dados2 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">18</span>, <span class="dv">74</span>)</span>
-<span id="cb118-6"><a href="agrupamentos-de-dados.html#cb118-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-7"><a href="agrupamentos-de-dados.html#cb118-7" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">=</span> <span class="fu">list</span>(identificador1, dados1, identificador2, dados2)</span>
-<span id="cb118-8"><a href="agrupamentos-de-dados.html#cb118-8" aria-hidden="true" tabindex="-1"></a>lista</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="agrupamentos-de-dados.html#cb122-1" aria-hidden="true" tabindex="-1"></a>identificador1 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;matriz&quot;</span>)</span>
+<span id="cb122-2"><a href="agrupamentos-de-dados.html#cb122-2" aria-hidden="true" tabindex="-1"></a>dados1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">9</span>,<span class="dv">37</span>)</span>
+<span id="cb122-3"><a href="agrupamentos-de-dados.html#cb122-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-4"><a href="agrupamentos-de-dados.html#cb122-4" aria-hidden="true" tabindex="-1"></a>identificador2 <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;filial&quot;</span>)</span>
+<span id="cb122-5"><a href="agrupamentos-de-dados.html#cb122-5" aria-hidden="true" tabindex="-1"></a>dados2 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">18</span>, <span class="dv">74</span>)</span>
+<span id="cb122-6"><a href="agrupamentos-de-dados.html#cb122-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb122-7"><a href="agrupamentos-de-dados.html#cb122-7" aria-hidden="true" tabindex="-1"></a>lista <span class="ot">=</span> <span class="fu">list</span>(identificador1, dados1, identificador2, dados2)</span>
+<span id="cb122-8"><a href="agrupamentos-de-dados.html#cb122-8" aria-hidden="true" tabindex="-1"></a>lista</span></code></pre></div>
 <pre><code>## [[1]]
 ## [1] &quot;matriz&quot;
 ## 
@@ -551,13 +549,13 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 ## [[4]]
 ## [1]  2 18 74</code></pre>
 <p>Eventualmente, pode ser necessário “descaracterizar” a lista. Com a função <strong>unlist</strong>, podemos converter a lista anteriormente utilizada em um vetor. Note que a lista possuía elementos string e numéricos, o que era admitido em uma lista, mas não em um vetor.</p>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="agrupamentos-de-dados.html#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(lista)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="agrupamentos-de-dados.html#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">unlist</span>(lista)</span></code></pre></div>
 <pre><code>## [1] &quot;matriz&quot; &quot;1&quot;      &quot;9&quot;      &quot;37&quot;     &quot;filial&quot; &quot;2&quot;      &quot;18&quot;     &quot;74&quot;</code></pre>
 <p>Como esperado, o vetor converte todos os elementos em strings (texto), já que ele não consegue transformar “matriz” em um número.</p>
 <p>Outro exemplo:</p>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="agrupamentos-de-dados.html#cb122-1" aria-hidden="true" tabindex="-1"></a>lista2 <span class="ot">=</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;primeiro&quot;</span>, <span class="st">&quot;segundo&quot;</span>), <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
-<span id="cb122-2"><a href="agrupamentos-de-dados.html#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lista2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ordem&quot;</span>, <span class="st">&quot;dados&quot;</span>)</span>
-<span id="cb122-3"><a href="agrupamentos-de-dados.html#cb122-3" aria-hidden="true" tabindex="-1"></a>lista2</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="agrupamentos-de-dados.html#cb126-1" aria-hidden="true" tabindex="-1"></a>lista2 <span class="ot">=</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="st">&quot;primeiro&quot;</span>, <span class="st">&quot;segundo&quot;</span>), <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">9</span>, <span class="at">ncol =</span> <span class="dv">3</span>))</span>
+<span id="cb126-2"><a href="agrupamentos-de-dados.html#cb126-2" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(lista2) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;ordem&quot;</span>, <span class="st">&quot;dados&quot;</span>)</span>
+<span id="cb126-3"><a href="agrupamentos-de-dados.html#cb126-3" aria-hidden="true" tabindex="-1"></a>lista2</span></code></pre></div>
 <pre><code>## $ordem
 ## [1] &quot;primeiro&quot; &quot;segundo&quot; 
 ## 
@@ -573,13 +571,13 @@ Entretanto, se estivéssemos falando de uma relação envolvendo os nomes <stron
 <p>O factor é um tipo especial de vetor, utilizado para variáveis categóricas, ou seja, qualidades ou atributos de algo que serão usadas em alguma análise. Assim, se você está desenvolvendo um estudo comparativo por setor econômico, pode ser uma ideia interessante incluir o setor econômico como um factor. Note que setores econômicos não possuem um critério específico de ordenação; normalmente esse tipo de análise não define que um setor é mais importante que outro, sendo apenas um critério de separação entre as empresas que pertencem a cada um. Por exemplo, se eu quero comparar que setores sofreram mais com a Covid19 durante o ano de 2020, eu devo identificar que empresas pertencem a cada setor e analisar o que aconteceu com elas. Não há, a priori, qualquer ordem entre eles.</p>
 <p>Note que isso é bem diferente de perguntas, feitas em questionários, com graus de comparação. Por exemplo, se perguntamos ao entrevistado se ele está “pouco satisfeito,” “satisfeito” ou “muito satisfeito,” a resposta tem níveis. É claro que “muito satisfeito” possui um valor maior que “satisfeito” e é claro que “satisfeito” possui um valor maior que “pouco satisfeito.”</p>
 <p>O R não possui um mecanismo interno para entender expressões textuais, de forma que o programador precisa explicar para o R que certas strings possuem valor superior a outras. É fácil para um ser humano entender que “excelente” é melhor que “bom,” mas como o R não sabe o que significa nem bom, nem excelente, podemos criar um factor.</p>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="agrupamentos-de-dados.html#cb124-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>)</span>
-<span id="cb124-2"><a href="agrupamentos-de-dados.html#cb124-2" aria-hidden="true" tabindex="-1"></a>fat <span class="ot">=</span> <span class="fu">factor</span>(vetor, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb124-3"><a href="agrupamentos-de-dados.html#cb124-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb124-4"><a href="agrupamentos-de-dados.html#cb124-4" aria-hidden="true" tabindex="-1"></a>fat</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="agrupamentos-de-dados.html#cb128-1" aria-hidden="true" tabindex="-1"></a>vetor <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>)</span>
+<span id="cb128-2"><a href="agrupamentos-de-dados.html#cb128-2" aria-hidden="true" tabindex="-1"></a>fat <span class="ot">=</span> <span class="fu">factor</span>(vetor, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;bom&quot;</span>, <span class="st">&quot;excelente&quot;</span>), <span class="at">ordered =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb128-3"><a href="agrupamentos-de-dados.html#cb128-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb128-4"><a href="agrupamentos-de-dados.html#cb128-4" aria-hidden="true" tabindex="-1"></a>fat</span></code></pre></div>
 <pre><code>## [1] bom       bom       excelente
 ## Levels: bom &lt; excelente</code></pre>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="agrupamentos-de-dados.html#cb126-1" aria-hidden="true" tabindex="-1"></a>fat[<span class="dv">1</span>] <span class="sc">&lt;</span> fat[<span class="dv">3</span>]</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="agrupamentos-de-dados.html#cb130-1" aria-hidden="true" tabindex="-1"></a>fat[<span class="dv">1</span>] <span class="sc">&lt;</span> fat[<span class="dv">3</span>]</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Várias funções de importações incluem um comando para que você informe qual tratamento deseja (geralmente o parâmetro é <em>stringsAsFactors</em>).</p>
 

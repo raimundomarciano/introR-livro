@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-24" />
+<meta name="date" content="2021-09-26" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,12 +164,10 @@ div.csl-indent {
 <ul>
 <li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#instalando-o-r"><i class="fa fa-check"></i><b>2.1</b> Instalando o R</a></li>
 <li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#r-studio"><i class="fa fa-check"></i><b>2.2</b> R Studio</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.3</b> Exercício</a></li>
-<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.4</b> R nas Nuvens</a></li>
-<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.5</b> Scripts</a>
-<ul>
-<li class="chapter" data-level="2.5.1" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.5.1</b> Gabarito Exercício</a></li>
-</ul></li>
+<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#r-nas-nuvens"><i class="fa fa-check"></i><b>2.3</b> R nas Nuvens</a></li>
+<li class="chapter" data-level="2.4" data-path="intro.html"><a href="intro.html#scripts"><i class="fa fa-check"></i><b>2.4</b> Scripts</a></li>
+<li class="chapter" data-level="2.5" data-path="intro.html"><a href="intro.html#exercício"><i class="fa fa-check"></i><b>2.5</b> Exercício</a></li>
+<li class="chapter" data-level="2.6" data-path="intro.html"><a href="intro.html#gabarito-exercício"><i class="fa fa-check"></i><b>2.6</b> Gabarito Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="variáveis.html"><a href="variáveis.html"><i class="fa fa-check"></i><b>3</b> Variáveis</a>
 <ul>
@@ -244,41 +242,41 @@ div.csl-indent {
 <div id="variáveis" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Variáveis</h1>
 <p>Os dados são inseridos no R como variáveis. Eles podem ser importados (trazidos de um arquivo para o R) ou digitados no próprio console. Quando você deseja armazenar um valor na memória, você deve atribuí-lo, usando o sinal = ou &lt;-.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="variáveis.html#cb4-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb4-2"><a href="variáveis.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="variáveis.html#cb8-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb8-2"><a href="variáveis.html#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(x)</span></code></pre></div>
 <pre><code>## [1] 1</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="variáveis.html#cb6-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span>
-<span id="cb6-2"><a href="variáveis.html#cb6-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="variáveis.html#cb10-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">1</span><span class="sc">+</span><span class="dv">1</span></span>
+<span id="cb10-2"><a href="variáveis.html#cb10-2" aria-hidden="true" tabindex="-1"></a>y</span></code></pre></div>
 <pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="variáveis.html#cb8-1" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">=</span> <span class="st">&quot;Esse é um texto. Observe as aspas duplas&quot;</span></span>
-<span id="cb8-2"><a href="variáveis.html#cb8-2" aria-hidden="true" tabindex="-1"></a>assim <span class="ot">=</span> <span class="st">&#39;Também podem ser usadas aspas simples&#39;</span></span>
-<span id="cb8-3"><a href="variáveis.html#cb8-3" aria-hidden="true" tabindex="-1"></a>sugestao <span class="ot">=</span> <span class="st">&#39;Use aspas simples sempre que &quot;possível&quot; para delimitar a variável. Os </span></span>
-<span id="cb8-4"><a href="variáveis.html#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">textos em português costumam usadas aspas duplas.&#39;</span></span>
-<span id="cb8-5"><a href="variáveis.html#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sugestao)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="variáveis.html#cb12-1" aria-hidden="true" tabindex="-1"></a>texto <span class="ot">=</span> <span class="st">&quot;Esse é um texto. Observe as aspas duplas&quot;</span></span>
+<span id="cb12-2"><a href="variáveis.html#cb12-2" aria-hidden="true" tabindex="-1"></a>assim <span class="ot">=</span> <span class="st">&#39;Também podem ser usadas aspas simples&#39;</span></span>
+<span id="cb12-3"><a href="variáveis.html#cb12-3" aria-hidden="true" tabindex="-1"></a>sugestao <span class="ot">=</span> <span class="st">&#39;Use aspas simples sempre que &quot;possível&quot; para delimitar a variável. Os </span></span>
+<span id="cb12-4"><a href="variáveis.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="st">textos em português costumam usadas aspas duplas.&#39;</span></span>
+<span id="cb12-5"><a href="variáveis.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(sugestao)</span></code></pre></div>
 <pre><code>## [1] &quot;Use aspas simples sempre que \&quot;possível\&quot; para delimitar a variável. Os \ntextos em português costumam usadas aspas duplas.&quot;</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="variáveis.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(sugestao)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="variáveis.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(sugestao)</span></code></pre></div>
 <pre><code>## Use aspas simples sempre que &quot;possível&quot; para delimitar a variável. Os 
 ## textos em português costumam usadas aspas duplas.</code></pre>
 <div id="numéricas" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Numéricas</h2>
 <p>Por padrão, o R trata números como variáveis da classe <em>numeric</em> e tipo <em>double</em>. Em outras palavras, ele considera, por padrão, qualquer número digitado como um número real.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="variáveis.html#cb12-1" aria-hidden="true" tabindex="-1"></a>numero1 <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb12-2"><a href="variáveis.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero1)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="variáveis.html#cb16-1" aria-hidden="true" tabindex="-1"></a>numero1 <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb16-2"><a href="variáveis.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero1)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="variáveis.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(numero1)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="variáveis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(numero1)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <p>Geralmente, isso é o comportamento desejado. No caso de você precisar que o R trate o número como um <em>inteiro</em>, você deve acrescentar um L.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="variáveis.html#cb16-1" aria-hidden="true" tabindex="-1"></a>numero2 <span class="ot">=</span> 2L</span>
-<span id="cb16-2"><a href="variáveis.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero2)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="variáveis.html#cb20-1" aria-hidden="true" tabindex="-1"></a>numero2 <span class="ot">=</span> 2L</span>
+<span id="cb20-2"><a href="variáveis.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero2)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="variáveis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(numero2)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="variáveis.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(numero2)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
 <p>O R não usa a formatação “brasileira” de números. No sistema adotado, devemos separar decimais por ponto, não por vírgulas. Por isso, o correto é 0.5 ao invés de 1,5.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="variáveis.html#cb20-1" aria-hidden="true" tabindex="-1"></a>numero3 <span class="ot">=</span> <span class="fl">1.5</span></span>
-<span id="cb20-2"><a href="variáveis.html#cb20-2" aria-hidden="true" tabindex="-1"></a>numero4 <span class="ot">=</span> <span class="fl">1.5</span> <span class="sc">*</span> <span class="dv">2</span></span>
-<span id="cb20-3"><a href="variáveis.html#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numero3)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="variáveis.html#cb24-1" aria-hidden="true" tabindex="-1"></a>numero3 <span class="ot">=</span> <span class="fl">1.5</span></span>
+<span id="cb24-2"><a href="variáveis.html#cb24-2" aria-hidden="true" tabindex="-1"></a>numero4 <span class="ot">=</span> <span class="fl">1.5</span> <span class="sc">*</span> <span class="dv">2</span></span>
+<span id="cb24-3"><a href="variáveis.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numero3)</span></code></pre></div>
 <pre><code>## [1] 1.5</code></pre>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="variáveis.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numero4)</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="variáveis.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(numero4)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 <p>Operações matemáticas com objetos numéricos serão apresentadas na seção <a href="trabalhando-com-variáveis-no-r-base.html#funções-numéricas-básicas">Funções numéricas básicas</a>.</p>
 <!-- O R possui uma abordagem simplificada para o tratamento de números. Em tese, na computação os números possuem várias classificações, como: inteiro (integer), que não admitem casas decimais,  e ponto-flutuantes (float), que possuem casas decimais. Portanto, 3 pode ser um integer, enquanto 3,5 não pode (tem um dígito após a vírgula). Ainda há mais algumas classificações, como o double e o long, mas o integer e o float são suficientes para o que precisamos discutir. -->
@@ -290,19 +288,19 @@ div.csl-indent {
 <h2><span class="header-section-number">3.2</span> Textuais</h2>
 <p>Para inserir um caractere, uma palavra ou uma frase, é necessário o uso de aspas simples ou duplas. Como no português é comum o uso de aspas duplas, é interessante o uso de aspas simples no R. Isso se deve ao fato de que se você precisar eventualmente incluir as aspas duplas, elas podem ficar dentro das aspas simples.</p>
 <p>Por exemplo, é aceitável:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="variáveis.html#cb24-1" aria-hidden="true" tabindex="-1"></a>texto1 <span class="ot">=</span> <span class="st">&#39;Ela disse: &quot;Ok&quot;.&#39;</span></span>
-<span id="cb24-2"><a href="variáveis.html#cb24-2" aria-hidden="true" tabindex="-1"></a>texto2 <span class="ot">=</span> <span class="st">&#39;E eu respondi: &quot;Certo&quot;.&#39;</span></span>
-<span id="cb24-3"><a href="variáveis.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(texto1, texto2))</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="variáveis.html#cb28-1" aria-hidden="true" tabindex="-1"></a>texto1 <span class="ot">=</span> <span class="st">&#39;Ela disse: &quot;Ok&quot;.&#39;</span></span>
+<span id="cb28-2"><a href="variáveis.html#cb28-2" aria-hidden="true" tabindex="-1"></a>texto2 <span class="ot">=</span> <span class="st">&#39;E eu respondi: &quot;Certo&quot;.&#39;</span></span>
+<span id="cb28-3"><a href="variáveis.html#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(texto1, texto2))</span></code></pre></div>
 <pre><code>## Ela disse: &quot;Ok&quot;.
 ## E eu respondi: &quot;Certo&quot;.</code></pre>
 <p>Perceba que as aspas simples estão funcionando apenas como delimitadores. Estão dizendo que tudo que está dentro delas faz parte de um mesmo texto, inclusive as aspas duplas.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="variáveis.html#cb26-1" aria-hidden="true" tabindex="-1"></a>texto3 <span class="ot">&lt;-</span> <span class="st">&quot;Ela disse: &quot;</span>Ok<span class="st">&quot;.&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="variáveis.html#cb30-1" aria-hidden="true" tabindex="-1"></a>texto3 <span class="ot">&lt;-</span> <span class="st">&quot;Ela disse: &quot;</span>Ok<span class="st">&quot;.&quot;</span></span></code></pre></div>
 <p>O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok“.”)</p>
 <div id="numérica-ou-textual" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Numérica ou textual?</h3>
 <p>O CNPJ de uma empresa é composto por 14 dígitos numéricos (0 a 9), separados por alguns marcadores (pontos, barras e traços). Por exemplo, pode ser 12.345.678/0001-19. Para guardar essa informação como uma variável numérica, você precisaria omitir as marcações, digitando 12345678000119. Entretanto, existe aqui um problema: o caso dos CNPJs iniciados por 0. Se há um 0 no início do número, ele é sempre ignorado. Por exemplo, 02 sempre será salvo na memória como 2, porque o zero à esquerda, na Matemática, não tem função.</p>
 <p>Pensando nisso, pode ser mais interessante salvar o CNPJ como uma variável textual.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="variáveis.html#cb27-1" aria-hidden="true" tabindex="-1"></a>cnpj <span class="ot">&lt;-</span> <span class="st">&quot;12.345.678/0001-19&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="variáveis.html#cb31-1" aria-hidden="true" tabindex="-1"></a>cnpj <span class="ot">&lt;-</span> <span class="st">&quot;12.345.678/0001-19&quot;</span></span></code></pre></div>
 <p>Com isso não são perdidos os marcadores. Perceba, por fim, que o tratamento desse “número” como texto não tem implicações sobre a análise estatística dos dados. O CNPJ não é um número sobre o qual você realiza operações matemáticas. Você não calcula a média,a moda ou a mediana dos CNPJs e nem cria um gráfico de CNPJs. Ele é um identificador da empresa, tal qual o nome dela.</p>
 <p>No caso de pessoas físicas, o mesmo raciocínio vale para o CPF.</p>
 <blockquote>
@@ -317,91 +315,91 @@ div.csl-indent {
 <p>Se dizemos que estamos precisando de um relatório que contenha apenas as empresas que tiveram lucros no ano passado (2020) <strong>e</strong> que abriram capital nos últimos cinco anos (2016-2020), estamos exigindo que as empresas necessariamente atendam aos dois requisitos; ou seja, o relatório só deve conter as empresas que, além de terem aberto o capital entre 2016 e 2020, também apresentaram, em seus demonstrativos financeiros de 2020, um resultado contábil positivo. Com o uso do operador <strong>AND</strong> (<strong>e</strong>), não basta uma característica, é necessário que atenda as duas.</p>
 <p>Se tivéssemos dito que queríamos um relatório com empresas que têm Patrimônio Líquido Negativo <strong>ou</strong> que estão em Recuperação Judicial, precisaríamos pegar todas as empresas que atendem a qualquer um dos critérios (inclusive as que atendem a ambos os critérios). Assim, se a empresa tem PL negativo, mas não está em recuperação judicial, ela deve constar no relatório. Se ela está em recuperação judicial, mas não tem PL negativo, ela deve constar no relatório. Se ela tem PL negativo e está em recuperação judicial, ela também deve estar no relatório. A única situação em que ela deve ser deixada de fora é caso ela tenha PL maior ou igual a zero e não esteja em recuperação judicial.</p>
 <p>No R, o operador AND é representado por &amp; (“e comercial”), enquanto o OR é representado por | (uma barra vertical).</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="variáveis.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AND ou E é representado por &amp;</span></span>
-<span id="cb28-2"><a href="variáveis.html#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="variáveis.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AND ou E é representado por &amp;</span></span>
+<span id="cb32-2"><a href="variáveis.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="variáveis.html#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR ou OU é representado por |</span></span>
-<span id="cb30-2"><a href="variáveis.html#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="variáveis.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR ou OU é representado por |</span></span>
+<span id="cb34-2"><a href="variáveis.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="cn">TRUE</span> <span class="sc">|</span> <span class="cn">FALSE</span>) </span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Além disso, é possível realizar a negação de um valor lógico. Dizer que algo não é verdadeiro equivale a dizer que é falso. Dizer que algo não é falso equivale a dizer que algo é verdadeiro. No R, a negação é representada por um ! (ponto de exclamação).</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="variáveis.html#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AND ou E é representado por &amp;</span></span>
-<span id="cb32-2"><a href="variáveis.html#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">5</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="variáveis.html#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># AND ou E é representado por &amp;</span></span>
+<span id="cb36-2"><a href="variáveis.html#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">5</span></span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="variáveis.html#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR ou OU é representado por |</span></span>
-<span id="cb34-2"><a href="variáveis.html#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">5</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="variáveis.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># OR ou OU é representado por |</span></span>
+<span id="cb38-2"><a href="variáveis.html#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>(<span class="dv">2</span> <span class="sc">&lt;</span> <span class="dv">5</span>) </span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
 <p>Sabemos que 2 é menor que 5. Por isso, a expressão 2 &lt; 5 retorna um valor TRUE (verdadeiro). Quando adicionamos o operador de negação (!), estamos pedindo para que o R retorne “não” verdadeiro, o que equivale a Falso.</p>
 <p>Variáveis lógicas podem ter muitos usos, como parâmetros em funções ou filtros para listas de dados. Por exemplo, você pode querer que o usuário informe se ele quer imprimir o relatório dos valores ao final. Nesse caso, ele deveria informar que o valor do parâmetro imprimir_relatorio deveria ser TRUE. Caso ele não queira imprimir o relatório, deveria informar imprimir_relatorio como FALSE.</p>
 <p>Também podem ser usados para comparações de igualdade (==) ou desigualdade (!=).</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="variáveis.html#cb36-1" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb36-2"><a href="variáveis.html#cb36-2" aria-hidden="true" tabindex="-1"></a>dois_texto <span class="ot">&lt;-</span> <span class="st">&quot;dois&quot;</span></span>
-<span id="cb36-3"><a href="variáveis.html#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é o mesmo que o dois &quot;por extenso&quot;</span></span>
-<span id="cb36-4"><a href="variáveis.html#cb36-4" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">==</span> dois_texto</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="variáveis.html#cb40-1" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb40-2"><a href="variáveis.html#cb40-2" aria-hidden="true" tabindex="-1"></a>dois_texto <span class="ot">&lt;-</span> <span class="st">&quot;dois&quot;</span></span>
+<span id="cb40-3"><a href="variáveis.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é o mesmo que o dois &quot;por extenso&quot;</span></span>
+<span id="cb40-4"><a href="variáveis.html#cb40-4" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">==</span> dois_texto</span></code></pre></div>
 <pre><code>## [1] FALSE</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="variáveis.html#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é diferente do dois &quot;por extenso&quot;</span></span>
-<span id="cb38-2"><a href="variáveis.html#cb38-2" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">!=</span> dois_texto</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="variáveis.html#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é diferente do dois &quot;por extenso&quot;</span></span>
+<span id="cb42-2"><a href="variáveis.html#cb42-2" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">!=</span> dois_texto</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>O R não entende que “dois” é a forma “por extenso” do número 2. Para o R, há um número 2 e há uma palavra, cujo significado o R desconhece. Então, na comparação entre esse inteiro e essa string, o R entende que há uma diferença (de tipos). Por isso, ele afirma que são diferentes (ou não iguais).</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="variáveis.html#cb40-1" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb40-2"><a href="variáveis.html#cb40-2" aria-hidden="true" tabindex="-1"></a>dois_texto <span class="ot">&lt;-</span> <span class="st">&quot;2&quot;</span></span>
-<span id="cb40-3"><a href="variáveis.html#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é o mesmo que o dois &quot;caractere&quot;</span></span>
-<span id="cb40-4"><a href="variáveis.html#cb40-4" aria-hidden="true" tabindex="-1"></a><span class="co"># O resultado é verdadeiro porque apesar dos tipos serem diferentes, o conteúdo é o mesmo.</span></span>
-<span id="cb40-5"><a href="variáveis.html#cb40-5" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">==</span> dois_texto</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="variáveis.html#cb44-1" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb44-2"><a href="variáveis.html#cb44-2" aria-hidden="true" tabindex="-1"></a>dois_texto <span class="ot">&lt;-</span> <span class="st">&quot;2&quot;</span></span>
+<span id="cb44-3"><a href="variáveis.html#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Vamos testar de o numero dois é o mesmo que o dois &quot;caractere&quot;</span></span>
+<span id="cb44-4"><a href="variáveis.html#cb44-4" aria-hidden="true" tabindex="-1"></a><span class="co"># O resultado é verdadeiro porque apesar dos tipos serem diferentes, o conteúdo é o mesmo.</span></span>
+<span id="cb44-5"><a href="variáveis.html#cb44-5" aria-hidden="true" tabindex="-1"></a>dois_numero <span class="sc">==</span> dois_texto</span></code></pre></div>
 <pre><code>## [1] TRUE</code></pre>
 <p>Existe outro operador de igualdade (===), mas que não será tratado agora.</p>
 </div>
 <div id="datas" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Datas</h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="variáveis.html#cb42-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb42-2"><a href="variáveis.html#cb42-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
-<pre><code>## [1] &quot;2021-09-24&quot;</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="variáveis.html#cb44-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">format</span>(today, <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
-<span id="cb44-2"><a href="variáveis.html#cb44-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
-<pre><code>## [1] &quot;24/09/2021&quot;</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="variáveis.html#cb46-1" aria-hidden="true" tabindex="-1"></a>today2 <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
-<span id="cb46-2"><a href="variáveis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today2)</span></code></pre></div>
-<pre><code>## [1] &quot;24/09/2021&quot;</code></pre>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="variáveis.html#cb46-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb46-2"><a href="variáveis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
+<pre><code>## [1] &quot;2021-09-26&quot;</code></pre>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="variáveis.html#cb48-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">format</span>(today, <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
+<span id="cb48-2"><a href="variáveis.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
+<pre><code>## [1] &quot;26/09/2021&quot;</code></pre>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="variáveis.html#cb50-1" aria-hidden="true" tabindex="-1"></a>today2 <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
+<span id="cb50-2"><a href="variáveis.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today2)</span></code></pre></div>
+<pre><code>## [1] &quot;26/09/2021&quot;</code></pre>
 </div>
 <div id="r-x-outras-linguagens" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> R x outras linguagens</h2>
 <p>O R é uma linguagem que automaticamente reconhece o tipo do dado que foi inserido. Por uma questão de comparação, se você estivesse usando uma linguagem <em>tipada</em>, como o C++, você precisaria declarar explicitamente o tipo da variável que está sendo criada. Assim, seria um erro você criar uma variável usando</p>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="variáveis.html#cb48-1" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">=</span> <span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="variáveis.html#cb52-1" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">=</span> <span class="dv">2</span></span></code></pre></div>
 <p>O C++ não entende o que você está querendo dizer com isso. Você precisaria informar que existe uma variável do tipo <em>integer</em> (simplesmente <em>int</em>) chamada <em>dois</em> e cujo valor é o número inteiro 2. Outra particularidade do R é que as linhas de código não precisam ser finalizadas com um ponto-e-vírgula (;), como acontece no C++.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="variáveis.html#cb49-1" aria-hidden="true" tabindex="-1"></a>int dois <span class="ot">=</span> <span class="dv">2</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="variáveis.html#cb53-1" aria-hidden="true" tabindex="-1"></a>int dois <span class="ot">=</span> <span class="dv">2</span>;</span></code></pre></div>
 <p>Além disso, as variáveis em R são mutáveis, inclusive quanto ao tipo. Isso quer dizer que uma vez definidas (ou atribuídas), podem ter seus valores e tipo modificados. Assim, uma variável que antes tinha um número, pode passar a ter um texto ou um booleano.</p>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="variáveis.html#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se a variavel receber um número (integer)</span></span>
-<span id="cb50-2"><a href="variáveis.html#cb50-2" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb50-3"><a href="variáveis.html#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="co"># e depois receber um texto</span></span>
-<span id="cb50-4"><a href="variáveis.html#cb50-4" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="st">&quot;dois&quot;</span></span>
-<span id="cb50-5"><a href="variáveis.html#cb50-5" aria-hidden="true" tabindex="-1"></a><span class="co"># seu conteúdo e seu tipo estarão de acordo com a última atribuição</span></span>
-<span id="cb50-6"><a href="variáveis.html#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dois)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="variáveis.html#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se a variavel receber um número (integer)</span></span>
+<span id="cb54-2"><a href="variáveis.html#cb54-2" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="dv">2</span></span>
+<span id="cb54-3"><a href="variáveis.html#cb54-3" aria-hidden="true" tabindex="-1"></a><span class="co"># e depois receber um texto</span></span>
+<span id="cb54-4"><a href="variáveis.html#cb54-4" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="st">&quot;dois&quot;</span></span>
+<span id="cb54-5"><a href="variáveis.html#cb54-5" aria-hidden="true" tabindex="-1"></a><span class="co"># seu conteúdo e seu tipo estarão de acordo com a última atribuição</span></span>
+<span id="cb54-6"><a href="variáveis.html#cb54-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dois)</span></code></pre></div>
 <pre><code>## [1] &quot;dois&quot;</code></pre>
 <p>Por fim, para o R a indentação não é relevante. Há linguagens de programação em que a posição relativa das linhas de código é essencial para determinar se elas fazem parte de um bloco ou não. No R, os blocos são definidos com o uso de chaves ({ }). Ainda iremos explorar com detalhes o uso das condicionais, mas podemos ilustrar o seguinte caso: se o resultado for maior que zero, então, sim, tivemos lucro; caso contrário, não tivemos.</p>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="variáveis.html#cb52-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
-<span id="cb52-2"><a href="variáveis.html#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb52-3"><a href="variáveis.html#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
-<span id="cb52-4"><a href="variáveis.html#cb52-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { </span>
-<span id="cb52-5"><a href="variáveis.html#cb52-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
-<span id="cb52-6"><a href="variáveis.html#cb52-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
-<span id="cb52-7"><a href="variáveis.html#cb52-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># caso contrário</span></span>
-<span id="cb52-8"><a href="variáveis.html#cb52-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {  </span>
-<span id="cb52-9"><a href="variáveis.html#cb52-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
-<span id="cb52-10"><a href="variáveis.html#cb52-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span>
-<span id="cb52-11"><a href="variáveis.html#cb52-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="variáveis.html#cb56-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
+<span id="cb56-2"><a href="variáveis.html#cb56-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-3"><a href="variáveis.html#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
+<span id="cb56-4"><a href="variáveis.html#cb56-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { </span>
+<span id="cb56-5"><a href="variáveis.html#cb56-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
+<span id="cb56-6"><a href="variáveis.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
+<span id="cb56-7"><a href="variáveis.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># caso contrário</span></span>
+<span id="cb56-8"><a href="variáveis.html#cb56-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {  </span>
+<span id="cb56-9"><a href="variáveis.html#cb56-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
+<span id="cb56-10"><a href="variáveis.html#cb56-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span>
+<span id="cb56-11"><a href="variáveis.html#cb56-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;Tivemos Lucro!&quot;</code></pre>
 <p>No R, esse alinhamento é apenas um facilitador de leitura do código. Se o código estiver organizado, as pessoas terão mais facilidade em entendê-lo. O código a seguir tem exatamente a mesma funcionalidade.</p>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="variáveis.html#cb54-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
-<span id="cb54-2"><a href="variáveis.html#cb54-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) } <span class="cf">else</span> {<span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>)}</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="variáveis.html#cb58-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
+<span id="cb58-2"><a href="variáveis.html#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) } <span class="cf">else</span> {<span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>)}</span></code></pre></div>
 <pre><code>## [1] &quot;Tivemos Lucro!&quot;</code></pre>
 <p>Embora seja verdade que o espaço ocupado está menor, quando o código começa a adquirir um alto grau de complexidade, torna-se muito desejável que ele esteja melhor organizado e, preferencialmente, comentado.</p>
 <p>No Python, onde a identação faz diferença, o código precisaria seguir uma estrutura baseada em espaços, sendo desnecessário o uso das chaves.</p>
-<div class="sourceCode" id="cb56"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb56-1"><a href="variáveis.html#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
-<span id="cb56-2"><a href="variáveis.html#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="op">&gt;</span> <span class="dv">0</span>):  </span>
-<span id="cb56-3"><a href="variáveis.html#cb56-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
-<span id="cb56-4"><a href="variáveis.html#cb56-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
-<span id="cb56-5"><a href="variáveis.html#cb56-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:  </span>
-<span id="cb56-6"><a href="variáveis.html#cb56-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
-<span id="cb56-7"><a href="variáveis.html#cb56-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb60-1"><a href="variáveis.html#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
+<span id="cb60-2"><a href="variáveis.html#cb60-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="op">&gt;</span> <span class="dv">0</span>):  </span>
+<span id="cb60-3"><a href="variáveis.html#cb60-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
+<span id="cb60-4"><a href="variáveis.html#cb60-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
+<span id="cb60-5"><a href="variáveis.html#cb60-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:  </span>
+<span id="cb60-6"><a href="variáveis.html#cb60-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
+<span id="cb60-7"><a href="variáveis.html#cb60-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span></code></pre></div>
 <p>No Python, portanto, o que importa para definir que o print(“Tivemos Lucro!”) está associado ao if(resultado &gt; 0) é o fato de não haver nenhum espaço entre a margem da página e o if; e o fato de haver quatro espaços entre a margem da página e o print. Isso faz com que esse print esteja subordinado ao if; assim como, o segundo print (que também está mais recuado) é subordinado ao else (que não tem recuo).</p>
 
 </div>

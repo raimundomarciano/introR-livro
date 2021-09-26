@@ -2,9 +2,9 @@ boas-vindas
 intro
 instalando-o-r
 r-studio
-exercício
 r-nas-nuvens
 scripts
+exercício
 gabarito-exercício
 variáveis
 numéricas
