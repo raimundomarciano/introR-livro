@@ -178,7 +178,7 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="variáveis.html"><a href="variáveis.html#lógicas"><i class="fa fa-check"></i><b>3.3</b> Lógicas</a></li>
 <li class="chapter" data-level="3.4" data-path="variáveis.html"><a href="variáveis.html#datas"><i class="fa fa-check"></i><b>3.4</b> Datas</a></li>
-<li class="chapter" data-level="3.5" data-path="variáveis.html"><a href="variáveis.html#r-x-outras-linguagens"><i class="fa fa-check"></i><b>3.5</b> R x outras linguagens</a></li>
+<li class="chapter" data-level="3.5" data-path="variáveis.html"><a href="variáveis.html#exercício-1"><i class="fa fa-check"></i><b>3.5</b> Exercício</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="agrupamentos-de-dados.html"><a href="agrupamentos-de-dados.html"><i class="fa fa-check"></i><b>4</b> Agrupamentos de Dados</a>
 <ul>
@@ -360,48 +360,120 @@ div.csl-indent {
 <div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="variáveis.html#cb43-1" aria-hidden="true" tabindex="-1"></a>today2 <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
 <span id="cb43-2"><a href="variáveis.html#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today2)</span></code></pre></div>
 <pre><code>## [1] &quot;20/03/2022&quot;</code></pre>
+<!-- ## R x outras linguagens -->
+<!-- O R é uma linguagem que automaticamente reconhece o tipo do dado que foi inserido. Por uma questão de comparação, se você estivesse usando uma linguagem _tipada_, como o C++, você precisaria declarar explicitamente o tipo da variável que está sendo criada. Assim, seria um erro você criar uma variável usando -->
+<!-- ```{r} -->
+<!-- dois = 2 -->
+<!-- ``` -->
+<!-- O C++ não entende o que você está querendo dizer com isso. Você precisaria informar que existe uma variável do tipo _integer_ (simplesmente _int_) chamada _dois_ e cujo valor é o número inteiro 2. Outra particularidade do R é que as linhas de código não precisam ser finalizadas com um ponto-e-vírgula (;), como acontece no C++. -->
+<!-- ```{r eval=FALSE, message=FALSE} -->
+<!-- int dois = 2; -->
+<!-- ``` -->
+<!-- Além disso, as variáveis em R são mutáveis, inclusive quanto ao tipo. Isso quer dizer que uma vez definidas (ou atribuídas), podem ter seus valores e tipo modificados. Assim, uma variável que antes tinha um número, pode passar a ter um texto ou um booleano. -->
+<!-- ```{r eval=TRUE, message=FALSE} -->
+<!-- # se a variavel receber um número (integer) -->
+<!-- dois <- 2 -->
+<!-- # e depois receber um texto -->
+<!-- dois <- "dois" -->
+<!-- # seu conteúdo e seu tipo estarão de acordo com a última atribuição -->
+<!-- print(dois) -->
+<!-- ``` -->
+<!-- Por fim, para o R a indentação não é relevante. Há linguagens de programação em que a posição relativa das linhas de código é essencial para determinar se elas fazem parte de um bloco ou não. No R, os blocos são definidos com o uso de chaves ({ }). Ainda iremos explorar com detalhes o uso das condicionais, mas podemos ilustrar o seguinte caso: se o resultado for maior que zero, então, sim, tivemos lucro; caso contrário, não tivemos. -->
+<!-- ```{r message=FALSE} -->
+<!-- resultado <- 3000 -->
+<!-- #se o resultado for maior que zero -->
+<!-- if (resultado > 0) {  -->
+<!--   # informe: "Tivemos Lucro!" -->
+<!--   print("Tivemos Lucro!")  -->
+<!--   # caso contrário -->
+<!-- } else {   -->
+<!--   # informe: "Deu ruim :( " -->
+<!--   print("Deu ruim :(")  -->
+<!-- } -->
+<!-- ``` -->
+<!-- No R, esse alinhamento é apenas um facilitador de leitura do código. Se o código estiver organizado, as pessoas terão mais facilidade em entendê-lo. O código a seguir tem exatamente a mesma funcionalidade. -->
+<!-- ```{r message=FALSE} -->
+<!-- resultado <- 3000 -->
+<!-- if (resultado > 0) { print("Tivemos Lucro!") } else {print("Deu ruim :(")} -->
+<!-- ``` -->
+<!-- Embora seja verdade que o espaço ocupado está menor, quando o código começa a adquirir um alto grau de complexidade, torna-se muito desejável que ele esteja melhor organizado e, preferencialmente, comentado.  -->
+<!-- No Python, onde a identação faz diferença, o código precisaria seguir uma estrutura baseada em espaços, sendo desnecessário o uso das chaves. -->
+<!-- ```python -->
+<!-- #se o resultado for maior que zero -->
+<!-- if (resultado > 0):   -->
+<!--   # informe: "Tivemos Lucro!" -->
+<!--   print("Tivemos Lucro!")  -->
+<!-- else:   -->
+<!--   # informe: "Deu ruim :( " -->
+<!--   print("Deu ruim :(")  -->
+<!-- ``` -->
+<!-- No Python, portanto, o que importa para definir que o print("Tivemos Lucro!") está associado ao if(resultado > 0) é o fato de não haver nenhum espaço entre a margem da página e o if; e o fato de haver quatro espaços entre a margem da página e o print. Isso faz com que esse print esteja subordinado ao if; assim como, o segundo print (que também está mais recuado) é subordinado ao else (que não tem recuo). -->
 </div>
-<div id="r-x-outras-linguagens" class="section level2" number="3.5">
-<h2><span class="header-section-number">3.5</span> R x outras linguagens</h2>
-<p>O R é uma linguagem que automaticamente reconhece o tipo do dado que foi inserido. Por uma questão de comparação, se você estivesse usando uma linguagem <em>tipada</em>, como o C++, você precisaria declarar explicitamente o tipo da variável que está sendo criada. Assim, seria um erro você criar uma variável usando</p>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="variáveis.html#cb45-1" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">=</span> <span class="dv">2</span></span></code></pre></div>
-<p>O C++ não entende o que você está querendo dizer com isso. Você precisaria informar que existe uma variável do tipo <em>integer</em> (simplesmente <em>int</em>) chamada <em>dois</em> e cujo valor é o número inteiro 2. Outra particularidade do R é que as linhas de código não precisam ser finalizadas com um ponto-e-vírgula (;), como acontece no C++.</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="variáveis.html#cb46-1" aria-hidden="true" tabindex="-1"></a>int dois <span class="ot">=</span> <span class="dv">2</span>;</span></code></pre></div>
-<p>Além disso, as variáveis em R são mutáveis, inclusive quanto ao tipo. Isso quer dizer que uma vez definidas (ou atribuídas), podem ter seus valores e tipo modificados. Assim, uma variável que antes tinha um número, pode passar a ter um texto ou um booleano.</p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="variáveis.html#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># se a variavel receber um número (integer)</span></span>
-<span id="cb47-2"><a href="variáveis.html#cb47-2" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="dv">2</span></span>
-<span id="cb47-3"><a href="variáveis.html#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="co"># e depois receber um texto</span></span>
-<span id="cb47-4"><a href="variáveis.html#cb47-4" aria-hidden="true" tabindex="-1"></a>dois <span class="ot">&lt;-</span> <span class="st">&quot;dois&quot;</span></span>
-<span id="cb47-5"><a href="variáveis.html#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="co"># seu conteúdo e seu tipo estarão de acordo com a última atribuição</span></span>
-<span id="cb47-6"><a href="variáveis.html#cb47-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(dois)</span></code></pre></div>
-<pre><code>## [1] &quot;dois&quot;</code></pre>
-<p>Por fim, para o R a indentação não é relevante. Há linguagens de programação em que a posição relativa das linhas de código é essencial para determinar se elas fazem parte de um bloco ou não. No R, os blocos são definidos com o uso de chaves ({ }). Ainda iremos explorar com detalhes o uso das condicionais, mas podemos ilustrar o seguinte caso: se o resultado for maior que zero, então, sim, tivemos lucro; caso contrário, não tivemos.</p>
-<div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="variáveis.html#cb49-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
-<span id="cb49-2"><a href="variáveis.html#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-3"><a href="variáveis.html#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
-<span id="cb49-4"><a href="variáveis.html#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { </span>
-<span id="cb49-5"><a href="variáveis.html#cb49-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
-<span id="cb49-6"><a href="variáveis.html#cb49-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
-<span id="cb49-7"><a href="variáveis.html#cb49-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># caso contrário</span></span>
-<span id="cb49-8"><a href="variáveis.html#cb49-8" aria-hidden="true" tabindex="-1"></a>} <span class="cf">else</span> {  </span>
-<span id="cb49-9"><a href="variáveis.html#cb49-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
-<span id="cb49-10"><a href="variáveis.html#cb49-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span>
-<span id="cb49-11"><a href="variáveis.html#cb49-11" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## [1] &quot;Tivemos Lucro!&quot;</code></pre>
-<p>No R, esse alinhamento é apenas um facilitador de leitura do código. Se o código estiver organizado, as pessoas terão mais facilidade em entendê-lo. O código a seguir tem exatamente a mesma funcionalidade.</p>
-<div class="sourceCode" id="cb51"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb51-1"><a href="variáveis.html#cb51-1" aria-hidden="true" tabindex="-1"></a>resultado <span class="ot">&lt;-</span> <span class="dv">3000</span></span>
-<span id="cb51-2"><a href="variáveis.html#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="sc">&gt;</span> <span class="dv">0</span>) { <span class="fu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) } <span class="cf">else</span> {<span class="fu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>)}</span></code></pre></div>
-<pre><code>## [1] &quot;Tivemos Lucro!&quot;</code></pre>
-<p>Embora seja verdade que o espaço ocupado está menor, quando o código começa a adquirir um alto grau de complexidade, torna-se muito desejável que ele esteja melhor organizado e, preferencialmente, comentado.</p>
-<p>No Python, onde a identação faz diferença, o código precisaria seguir uma estrutura baseada em espaços, sendo desnecessário o uso das chaves.</p>
-<div class="sourceCode" id="cb53"><pre class="sourceCode python"><code class="sourceCode python"><span id="cb53-1"><a href="variáveis.html#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co">#se o resultado for maior que zero</span></span>
-<span id="cb53-2"><a href="variáveis.html#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (resultado <span class="op">&gt;</span> <span class="dv">0</span>):  </span>
-<span id="cb53-3"><a href="variáveis.html#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Tivemos Lucro!&quot;</span></span>
-<span id="cb53-4"><a href="variáveis.html#cb53-4" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Tivemos Lucro!&quot;</span>) </span>
-<span id="cb53-5"><a href="variáveis.html#cb53-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:  </span>
-<span id="cb53-6"><a href="variáveis.html#cb53-6" aria-hidden="true" tabindex="-1"></a>  <span class="co"># informe: &quot;Deu ruim :( &quot;</span></span>
-<span id="cb53-7"><a href="variáveis.html#cb53-7" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="st">&quot;Deu ruim :(&quot;</span>) </span></code></pre></div>
-<p>No Python, portanto, o que importa para definir que o print(“Tivemos Lucro!”) está associado ao if(resultado &gt; 0) é o fato de não haver nenhum espaço entre a margem da página e o if; e o fato de haver quatro espaços entre a margem da página e o print. Isso faz com que esse print esteja subordinado ao if; assim como, o segundo print (que também está mais recuado) é subordinado ao else (que não tem recuo).</p>
+<div id="exercício-1" class="section level2" number="3.5">
+<h2><span class="header-section-number">3.5</span> Exercício</h2>
+<p>Construa uma tabela verdade para as operações lógicas E, OU.</p>
+<table>
+<thead>
+<tr class="header">
+<th>v1</th>
+<th>v2</th>
+<th>Operador E</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>True</td>
+<td>True</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>True</td>
+<td>False</td>
+<td>FALSE</td>
+</tr>
+<tr class="odd">
+<td>False</td>
+<td>True</td>
+<td>FALSE</td>
+</tr>
+<tr class="even">
+<td>False</td>
+<td>False</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th>v1</th>
+<th>v2</th>
+<th>Operador OU</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>True</td>
+<td>True</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>True</td>
+<td>False</td>
+<td>TRUE</td>
+</tr>
+<tr class="odd">
+<td>False</td>
+<td>True</td>
+<td>TRUE</td>
+</tr>
+<tr class="even">
+<td>False</td>
+<td>False</td>
+<td>FALSE</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 </div>

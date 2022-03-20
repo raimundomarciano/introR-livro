@@ -40,3 +40,4 @@ bcbdata
 juntando-bases
 exportando
 markdown
+exercício-1
