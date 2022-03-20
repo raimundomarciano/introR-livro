@@ -21,7 +21,6 @@ writeLines(sugestao)
 
 ## Numéricas
 
-Por padrão, o R trata números como variáveis da classe _numeric_ e tipo _double_. Em outras palavras, ele considera, por padrão, qualquer número digitado como um número real. 
 
 ```{r eval=TRUE, message=FALSE}
 numero1 = 1
@@ -29,7 +28,6 @@ class(numero1)
 typeof(numero1)
 ```
 
-Geralmente, isso é o comportamento desejado. No caso de você precisar que o R trate o número como um _inteiro_, você deve acrescentar um L.
 
 ```{r eval=TRUE, message=FALSE}
 numero2 = 2L

@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Trabalhando com variáveis no R Base | Introdução ao R</title>
+  <title>9 Exportando | Introdução ao R</title>
   <meta name="description" content="Curso de Extensão da UFRN" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Trabalhando com variáveis no R Base | Introdução ao R" />
+  <meta property="og:title" content="9 Exportando | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Trabalhando com variáveis no R Base | Introdução ao R" />
+  <meta name="twitter:title" content="9 Exportando | Introdução ao R" />
   
   <meta name="twitter:description" content="Curso de Extensão da UFRN" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="agrupamentos-de-dados.html"/>
-<link rel="next" href="criando-sua-própria-função.html"/>
+<link rel="prev" href="obtendo-dados.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -242,76 +242,20 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="trabalhando-com-variáveis-no-r-base" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Trabalhando com variáveis no R Base</h1>
-<div id="manuseio-de-variáveis" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Manuseio de variáveis</h2>
-</div>
-<div id="funções-numéricas-básicas" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> Funções numéricas básicas</h2>
-<p>As principais operações matemáticas e de estatísticas descritivas já vêm instaladas no R.</p>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Sejam a = 5 e b = 2 e v um vetor de números inteiros</span></span>
-<span id="cb132-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-2" aria-hidden="true" tabindex="-1"></a>a <span class="ot">=</span> <span class="dv">5</span></span>
-<span id="cb132-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-3" aria-hidden="true" tabindex="-1"></a>b <span class="ot">=</span> <span class="dv">2</span></span>
-<span id="cb132-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb132-4" aria-hidden="true" tabindex="-1"></a>v <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>)</span></code></pre></div>
-<p>As operações básicas podem ser representadas por:</p>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb133-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">+</span> b <span class="co"># soma</span></span></code></pre></div>
-<pre><code>## [1] 7</code></pre>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb135-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">-</span> b <span class="co"># subtração</span></span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb137-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">*</span> b <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb139-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">/</span> b <span class="co"># divisão</span></span></code></pre></div>
-<pre><code>## [1] 2.5</code></pre>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb141-1" aria-hidden="true" tabindex="-1"></a>a <span class="sc">^</span> b <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
-<pre><code>## [1] 25</code></pre>
-<p>Além disso, podemos estabelecer as operações no vetor, aplicando a elementos específicos:</p>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb143-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">1</span>] <span class="sc">+</span> v[<span class="dv">2</span>] <span class="co"># soma</span></span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb145-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">1</span>] <span class="sc">-</span> v[<span class="dv">2</span>] <span class="co"># subtração</span></span></code></pre></div>
-<pre><code>## [1] -1</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb147-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">1</span>] <span class="sc">*</span> v[<span class="dv">2</span>] <span class="co"># multiplicação (asterisco)</span></span></code></pre></div>
-<pre><code>## [1] 2</code></pre>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb149-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">1</span>] <span class="sc">/</span> v[<span class="dv">2</span>] <span class="co"># divisão</span></span></code></pre></div>
-<pre><code>## [1] 0.5</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb151-1" aria-hidden="true" tabindex="-1"></a>v[<span class="dv">1</span>] <span class="sc">^</span> v[<span class="dv">2</span>] <span class="co"># potenciação (acento circunflexo)</span></span></code></pre></div>
-<pre><code>## [1] 1</code></pre>
-<p>Quando queremos aplicar ao vetor inteiro, podemos usar funções instaladas no R base.</p>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(v) <span class="co"># soma de todos os elementos de v</span></span></code></pre></div>
-<pre><code>## [1] 15</code></pre>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb155-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(v[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># soma dos quatro primeiros elementos de v</span></span></code></pre></div>
-<pre><code>## [1] 10</code></pre>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb157-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(v[<span class="dv">3</span><span class="sc">:</span><span class="dv">5</span>]) <span class="co"># soma dos três últimos elementos de v</span></span></code></pre></div>
-<pre><code>## [1] 12</code></pre>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb159-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v) <span class="co"># média aritmérica de todos os elementos de v</span></span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb161-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(v[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]) <span class="co"># média dos quatro primeiros elementos de v</span></span></code></pre></div>
-<pre><code>## [1] 2.5</code></pre>
-</div>
-<div id="funções-textuais-básicas" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Funções textuais básicas</h2>
-<p>Seja o seguinte data.frame:</p>
-<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-1" aria-hidden="true" tabindex="-1"></a>cias <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">nome =</span> <span class="fu">c</span>(<span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Petrobras&quot;</span>, <span class="st">&quot;Vale&quot;</span>, <span class="st">&quot;Banco do Brasil&quot;</span>),</span>
-<span id="cb163-2"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-2" aria-hidden="true" tabindex="-1"></a>                   <span class="at">ticker =</span> <span class="fu">c</span>(<span class="st">&quot;PETR3&quot;</span>, <span class="st">&quot;PETR4&quot;</span>, <span class="st">&quot;VALE3&quot;</span>, <span class="st">&quot;BBAS3&quot;</span>),</span>
-<span id="cb163-3"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-3" aria-hidden="true" tabindex="-1"></a>                   <span class="at">tipo =</span> <span class="fu">c</span>(<span class="st">&quot;ON&quot;</span>, <span class="st">&quot;PN&quot;</span>, <span class="st">&quot;ON&quot;</span>, <span class="st">&quot;ON&quot;</span>),</span>
-<span id="cb163-4"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-4" aria-hidden="true" tabindex="-1"></a>                   <span class="at">segmento =</span> <span class="fu">c</span>(<span class="st">&quot;N2&quot;</span>, <span class="st">&quot;N2&quot;</span>, <span class="st">&quot;NM&quot;</span>, <span class="st">&quot;NM&quot;</span>),</span>
-<span id="cb163-5"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-5" aria-hidden="true" tabindex="-1"></a>                   <span class="at">stringsAsFactors =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb163-6"><a href="trabalhando-com-variáveis-no-r-base.html#cb163-6" aria-hidden="true" tabindex="-1"></a>cias</span></code></pre></div>
-<pre><code>##              nome ticker tipo segmento
-## 1       Petrobras  PETR3   ON       N2
-## 2       Petrobras  PETR4   PN       N2
-## 3            Vale  VALE3   ON       NM
-## 4 Banco do Brasil  BBAS3   ON       NM</code></pre>
-<p>Podemos estar interessados em saber se há uma empresa chamada “Banco do Brasil.” Para isso, há as funções grep() e grepl(). A grep() retorna um vetor com todas as posições em que foi encontrada a expressão desejada. A função grepl() retorna um vetor com a análise se cada elemento possui o padrão desejado ou não. Assim, se aplicássemos o grep() com a expressão “Petrobras” à lista de nomes, receberíamos a informação de que “Petrobras” foi localizada nas posições 1 e 2, sem qualquer menção às posições 3 e 4. Se usássemos o grepl(), o retorno seria uma lista composta por (TRUE, TRUE, FALSE, FALSE), que explicita a situação de cada observação.</p>
-<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb165-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="sc">$</span>nome)</span></code></pre></div>
-<pre><code>## [1] 1 2</code></pre>
-<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb167-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grep</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="sc">$</span>nome)</span></code></pre></div>
-<pre><code>## [1] 4</code></pre>
-<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb169-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;Petrobras&quot;</span>, cias<span class="sc">$</span>nome)</span></code></pre></div>
-<pre><code>## [1]  TRUE  TRUE FALSE FALSE</code></pre>
-<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb171-1"><a href="trabalhando-com-variáveis-no-r-base.html#cb171-1" aria-hidden="true" tabindex="-1"></a><span class="fu">grepl</span>(<span class="st">&quot;Banco do Brasil&quot;</span>, cias<span class="sc">$</span>nome)</span></code></pre></div>
-<pre><code>## [1] FALSE FALSE FALSE  TRUE</code></pre>
+<div id="exportando" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Exportando</h1>
+<p>Uma forma interessante de fazer relatórios é a combinação entre a simplicidade do Markdown e o poder do R. O Markdown é um estilo fácil de marcação. Quando estamos usando um arquivo do tipo. Rmd (R Markdown) assinalamos certos blocos com caracteres especiais, de forma a indicar o que eles representam e como queremos que eles sejam formatados ou interpretados. Assim, se incluímos um trecho entre pares de asteriscos, queremos que esteja em negrito; mas se for antecedido por uma cerquilha (jogo da velha), trata-se do título da seção, devendo estar em negrito e com tamanho de fonte superior ao do corpo do texto. É possível, inclusive, combinar com o <span class="math inline">\(\LaTeX\)</span>, o que facilita consideravelmente aa inserção de equações.</p>
+<div id="markdown" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Markdown</h2>
+<p>O Markdown possui um cabeçalho configurável, o Yaml.</p>
+<p><span class="citation">(<a href="#ref-rmdcook21" role="doc-biblioref">Xie, Dervieux, and Riederer 2021</a>)</span></p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-rmdcook21" class="csl-entry">
+Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2021. <em>R Markdown Cookbook</em>. Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">https://bookdown.org/yihui/rmarkdown-cookbook/</a>.
 </div>
 </div>
             </section>
@@ -319,8 +263,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="agrupamentos-de-dados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="criando-sua-própria-função.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="obtendo-dados.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

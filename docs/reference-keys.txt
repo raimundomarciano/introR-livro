@@ -29,6 +29,7 @@ criando-sua-própria-função
 modularização-do-código
 comentários
 pacotes-bibliotecas
+clipr
 obtendo-dados
 planilhas-csv-excel
 txt-bloco-de-notas-e-word
@@ -37,5 +38,5 @@ dados-coletados-por-meio-de-pacotes
 getdfpdata
 bcbdata
 juntando-bases
-relatórios-em-markdown
+exportando
 markdown

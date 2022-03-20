@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="intro.html"/>
 <link rel="next" href="agrupamentos-de-dados.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -201,7 +201,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#modularização-do-código"><i class="fa fa-check"></i><b>6.1</b> Modularização do código</a></li>
 <li class="chapter" data-level="6.2" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>6.2</b> Comentários</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>7</b> Pacotes / Bibliotecas</a></li>
+<li class="chapter" data-level="7" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>7</b> Pacotes / Bibliotecas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html#clipr"><i class="fa fa-check"></i><b>7.1</b> clipr</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>8</b> Obtendo dados</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#planilhas-csv-excel"><i class="fa fa-check"></i><b>8.1</b> Planilhas (csv / Excel)</a></li>
@@ -214,9 +217,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="obtendo-dados.html"><a href="obtendo-dados.html#juntando-bases"><i class="fa fa-check"></i><b>8.5</b> Juntando bases</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="relatórios-em-markdown.html"><a href="relatórios-em-markdown.html"><i class="fa fa-check"></i><b>9</b> Relatórios em Markdown</a>
+<li class="chapter" data-level="9" data-path="exportando.html"><a href="exportando.html"><i class="fa fa-check"></i><b>9</b> Exportando</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="relatórios-em-markdown.html"><a href="relatórios-em-markdown.html#markdown"><i class="fa fa-check"></i><b>9.1</b> Markdown</a></li>
+<li class="chapter" data-level="9.1" data-path="exportando.html"><a href="exportando.html#markdown"><i class="fa fa-check"></i><b>9.1</b> Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -259,13 +262,11 @@ div.csl-indent {
 ## textos em português costumam usadas aspas duplas.</code></pre>
 <div id="numéricas" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Numéricas</h2>
-<p>Por padrão, o R trata números como variáveis da classe <em>numeric</em> e tipo <em>double</em>. Em outras palavras, ele considera, por padrão, qualquer número digitado como um número real.</p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="variáveis.html#cb16-1" aria-hidden="true" tabindex="-1"></a>numero1 <span class="ot">=</span> <span class="dv">1</span></span>
 <span id="cb16-2"><a href="variáveis.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero1)</span></code></pre></div>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
 <div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="variáveis.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(numero1)</span></code></pre></div>
 <pre><code>## [1] &quot;double&quot;</code></pre>
-<p>Geralmente, isso é o comportamento desejado. No caso de você precisar que o R trate o número como um <em>inteiro</em>, você deve acrescentar um L.</p>
 <div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="variáveis.html#cb20-1" aria-hidden="true" tabindex="-1"></a>numero2 <span class="ot">=</span> 2L</span>
 <span id="cb20-2"><a href="variáveis.html#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(numero2)</span></code></pre></div>
 <pre><code>## [1] &quot;integer&quot;</code></pre>
@@ -295,7 +296,7 @@ div.csl-indent {
 ## E eu respondi: &quot;Certo&quot;.</code></pre>
 <p>Perceba que as aspas simples estão funcionando apenas como delimitadores. Estão dizendo que tudo que está dentro delas faz parte de um mesmo texto, inclusive as aspas duplas.</p>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="variáveis.html#cb30-1" aria-hidden="true" tabindex="-1"></a>texto3 <span class="ot">&lt;-</span> <span class="st">&quot;Ela disse: &quot;</span>Ok<span class="st">&quot;.&quot;</span></span></code></pre></div>
-<p>O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok“.”)</p>
+<p>O texto3 seria problemático para o R. Assim que ele identifica as primeiras aspas, ele passa a esperar um texto. Quando aparecem mais aspas, ele entende que o texto foi encerrado e não pretende continuar lendo o que vem depois. Com isso, ele estranha que tenha mais texto logo após (Ok”.”)</p>
 <div id="numérica-ou-textual" class="section level3" number="3.2.1">
 <h3><span class="header-section-number">3.2.1</span> Numérica ou textual?</h3>
 <p>O CNPJ de uma empresa é composto por 14 dígitos numéricos (0 a 9), separados por alguns marcadores (pontos, barras e traços). Por exemplo, pode ser 12.345.678/0001-19. Para guardar essa informação como uma variável numérica, você precisaria omitir as marcações, digitando 12345678000119. Entretanto, existe aqui um problema: o caso dos CNPJs iniciados por 0. Se há um 0 no início do número, ele é sempre ignorado. Por exemplo, 02 sempre será salvo na memória como 2, porque o zero à esquerda, na Matemática, não tem função.</p>
@@ -352,13 +353,13 @@ div.csl-indent {
 <h2><span class="header-section-number">3.4</span> Datas</h2>
 <div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="variáveis.html#cb46-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
 <span id="cb46-2"><a href="variáveis.html#cb46-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
-<pre><code>## [1] &quot;2021-09-26&quot;</code></pre>
+<pre><code>## [1] &quot;2022-03-20&quot;</code></pre>
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="variáveis.html#cb48-1" aria-hidden="true" tabindex="-1"></a>today <span class="ot">&lt;-</span> <span class="fu">format</span>(today, <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
 <span id="cb48-2"><a href="variáveis.html#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today)</span></code></pre></div>
-<pre><code>## [1] &quot;26/09/2021&quot;</code></pre>
+<pre><code>## [1] &quot;20/03/2022&quot;</code></pre>
 <div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="variáveis.html#cb50-1" aria-hidden="true" tabindex="-1"></a>today2 <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">Sys.Date</span>(), <span class="st">&quot;%d/%m/%Y&quot;</span>)</span>
 <span id="cb50-2"><a href="variáveis.html#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(today2)</span></code></pre></div>
-<pre><code>## [1] &quot;26/09/2021&quot;</code></pre>
+<pre><code>## [1] &quot;20/03/2022&quot;</code></pre>
 </div>
 <div id="r-x-outras-linguagens" class="section level2" number="3.5">
 <h2><span class="header-section-number">3.5</span> R x outras linguagens</h2>

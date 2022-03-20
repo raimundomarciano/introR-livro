@@ -24,7 +24,7 @@
 <meta name="author" content="Raimundo Marciano de Freitas Neto" />
 
 
-<meta name="date" content="2021-09-26" />
+<meta name="date" content="2022-03-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@
   
 <link rel="prev" href="criando-sua-própria-função.html"/>
 <link rel="next" href="obtendo-dados.html"/>
-<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -201,7 +201,10 @@ div.csl-indent {
 <li class="chapter" data-level="6.1" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#modularização-do-código"><i class="fa fa-check"></i><b>6.1</b> Modularização do código</a></li>
 <li class="chapter" data-level="6.2" data-path="criando-sua-própria-função.html"><a href="criando-sua-própria-função.html#comentários"><i class="fa fa-check"></i><b>6.2</b> Comentários</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>7</b> Pacotes / Bibliotecas</a></li>
+<li class="chapter" data-level="7" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html"><i class="fa fa-check"></i><b>7</b> Pacotes / Bibliotecas</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="pacotes-bibliotecas.html"><a href="pacotes-bibliotecas.html#clipr"><i class="fa fa-check"></i><b>7.1</b> clipr</a></li>
+</ul></li>
 <li class="chapter" data-level="8" data-path="obtendo-dados.html"><a href="obtendo-dados.html"><i class="fa fa-check"></i><b>8</b> Obtendo dados</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="obtendo-dados.html"><a href="obtendo-dados.html#planilhas-csv-excel"><i class="fa fa-check"></i><b>8.1</b> Planilhas (csv / Excel)</a></li>
@@ -214,9 +217,9 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="obtendo-dados.html"><a href="obtendo-dados.html#juntando-bases"><i class="fa fa-check"></i><b>8.5</b> Juntando bases</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="relatórios-em-markdown.html"><a href="relatórios-em-markdown.html"><i class="fa fa-check"></i><b>9</b> Relatórios em Markdown</a>
+<li class="chapter" data-level="9" data-path="exportando.html"><a href="exportando.html"><i class="fa fa-check"></i><b>9</b> Exportando</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="relatórios-em-markdown.html"><a href="relatórios-em-markdown.html#markdown"><i class="fa fa-check"></i><b>9.1</b> Markdown</a></li>
+<li class="chapter" data-level="9.1" data-path="exportando.html"><a href="exportando.html#markdown"><i class="fa fa-check"></i><b>9.1</b> Markdown</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
@@ -266,7 +269,32 @@ div.csl-indent {
 <p>Sempre que você estiver confuso sobre qual função está dominando e qual está oculta, você pode incluir o nome do pacote no comando. Se você usar dplyr::lag(), com certeza será o lag() do dplyr. Se você usar stats::lag(), com certeza será o lag() do stats.</p>
 <p>Se o pacote que você deseja instalar está disponível no Github, você deve usar a função install_github() do pacote remotes.</p>
 <div class="sourceCode" id="cb189"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb189-1"><a href="pacotes-bibliotecas.html#cb189-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code></pre></div>
+<div id="clipr" class="section level2" number="7.1">
+<h2><span class="header-section-number">7.1</span> clipr</h2>
+<p>O pacote {clipr} permite a interação com o “copia-e-cola” do Windows. As duas principais funções são:</p>
+<ul>
+<li>clipr::read_clip_tbl()</li>
+<li>clipr::write_clip()</li>
+</ul>
+<p>A função read_clip_tbl() permite a leitura do que está “copiado” para dentro do R, na forma de um data.frame. A função write_clip permite copiar o conteúdo de um data.frame, que pode ser “colado” em uma planilha, como o Excel. Quando estamos trabalhando com a vírgula como separador de decimais, é importante incluir o argumento</p>
+<blockquote>
+<p>dec = “,”</p>
+</blockquote>
+<p>dentro dos parênteses.</p>
+<blockquote>
+<p>dados_colados_no_R = clipr::read_clip_tbl()</p>
+</blockquote>
+<blockquote>
+<p>dados_colados_no_R = clipr::read_clip_tbl(dec=“,”)</p>
+</blockquote>
+<blockquote>
+<p>clipr::write_clip(tabela_no_R)</p>
+</blockquote>
+<blockquote>
+<p>clipr::write_clip(tabela_no_R, dec=“,”)</p>
+</blockquote>
 
+</div>
 </div>
             </section>
 

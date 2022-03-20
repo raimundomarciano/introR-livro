@@ -50,3 +50,26 @@ Se o pacote que você deseja instalar está disponível no Github, você deve us
 ```{r eval = FALSE}
 remotes::install_github()
 ```
+
+
+## clipr
+
+O pacote {clipr} permite a interação com o "copia-e-cola" do Windows. As duas principais funções são: 
+
+- clipr::read_clip_tbl()
+- clipr::write_clip()
+
+A função read_clip_tbl() permite a leitura do que está "copiado" para dentro do R, na forma de um data.frame. A função write_clip permite copiar o conteúdo de um data.frame, que pode ser "colado" em uma planilha, como o Excel. Quando estamos trabalhando com a vírgula como separador de decimais, é importante incluir o argumento 
+
+> dec = ","
+
+dentro dos parênteses.
+
+> dados_colados_no_R = clipr::read_clip_tbl()
+
+> dados_colados_no_R = clipr::read_clip_tbl(dec=",")
+
+> clipr::write_clip(tabela_no_R)
+
+> clipr::write_clip(tabela_no_R, dec=",")
+
