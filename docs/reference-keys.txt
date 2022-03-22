@@ -12,7 +12,7 @@ textuais
 numérica-ou-textual
 lógicas
 datas
-r-x-outras-linguagens
+exercício-1
 agrupamentos-de-dados
 vetores
 matrizes
@@ -40,4 +40,5 @@ bcbdata
 juntando-bases
 exportando
 markdown
-exercício-1
+exemplos-de-contabilidade
+diário-contábil-e-balancete

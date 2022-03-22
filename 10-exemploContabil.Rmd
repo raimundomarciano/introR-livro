@@ -1,0 +1,81 @@
+# Exemplos de Contabilidade
+
+## Diário Contábil e Balancete
+
+```{r echo=T, message=FALSE}
+# O pacote dplyr permite tratamentos de dados e o uso do pipe %>%
+library(dplyr)
+```
+
+Criemos um data frame chamado 'diario'.
+
+```{r}
+diario = data.frame(matrix(ncol = 4, nrow = 0))
+colnames(diario) <- c("tipo", "conta", "valor", "historico")
+```
+
+Perceba que até agora não há qualquer dado dentro do data frame. A matrix inserida possui 4 colunas, mas nenhuma linha.
+
+```{r}
+print(diario)
+```
+
+Essencialmente, a matriz só serviu para fixar a estrutura do data frame (4 colunas). Agora, precisamos criar uma função para registrar os lançamentos. Normalmente, um software contábil possui uma interface (uma parte visual) onde você seleciona as contas do plano de contas e registra os valores e o histórico. Aqui, vamos apenas passar as informações necessárias para uma função, que irá adicionar o lançamento ao diário.
+
+```{r}
+lancamento <- function(tipo, conta, valor, historico = "."){
+  temp <- data.frame(tipo, conta, valor, historico)
+  rbind(diario, temp)
+}
+```
+
+A função lancamento exige os argumentos: i) tipo: é um débito (d) ou crédito (c); ii) conta: o nome da conta; iii) valor: o valor do lançamento (o decimal é o ponto, não a vírgula); iv) histórico: opcional. Note que para um lançamento completo é necessário executar a função pelo menos duas vezes, a fim de haver pelo menos um débito e pelo menos um crédito.
+
+Alguns lançamentos:
+
+```{r}
+diario <- lancamento("d", "Capital a Integralizar", 10000, "Subscrição de Capital")
+diario <- lancamento("c", "Capital Social", 10000, "Subscrição de Capital")
+diario <- lancamento("d", "Caixa", 10000, "Integralização de Capital")
+diario <- lancamento("c", "Capital a Integralizar", 10000, "Integralização de Capital")
+```
+
+```{r}
+imprimeDiario <-function(){
+  print(diario)
+}
+```
+
+```{r}
+imprimeDiario()
+```
+
+conferidor <- function(){
+  temp = diario %>% select(tipo, valor) %>% group_by(tipo) %>% summarise(Soma = sum(valor))
+  print(paste0("Créditos: ", temp$Soma[1]))
+  print(paste0("Débitos: ", temp$Soma[2]))
+}
+
+conferidor()
+
+planoContas <- data.frame(categoria = c("A", "A", "E", "E", "E"),
+                          conta = c("Ativo Total", "Caixa",
+                                    "Patrimônio Líquido", "Capital Social", "Capital a Integralizar"),
+                          natureza = c("d", "d", "c", "c", "c")
+)
+
+balancete <- planoContas  
+
+levantaBalancete <- function(){
+  temp <- diario
+  temp <- left_join(temp, planoContas, all.x = TRUE, all.y = FALSE)
+  temp$valor <- ifelse (temp$tipo == temp$natureza, temp$valor*1, temp$valor*-1)
+  temp <- temp %>% group_by(conta) %>% summarise(valor = sum(valor))
+  temp
+} 
+
+levantaBalancete()
+
+
+
+

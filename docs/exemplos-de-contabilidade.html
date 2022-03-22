@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Pacotes / Bibliotecas | Introdução ao R</title>
+  <title>10 Exemplos de Contabilidade | Introdução ao R</title>
   <meta name="description" content="Curso de Extensão da UFRN" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Pacotes / Bibliotecas | Introdução ao R" />
+  <meta property="og:title" content="10 Exemplos de Contabilidade | Introdução ao R" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Pacotes / Bibliotecas | Introdução ao R" />
+  <meta name="twitter:title" content="10 Exemplos de Contabilidade | Introdução ao R" />
   
   <meta name="twitter:description" content="Curso de Extensão da UFRN" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="criando-sua-própria-função.html"/>
-<link rel="next" href="obtendo-dados.html"/>
+<link rel="prev" href="references.html"/>
+
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -246,58 +246,64 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="pacotes-bibliotecas" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Pacotes / Bibliotecas</h1>
-<p>Muito do que precisamos usar já foi criado por alguém e disponibilizado na internet. No caso do R, a plataforma “oficial” para isso é o CRAN, mas há outras formas de conseguir esses códigos, como o Github.</p>
-<p>Diversas bibliotecas já vêm pré-instaladas no R.</p>
-<p>Quando precisamos instalar, usamos o comando</p>
-<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="pacotes-bibliotecas.html#cb176-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>()</span></code></pre></div>
-<p>O nome do pacote deve ser informado entre aspas, como todo bom texto.</p>
-<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb177-1"><a href="pacotes-bibliotecas.html#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
-<p>A instalação do pacote dplyr permite o acesso a várias funções, como filter(), select() e group_by(). Quando um pacote é instalado, as funções ficam dentro dele. ISso significa que quando queremos acessá-las, precisamos identificar a fonte.</p>
-<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="pacotes-bibliotecas.html#cb178-1" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">select</span>()</span>
-<span id="cb178-2"><a href="pacotes-bibliotecas.html#cb178-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">filter</span>()</span></code></pre></div>
-<p>Em outras palavras, primeiro dizemos qual é o pacote (dplyr, no caso), seguido de <span class="math inline">\(::\)</span> (dois pontos, duas vezes) e concluímos informando a função desejada e que se encontra desse pacote.</p>
-<p>Alternativamente, podemos usar library(dplyr). Isso deixa, durante a sessão ativa, as funções do pacote dplyr prontamente disponíveis. Quando você fechar o R (ou o R Studio), isso será desfeito. Portanto, da próxima vez que abrir o programa, precisará executar novamente o comando library(dplyr).</p>
-<p>É possível que existam duas funções com o mesmo nome, o que gera um conflito. Por exemplo, na minha máquina, há um pacote chamado <em>stats</em> que contém uma função chamada <em>lag</em>. Quando carrego o <em>dplyr</em>, que também possui uma função chamada lag(), recebo a seguinte mensagem:</p>
-<div class="sourceCode" id="cb179"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb179-1"><a href="pacotes-bibliotecas.html#cb179-1" aria-hidden="true" tabindex="-1"></a>Attaching package<span class="sc">:</span> ‘dplyr’</span>
-<span id="cb179-2"><a href="pacotes-bibliotecas.html#cb179-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb179-3"><a href="pacotes-bibliotecas.html#cb179-3" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>stats’<span class="sc">:</span></span>
-<span id="cb179-4"><a href="pacotes-bibliotecas.html#cb179-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb179-5"><a href="pacotes-bibliotecas.html#cb179-5" aria-hidden="true" tabindex="-1"></a>    filter, lag</span>
-<span id="cb179-6"><a href="pacotes-bibliotecas.html#cb179-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb179-7"><a href="pacotes-bibliotecas.html#cb179-7" aria-hidden="true" tabindex="-1"></a>The following objects are masked from ‘package<span class="sc">:</span>base’<span class="sc">:</span></span>
-<span id="cb179-8"><a href="pacotes-bibliotecas.html#cb179-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb179-9"><a href="pacotes-bibliotecas.html#cb179-9" aria-hidden="true" tabindex="-1"></a>    intersect, setdiff, setequal, union</span></code></pre></div>
-<p>Isso significa que a função lag() do <em>stats</em> foi ocultada pelo <em>dplyr</em>. Em outras palavras, se eu for usar a função lag() sem dizer a que pacote ela pertence, o R automaticamente entenderá que eu estou usando a do <em>dplyr</em>, que está sendo dominante em relação ao <em>stats</em>.</p>
-<p>Sempre que você estiver confuso sobre qual função está dominando e qual está oculta, você pode incluir o nome do pacote no comando. Se você usar dplyr::lag(), com certeza será o lag() do dplyr. Se você usar stats::lag(), com certeza será o lag() do stats.</p>
-<p>Se o pacote que você deseja instalar está disponível no Github, você deve usar a função install_github() do pacote remotes.</p>
-<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="pacotes-bibliotecas.html#cb180-1" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>()</span></code></pre></div>
-<div id="clipr" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> clipr</h2>
-<p>O pacote {clipr} permite a interação com o “copia-e-cola” do Windows. As duas principais funções são:</p>
-<ul>
-<li>clipr::read_clip_tbl()</li>
-<li>clipr::write_clip()</li>
-</ul>
-<p>A função read_clip_tbl() permite a leitura do que está “copiado” para dentro do R, na forma de um data.frame. A função write_clip permite copiar o conteúdo de um data.frame, que pode ser “colado” em uma planilha, como o Excel. Quando estamos trabalhando com a vírgula como separador de decimais, é importante incluir o argumento</p>
-<blockquote>
-<p>dec = “,”</p>
-</blockquote>
-<p>dentro dos parênteses.</p>
-<blockquote>
-<p>dados_colados_no_R = clipr::read_clip_tbl()</p>
-</blockquote>
-<blockquote>
-<p>dados_colados_no_R = clipr::read_clip_tbl(dec=“,”)</p>
-</blockquote>
-<blockquote>
-<p>clipr::write_clip(tabela_no_R)</p>
-</blockquote>
-<blockquote>
-<p>clipr::write_clip(tabela_no_R, dec=“,”)</p>
-</blockquote>
+<div id="exemplos-de-contabilidade" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Exemplos de Contabilidade</h1>
+<div id="diário-contábil-e-balancete" class="section level2" number="10.1">
+<h2><span class="header-section-number">10.1</span> Diário Contábil e Balancete</h2>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="exemplos-de-contabilidade.html#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="co"># O pacote dplyr permite tratamentos de dados e o uso do pipe %&gt;%</span></span>
+<span id="cb190-2"><a href="exemplos-de-contabilidade.html#cb190-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code></pre></div>
+<p>Criemos um data frame chamado ‘diario.’</p>
+<div class="sourceCode" id="cb191"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb191-1"><a href="exemplos-de-contabilidade.html#cb191-1" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="fu">matrix</span>(<span class="at">ncol =</span> <span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">0</span>))</span>
+<span id="cb191-2"><a href="exemplos-de-contabilidade.html#cb191-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(diario) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;tipo&quot;</span>, <span class="st">&quot;conta&quot;</span>, <span class="st">&quot;valor&quot;</span>, <span class="st">&quot;historico&quot;</span>)</span></code></pre></div>
+<p>Perceba que até agora não há qualquer dado dentro do data frame. A matrix inserida possui 4 colunas, mas nenhuma linha.</p>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="exemplos-de-contabilidade.html#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(diario)</span></code></pre></div>
+<pre><code>## [1] tipo      conta     valor     historico
+## &lt;0 rows&gt; (or 0-length row.names)</code></pre>
+<p>Essencialmente, a matriz só serviu para fixar a estrutura do data frame (4 colunas). Agora, precisamos criar uma função para registrar os lançamentos. Normalmente, um software contábil possui uma interface (uma parte visual) onde você seleciona as contas do plano de contas e registra os valores e o histórico. Aqui, vamos apenas passar as informações necessárias para uma função, que irá adicionar o lançamento ao diário.</p>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="exemplos-de-contabilidade.html#cb194-1" aria-hidden="true" tabindex="-1"></a>lancamento <span class="ot">&lt;-</span> <span class="cf">function</span>(tipo, conta, valor, <span class="at">historico =</span> <span class="st">&quot;.&quot;</span>){</span>
+<span id="cb194-2"><a href="exemplos-de-contabilidade.html#cb194-2" aria-hidden="true" tabindex="-1"></a>  temp <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(tipo, conta, valor, historico)</span>
+<span id="cb194-3"><a href="exemplos-de-contabilidade.html#cb194-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rbind</span>(diario, temp)</span>
+<span id="cb194-4"><a href="exemplos-de-contabilidade.html#cb194-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>A função lancamento exige os argumentos: i) tipo: é um débito (d) ou crédito (c); ii) conta: o nome da conta; iii) valor: o valor do lançamento (o decimal é o ponto, não a vírgula); iv) histórico: opcional. Note que para um lançamento completo é necessário executar a função pelo menos duas vezes, a fim de haver pelo menos um débito e pelo menos um crédito.</p>
+<p>Alguns lançamentos:</p>
+<div class="sourceCode" id="cb195"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb195-1"><a href="exemplos-de-contabilidade.html#cb195-1" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">&lt;-</span> <span class="fu">lancamento</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;Capital a Integralizar&quot;</span>, <span class="dv">10000</span>, <span class="st">&quot;Subscrição de Capital&quot;</span>)</span>
+<span id="cb195-2"><a href="exemplos-de-contabilidade.html#cb195-2" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">&lt;-</span> <span class="fu">lancamento</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;Capital Social&quot;</span>, <span class="dv">10000</span>, <span class="st">&quot;Subscrição de Capital&quot;</span>)</span>
+<span id="cb195-3"><a href="exemplos-de-contabilidade.html#cb195-3" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">&lt;-</span> <span class="fu">lancamento</span>(<span class="st">&quot;d&quot;</span>, <span class="st">&quot;Caixa&quot;</span>, <span class="dv">10000</span>, <span class="st">&quot;Integralização de Capital&quot;</span>)</span>
+<span id="cb195-4"><a href="exemplos-de-contabilidade.html#cb195-4" aria-hidden="true" tabindex="-1"></a>diario <span class="ot">&lt;-</span> <span class="fu">lancamento</span>(<span class="st">&quot;c&quot;</span>, <span class="st">&quot;Capital a Integralizar&quot;</span>, <span class="dv">10000</span>, <span class="st">&quot;Integralização de Capital&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="exemplos-de-contabilidade.html#cb196-1" aria-hidden="true" tabindex="-1"></a>imprimeDiario <span class="ot">&lt;-</span><span class="cf">function</span>(){</span>
+<span id="cb196-2"><a href="exemplos-de-contabilidade.html#cb196-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(diario)</span>
+<span id="cb196-3"><a href="exemplos-de-contabilidade.html#cb196-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb197"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb197-1"><a href="exemplos-de-contabilidade.html#cb197-1" aria-hidden="true" tabindex="-1"></a><span class="fu">imprimeDiario</span>()</span></code></pre></div>
+<pre><code>##   tipo                  conta valor                 historico
+## 1    d Capital a Integralizar 10000     Subscrição de Capital
+## 2    c         Capital Social 10000     Subscrição de Capital
+## 3    d                  Caixa 10000 Integralização de Capital
+## 4    c Capital a Integralizar 10000 Integralização de Capital</code></pre>
+<p>conferidor &lt;- function(){
+temp = diario %&gt;% select(tipo, valor) %&gt;% group_by(tipo) %&gt;% summarise(Soma = sum(valor))
+print(paste0(“Créditos:” temp<span class="math inline">\(Soma[1]))  print(paste0(&quot;Débitos: &quot;, temp\)</span>Soma[2]))
+}</p>
+<p>conferidor()</p>
+<p>planoContas &lt;- data.frame(categoria = c(“A,” “A,” “E,” “E,” “E”),
+conta = c(“Ativo Total,” “Caixa,”
+“Patrimônio Líquido,” “Capital Social,” “Capital a Integralizar”),
+natureza = c(“d,” “d,” “c,” “c,” “c”)
+)</p>
+<p>balancete &lt;- planoContas</p>
+<p>levantaBalancete &lt;- function(){
+temp &lt;- diario
+temp &lt;- left_join(temp, planoContas, all.x = TRUE, all.y = FALSE)
+temp<span class="math inline">\(valor &lt;- ifelse (temp\)</span>tipo == temp<span class="math inline">\(natureza, temp\)</span>valor<em>1, temp$valor</em>-1)
+temp &lt;- temp %&gt;% group_by(conta) %&gt;% summarise(valor = sum(valor))
+temp
+}</p>
+<p>levantaBalancete()</p>
 
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div class="csl-entry">
+Xie, Yihui, Christophe Dervieux, and Emily Riederer. 2021. <em>R Markdown Cookbook</em>. Chapman; Hall/CRC. <a href="https://bookdown.org/yihui/rmarkdown-cookbook/">https://bookdown.org/yihui/rmarkdown-cookbook/</a>.
+</div>
+</div>
 </div>
 </div>
             </section>
@@ -305,8 +311,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="criando-sua-própria-função.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="obtendo-dados.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="references.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -14,12 +14,9 @@ description: "Curso de Extensão da UFRN"
 
 O curso será composto por módulos teóricos e práticos e terá duração de XX horas, distribuídas em XX semanas, conforme o seguinte cronograma:
 
-* S01 00-00 a 00-00 Introdução
-* S02 00-00 a 00-00 Introdução
-* S03 00-00 a 00-00 Introdução
-* S04 00-00 a 00-00 Introdução
-* S05 00-00 a 00-00 Introdução
-* S06 00-00 a 00-00 Introdução
+* S01 00-00 a 00-00 Dados e funções
+* S02 00-00 a 00-00 Importação de Dados e Formas de Coleta
+* S03 00-00 a 00-00 Relatórios
 
 O curso é essencialmente assíncrono e a frequência será registrada de acordo com a entrega das atividades nos prazos assinalados.
 
